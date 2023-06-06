@@ -72,3 +72,23 @@ if (userAge > 18) {
 } else {
   console.log("You can't vote");
 }
+
+const result = 1 + 2 + 3 + "4" * 5; //other than + any signs converts string/anydatatype to number
+console.log(result); //result is in number
+
+const result1 = 1 + 2 + 3 + "4" + 5;
+console.log(result1);
+
+const result2 = 2**3+4; // ** = pow 
+console.log(result2);
+const result3 = "25/5"+6*"2"; // Bodmas then left to right
+console.log(result3);
+const result4 = "25/5"+6+"2";
+console.log(result4);
+
+// "ankit" * 2 = converts string to number = ankit cannot be converted to number so NAN
+const result5 = 1 + 2 + 3 + "4" * 5; //other than + any signs converts string/anydatatype to number
+console.log(result5);
+
+
+
