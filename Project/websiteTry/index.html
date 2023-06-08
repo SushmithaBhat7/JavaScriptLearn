@@ -4,6 +4,10 @@
 
   <style>
     /* Here goes CSS */
+
+    body {
+      margin: 0;
+    }
     .icon-container {
       display: flex;
       align-items: center;
@@ -11,7 +15,58 @@
     .icon {
       width: 24px;
       height: 24px;
-      margin: 10px;
+      margin: 0;
+      padding: 12px;
+      gap: 12px;
+      display: flex;
+    }
+
+    /* .divLeft {
+      display: flex;
+      justify-content: right;
+      margin-right: 0;
+      position: relative;
+      min-width: 960px;
+    } */
+    .search-bar-con {
+      left: 0px;
+      top: -13px;
+      margin: 0;
+      padding: 0;
+      justify-content: flex-start;
+      margin-left: 10px;
+    }
+
+    .function-con {
+      position: relative;
+      left: 550px;
+      top: 10%;
+      width: auto;
+      height: 80%;
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      flex: 1;
+      display: flex;
+      padding: 0 20px;
+      right: inherit;
+    }
+    .iconSpan {
+      width: auto;
+      position: retative;
+      /* height: 24px; */
+      margin: 0;
+      padding: 10px;
+      gap: 12px;
+      display: inline-block;
+    }
+    .divLeft {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      /* flex: 1; */
+      display: flex;
+      /* padding: 0 20px; */
     }
   </style>
 </head>
@@ -23,19 +78,21 @@
       <img src="./menu_icon.png" alt="Menu" />
     </div>
     <div>
-      <div class="icon">
+      <div style="display: flex">
         <!-- video logo icon -->
-        <img src="./video_logo_icon.png" alt="video" />
+        <img class="icon" src="./video_logo_icon.png" alt="video" />
         <!-- Name of my website -->
-        <span>YT</span>
+        <span class="iconSpan">YT</span>
       </div>
     </div>
 
-    <div>
+    <div class="search-bar-con">
       <!-- search bar -->
-      <input type="button" placeholder="Search ..." />
+      <!-- <input type="button" placeholder="Search ..." /> -->
+      <input type="text" name="search" class="search-bar" />
+      <input type="submit" name="search-submit" class="search-btn" />
     </div>
-    <div>
+    <div class="function-con">
       <div class="icon">
         <!-- microphone -->
         <img src="./microphone_icon.png" alt="microphone" />
