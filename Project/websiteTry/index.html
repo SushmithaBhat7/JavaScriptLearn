@@ -11,6 +11,7 @@
     .icon-container {
       display: flex;
       align-items: center;
+      justify-content: space-between;
     }
     .icon {
       width: 24px;
@@ -38,15 +39,15 @@
     }
 
     .function-con {
-      position: relative;
-      left: 550px;
-      top: 10%;
-      width: auto;
-      height: 80%;
+      /* position: relative; */
+
+      /* top: 10%; */
+      /* width: auto; */
+      /* height: 80%; */
       display: inline-block;
       margin: 0;
       padding: 0;
-      flex: 1;
+      /* flex: 1; */
       display: flex;
       padding: 0 20px;
       right: inherit;
@@ -68,30 +69,37 @@
       display: flex;
       /* padding: 0 20px; */
     }
+    .divElemetLeft {
+      display: flex;
+      align-items: center;
+    }
   </style>
 </head>
 
 <body>
   <header class="icon-container">
-    <div class="icon">
-      <!-- Menu icon -->
-      <img src="./menu_icon.png" alt="Menu" />
-    </div>
-    <div>
-      <div style="display: flex">
-        <!-- video logo icon -->
-        <img class="icon" src="./video_logo_icon.png" alt="video" />
-        <!-- Name of my website -->
-        <span class="iconSpan">YT</span>
+    <div class="divElemetLeft">
+      <div class="icon">
+        <!-- Menu icon -->
+        <img src="./menu_icon.png" alt="Menu" />
+      </div>
+      <div>
+        <div style="display: flex">
+          <!-- video logo icon -->
+          <img class="icon" src="./video_logo_icon.png" alt="video" />
+          <!-- Name of my website -->
+          <span class="iconSpan">YT</span>
+        </div>
+      </div>
+
+      <div class="search-bar-con">
+        <!-- search bar -->
+        <!-- <input type="button" placeholder="Search ..." /> -->
+        <input type="text" name="search" class="search-bar" />
+        <input type="submit" name="search-submit" class="search-btn" />
       </div>
     </div>
 
-    <div class="search-bar-con">
-      <!-- search bar -->
-      <!-- <input type="button" placeholder="Search ..." /> -->
-      <input type="text" name="search" class="search-bar" />
-      <input type="submit" name="search-submit" class="search-btn" />
-    </div>
     <div class="function-con">
       <div class="icon">
         <!-- microphone -->
