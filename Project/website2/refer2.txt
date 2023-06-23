@@ -1,0 +1,73 @@
+
+
+
+
+
+
+max-width: 80px;
+//Width can go upto this not above this, because we are talking about pixel
+//when we use a scroll bar and inside it we need a set of component to max width 
+
+opacity :0.4;
+//To make background color transparent
+
+
+
+white-space: nowrap;
+overflow: hidden;
+
+display: inline-block;
+display: block;
+vertical-align: middle;
+vertical-align: baseline;
+position: relative;
+
+border: none;
+outline: none;
+height: 7px;
+width: 20px;
+transform: rotate(180deg);
+box-sizing: border-box;
+
+margin: 0;
+margin: 2px 7px;;
+margin-top: 12px;
+margin-right: 5px;
+margin-bottom: 6px;
+margin-left: 5px;
+
+padding: 0;
+padding: 2px 7px;
+padding-top: 4px;
+padding-right: 4px;
+padding-bottom: 4px;
+padding-left: 4px;
+
+text-align: right;
+font-size: 14px;
+font-size: inherit;
+font-weight: inherit;
+text-decoration: none;
+text-overflow: ellipsis;
+font-family: Roboto,Arial,sans-serif;
+font-weight: 500;
+letter-spacing: 0;
+line-height: 1.4;
+line-height: normal;
+
+background-color: #f1f3f6;
+background: #fff;
+color: #212121;
+color: inherit;
+
+list-style: none;
+
+$0.style.backgroundColor="red"
+
+row -> JC - XAXIS, AI - Y AXIS
+column - JC - YAXIS, AI- XAXIS
+
+
+
+
+

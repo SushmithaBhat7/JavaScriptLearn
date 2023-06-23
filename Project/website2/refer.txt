@@ -1,0 +1,344 @@
+TODO :
+
+https://www.flipkart.com/nafa-3-5mm-clip-microphone-youtube-voice-recording-smartphones-dslrs-laptop-pc/p/itm75ff02a4f63a1?pid=MICGDGCFPTRN7VCE&lid=LSTMICGDGCFPTRN7VCEFGTZXX&marketplace=FLIPKART&q=NAFA+3.5mm+Clip+microphone+for+youtube&store=search.flipkart.com&srno=s_1_4&otracker=search&otracker1=search&fm=Search&iid=en_HrcwiJWvQLDv59CmMJx8sf0Bdb%2BTy%2BWupfob75Jtkc9TYFRC3P2%2Fesp9l4AsIZkr9%2BjKf7NGK19yvut0noeQMQ%3D%3D&ppt=sp&ppn=sp&ssid=suw5jegl1s0000001686541143166&qH=0fd8a11f492e4256 
+
+Reffered :
+
+https://www.flipkart.com/provogue-slim-fit-men-dark-green-trousers/p/itmda57e23061549?pid=TROGM7HHYCB23EZC&lid=LSTTROGM7HHYCB23EZC4ICARM&marketplace=FLIPKART&store=clo&srno=b_1_2&otracker=hp_omu_Top%2BDeals%2Bon%2BFashion_2_8.dealCard.OMU_VCV5RCALQNFH_7&otracker1=hp_omu_PINNED_neo%2Fmerchandising_Top%2BDeals%2Bon%2BFashion_NA_dealCard_cc_2_NA_view-all_7&fm=neo%2Fmerchandising&iid=en_K849SqWM8ZPzFlU5D6LG1DC4sWMMxe7f9bHjZDCEibOcx3emImL4zOGj04GUpta6xB6xefjPk2VsYl7LcWiNTg%3D%3D&ppt=hp&ppn=homepage&ssid=7jf9hzg3m80000001686414353168
+ 
+ 
+Font Awesome : embbed script file : <script src="https://kit.fontawesome.com/3f70d2bd1b.js" crossorigin="anonymous"></script>
+
+
+ Headder :
+
+.section-1 .s1 .price{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.section-1 .s1 .price .prices{
+    margin-top: -2rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+
+
+
+
+/*
+*/
+
+/*
+*/
+
+/*
+*/
+
+/*
+*/
+
+/*
+*/
+
+
+
+
+
+ 
+ /* For div/anchor text
+
+        //padding: 0px 0px 8px;
+
+        //flex-flow: row
+
+
+         max-width: 80px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: inline-block;
+          vertical-align: middle; */
+
+      /* For div tag and image together
+    text-decoration: none;
+    color: inherit;
+    border: none;
+    outline: none; */
+
+      /*For image
+     height: 7px;
+    width: 20px;
+    transform: rotate(180deg);
+    vertical-align: middle; */
+
+      /* For all tags *
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0; */
+
+      /* For Share Button
+    margin-left: 5px; */
+
+      /* Span for share symbol and share icon 
+    text-align: right; */
+
+      /* body {
+    font-size: 14px;
+    background-color: #f1f3f6;
+    color: #212121;
+    line-height: 1.4;
+    } */
+
+    /* Inherited from body {
+    font-family: Roboto,Arial,sans-serif;
+    letter-spacing: 0;
+    } */
+
+    /* Brand Name :
+    margin-top: 12px;
+     */
+
+     /*Brand Name style :
+     color: #878787;
+    font-size: 16px;
+    display: block;
+    font-weight: 500;
+
+    content = 651.200x22.400
+     */
+
+
+     /*div block having Brand Name,Discription,Spl Price,price,Discount,Rating,No of rating,Review,fAssured
+    padding: 0;
+    margin-top: 6px;
+
+    651.200x167.600
+     */
+
+     /*one line Discription of product
+
+     349.737x25.200
+    <Span>
+
+    padding: 0;
+    line-height: 1.4;
+    font-size: inherit;
+    font-weight: inherit;
+    display: inline-block;
+
+
+    color: #212121;
+    font-size: 18px;
+    font-weight: 400;
+    display: contents;
+     */
+
+     /*special price in green color
+
+
+     font-weight: 500;
+    text-align: left;
+    color: #388e3c;
+    //margin: 12px 0 -12px;
+     */
+
+     /* price, old price,66% off,details icon
+     183.425x39.20
+     */
+
+     /*Price
+         font-size: 28px;
+    vertical-align: sub;
+
+    61.175x39.200
+
+    price,old price display: inline-block;
+
+    font-size: 16px;
+    font-weight: 500;
+    color: #212121;
+
+     */
+
+     /*Old price
+
+         font-size: 16px;
+    margin-left: 12px;
+    vertical-align: middle;
+    color: #878787;
+
+    text-decoration: line-through;
+
+    display: inline-block;
+
+    46.400x22.400
+
+     */
+
+     /* 66% off
+
+     color: #26a541;
+
+     margin-left: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    vertical-align: middle;
+
+    letter-spacing: -.2px;
+
+
+
+     */
+
+     /* details symbol
+
+    height: 18px;
+
+    margin: 14px 0 0 8px;
+    cursor: pointer;
+
+     */
+
+     /* 3.9 rating
+
+         padding: 2px 7px;
+    border-radius: 14px;
+    font-size: 16px;
+    background-color: #26a541;
+    vertical-align: baseline;
+
+
+    line-height: normal;
+    display: inline-block;
+    color: #fff;
+    
+    font-weight: 500;
+
+    margin-bottom: 6px;
+
+        cursor: pointer;
+    display: inline-block;
+
+     */
+
+     /* No of rating and reviews
+
+
+    padding-left: 8px;
+    font-weight: 500;
+    color: #878787;
+
+    margin-bottom: 6px;
+    font-size: 16px;
+
+
+     */
+
+
+
+     /* fAssured
+
+     margin-bottom: 6px;
+    font-size: 16px;
+
+    cursor: pointer;
+
+    margin-left: 12px;
+    vertical-align: middle;
+    font-size: 20px;
+
+
+
+
+     */
+
+     /* Available offers div block 
+
+     display: block;
+     width: 100%;
+
+     */
+
+     /* Available offers
+     font-size: 16px;
+    font-weight: 500;
+    color: #212121;
+     */
+
+     /*List for offers :
+
+     line-height: 1.43;
+    color: #212121;
+    font-size: 14px;
+    position: relative;
+
+
+     */ list icon
+     margin-right: 10px;
+
+    width="18", height="18"
+
+
+     /*Bolded text : special price
+         color: #212121;
+    font-weight: 500;
+    padding-right: 4px;
+     */
+
+     /*list :
+     list-style: none;
+     */
+
+     /* view 8 more offers :
+
+     This is span
+
+     border: 0;
+    outline: none;
+    background: #fff;
+    border-radius: 0;
+    font-size: 14px;
+    color: #2874f0;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 8px;
+
+
+     */
+
+     /*T&C 
+
+    div tag :
+
+     display: inline-block;
+    position: relative;
+
+    span tag :
+
+    color: #2874f0;
+    font-weight: 500;
+    display: inline-block;
+    margin-left: 5px;
+    cursor: pointer;
+      
+     
+     */
+
+
+
+
+
+ /* font-family: Arial; */
+        /* font-family: "Nexa";
+        src: url("Nexa-Bold.ttf") format("truetype"); */
+
+<link
+      href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab|Roboto:300,400,500,700"
+      rel="stylesheet"
+    />

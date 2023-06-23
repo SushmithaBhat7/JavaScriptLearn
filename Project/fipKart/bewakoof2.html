@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab|Roboto:300,400,500,700"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Roboto";
+      }
+      .grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 4px;
+      }
+      .box {
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        /* background-color: rgb(69, 57, 57); */
+        box-sizing: border-box;
+      }
+      .box .imageDiv img {
+        /* height: 375; */
+        width: 100%;
+      }
+      .discriptionDiv {
+        display: flex;
+        flex-direction: row;
+        /* background-color: gray; */
+        justify-content: space-between;
+        padding-left: 6px;
+        align-items: center;
+        box-sizing: border-box;
+        max-height: 50px;
+      }
+
+      .wishList img {
+        height: auto;
+        width: 50px;
+      }
+      .brandNameDiscription {
+        /* background-color: aquamarine; */
+        display: flex;
+        flex-direction: column;
+        /* max-width: 90%; */
+        width: 500px;
+      }
+      .brandName {
+        font-size: 16px;
+      }
+      .discription {
+        /* background-color: blueviolet; */
+        max-width: 90%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 13px;
+      }
+      .price {
+        /* background-color: rgb(177, 226, 43); */
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+      .actualPrice {
+        text-decoration: line-through;
+        font-size: 12px;
+        color: rgb(69, 68, 68);
+      }
+      .discountedPrice {
+        /* background-color: brown; */
+        padding: 5px;
+        font-weight: 450;
+      }
+      .tribe {
+        /* background-color: chocolate; */
+        display: flex;
+        align-items: center;
+        font-weight: 450;
+        font-size: 12px;
+      }
+      .tribePrice {
+        /* background-color: rgb(83, 83, 227); */
+        padding: 5px;
+      }
+      .cotton {
+        /* background-color: aqua; */
+      }
+      .cottenContent {
+        /* background-color: rgb(159, 77, 77); */
+        padding: 2px;
+        margin: 4px;
+        display: inline-block;
+        border: 1px solid black;
+      }
+      .topTextDiv {
+        opacity: 0.6;
+        /* background-color: transparent; */
+      }
+      .lower {
+        width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid">
+      <div class="box">
+        <div class="imageDiv">
+          <div class="image">
+            <img
+              src="https://images.bewakoof.com/t640/women-s-black-tropical-vibes-typography-oversized-t-shirt-493433-1667493507-1.jpg"
+              alt="Shop Women's Black Tropical Vibes Typography Oversized T-shirt-Front"
+              width="100%"
+              height="100%"
+            />
+            <div class="topTextontainer">
+              <div class="topTextDiv">
+                <div style="color: rgb(115, 115, 115)">OVERSIZED FIT</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lower">
+          <div class="discriptionDiv">
+            <div class="brandNameDiscription">
+              <div class="brandName"><b>Bewakoof®</b></div>
+              <div class="discription">
+                Women's Black Tropical Vibes Typography Oversized T-shirt
+              </div>
+            </div>
+            <div class="wishList">
+              <img
+                src="https://images.bewakoof.com/web/Wishlist.svg"
+                alt="wishlist"
+              />
+            </div>
+          </div>
+          <div class="price">
+            <div class="discountedPrice">₹549</div>
+            <div class="actualPrice">₹1299</div>
+          </div>
+          <div class="tribe">
+            <span class="tribePrice">₹509</span>
+            <p class="tribetitle">For TriBe Members</p>
+          </div>
+          <div class="cotton">
+            <span class="cottenContent">100% COTTON</span>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="imageDiv">
+          <div class="image">
+            <img
+              src="https://images.bewakoof.com/t640/women-s-black-tropical-vibes-typography-oversized-t-shirt-493433-1667493507-1.jpg"
+              alt="Shop Women's Black Tropical Vibes Typography Oversized T-shirt-Front"
+              width="100%"
+              height="100%"
+            />
+            <div class="topTextontainer">
+              <div class="topTextDiv">
+                <div style="color: rgb(115, 115, 115)">OVERSIZED FIT</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lower">
+          <div class="discriptionDiv">
+            <div class="brandNameDiscription">
+              <div class="brandName"><b>Bewakoof®</b></div>
+              <div class="discription">
+                Women's Black Tropical Vibes Typography Oversized T-shirt
+              </div>
+            </div>
+            <div class="wishList">
+              <img
+                src="https://images.bewakoof.com/web/Wishlist.svg"
+                alt="wishlist"
+              />
+            </div>
+          </div>
+          <div class="price">
+            <div class="discountedPrice">₹549</div>
+            <div class="actualPrice">₹1299</div>
+          </div>
+          <div class="tribe">
+            <span class="tribePrice">₹509</span>
+            <p class="tribetitle">For TriBe Members</p>
+          </div>
+          <div class="cotton">
+            <span class="cottenContent">100% COTTON</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="imageDiv">
+          <div class="image">
+            <img
+              src="https://images.bewakoof.com/t640/women-s-black-tropical-vibes-typography-oversized-t-shirt-493433-1667493507-1.jpg"
+              alt="Shop Women's Black Tropical Vibes Typography Oversized T-shirt-Front"
+              width="100%"
+              height="100%"
+            />
+            <div class="topTextontainer">
+              <div class="topTextDiv">
+                <div style="color: rgb(115, 115, 115)">OVERSIZED FIT</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lower">
+          <div class="discriptionDiv">
+            <div class="brandNameDiscription">
+              <div class="brandName"><b>Bewakoof®</b></div>
+              <div class="discription">
+                Women's Black Tropical Vibes Typography Oversized T-shirt
+              </div>
+            </div>
+            <div class="wishList">
+              <img
+                src="https://images.bewakoof.com/web/Wishlist.svg"
+                alt="wishlist"
+              />
+            </div>
+          </div>
+          <div class="price">
+            <div class="discountedPrice">₹549</div>
+            <div class="actualPrice">₹1299</div>
+          </div>
+          <div class="tribe">
+            <span class="tribePrice">₹509</span>
+            <p class="tribetitle">For TriBe Members</p>
+          </div>
+          <div class="cotton">
+            <span class="cottenContent">100% COTTON</span>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="imageDiv">
+          <div class="image">
+            <img
+              src="https://images.bewakoof.com/t640/women-s-black-tropical-vibes-typography-oversized-t-shirt-493433-1667493507-1.jpg"
+              alt="Shop Women's Black Tropical Vibes Typography Oversized T-shirt-Front"
+              width="100%"
+              height="100%"
+            />
+            <div class="topTextontainer">
+              <div class="topTextDiv">
+                <div style="color: rgb(115, 115, 115)">OVERSIZED FIT</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lower">
+          <div class="discriptionDiv">
+            <div class="brandNameDiscription">
+              <div class="brandName"><b>Bewakoof®</b></div>
+              <div class="discription">
+                Women's Black Tropical Vibes Typography Oversized T-shirt
+              </div>
+            </div>
+            <div class="wishList">
+              <img
+                src="https://images.bewakoof.com/web/Wishlist.svg"
+                alt="wishlist"
+              />
+            </div>
+          </div>
+          <div class="price">
+            <div class="discountedPrice">₹549</div>
+            <div class="actualPrice">₹1299</div>
+          </div>
+          <div class="tribe">
+            <span class="tribePrice">₹509</span>
+            <p class="tribetitle">For TriBe Members</p>
+          </div>
+          <div class="cotton">
+            <span class="cottenContent">100% COTTON</span>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="imageDiv">
+          <div class="image">
+            <img
+              src="https://images.bewakoof.com/t640/women-s-black-tropical-vibes-typography-oversized-t-shirt-493433-1667493507-1.jpg"
+              alt="Shop Women's Black Tropical Vibes Typography Oversized T-shirt-Front"
+              width="100%"
+              height="100%"
+            />
+            <div class="topTextontainer">
+              <div class="topTextDiv">
+                <div style="color: rgb(115, 115, 115)">OVERSIZED FIT</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lower">
+          <div class="discriptionDiv">
+            <div class="brandNameDiscription">
+              <span class="brandName"><b>Bewakoof®</b></span>
+              <span class="discription">
+                Women's Black Tropical Vibes Typography Oversized T-shirt
+              </span>
+            </div>
+            <div class="wishList">
+              <img
+                src="https://images.bewakoof.com/web/Wishlist.svg"
+                alt="wishlist"
+              />
+            </div>
+          </div>
+          <div class="price">
+            <div class="discountedPrice">₹549</div>
+            <div class="actualPrice">₹1299</div>
+          </div>
+          <div class="tribe">
+            <span class="tribePrice">₹509</span>
+            <p class="tribetitle">For TriBe Members</p>
+          </div>
+          <div class="cotton">
+            <span class="cottenContent">100% COTTON</span>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <div class="imageDiv">
+          <div class="image">
+            <img
+              src="https://images.bewakoof.com/t640/women-s-black-tropical-vibes-typography-oversized-t-shirt-493433-1667493507-1.jpg"
+              alt="Shop Women's Black Tropical Vibes Typography Oversized T-shirt-Front"
+              width="100%"
+              height="100%"
+            />
+            <div class="topTextontainer">
+              <div class="topTextDiv">
+                <div style="color: rgb(115, 115, 115)">OVERSIZED FIT</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lower">
+          <div class="discriptionDiv">
+            <div class="brandNameDiscription">
+              <div class="brandName"><b>Bewakoof®</b></div>
+              <div class="discription">
+                Women's Black Tropical Vibes Typography Oversized T-shirt
+              </div>
+            </div>
+            <div class="wishList">
+              <img
+                src="https://images.bewakoof.com/web/Wishlist.svg"
+                alt="wishlist"
+              />
+            </div>
+          </div>
+          <div class="price">
+            <div class="discountedPrice">₹549</div>
+            <div class="actualPrice">₹1299</div>
+          </div>
+          <div class="tribe">
+            <span class="tribePrice">₹509</span>
+            <p class="tribetitle">For TriBe Members</p>
+          </div>
+          <div class="cotton">
+            <span class="cottenContent">100% COTTON</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

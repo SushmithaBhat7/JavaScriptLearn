@@ -1,0 +1,53 @@
+google Icon : chrome://new-tab-page/icons/google_logo.svg
+outlook : title="Outlook"
+<img draggable="false" alt="" src="chrome://favicon2/?size=24&amp;scaleFactor=1x&amp;showFallbackMonogram=&amp;pageUrl=https%3A%2F%2Fmail.rbi.org.in%2F">
+
+youtube : title="(12) YouTube"
+
+<img draggable="false" alt="" src="chrome://favicon2/?size=24&amp;scaleFactor=1x&amp;showFallbackMonogram=&amp;pageUrl=https%3A%2F%2Fyoutube.com%2F">
+
+Scalar : title="Intermediate DSA"
+
+<img draggable="false" alt="" src="chrome://favicon2/?size=24&amp;scaleFactor=1x&amp;showFallbackMonogram=&amp;pageUrl=https%3A%2F%2Fwww.scaler.com%2Facademy%2Fmentee-dashboard%2Fclass%2F42991%2Fsession%3FjoinSession%3D1">
+
+meet : title="Meet"
+
+<img draggable="false" alt="" src="chrome://favicon2/?size=24&amp;scaleFactor=1x&amp;showFallbackMonogram=&amp;pageUrl=https%3A%2F%2Fmeet.google.com%2Fifs-oafy-ubu">
+
+SAP : title="Samadhan Portal"
+
+<img draggable="false" alt="" src="chrome://favicon2/?size=24&amp;scaleFactor=1x&amp;showFallbackMonogram=&amp;pageUrl=https%3A%2F%2Fsamadhan.rbi.org.in%2F">
+
+R login : title="Login"
+
+<img draggable="false" alt="" src="chrome://favicon2/?size=24&amp;scaleFactor=1x&amp;showFallbackMonogram=&amp;pageUrl=https%3A%2F%2Fekp.rbi.org.in%2F">
+
+whatsapp : title="WhatsApp"
+
+<img draggable="false" alt="" src="chrome://favicon2/?size=24&amp;scaleFactor=1x&amp;showFallbackMonogram=&amp;pageUrl=https%3A%2F%2Fweb.whatsapp.com%2F">
+
+- icon : title="Add shortcut"
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<i class="material-icons">add</i>
+
+search :
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+<i class="material-icons">search</i>
+
+microphone :
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+<i class="material-icons" style="color: #4285F4;">mic</i>
+
+camera icon :
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+<i class="material-icons" style="color: #DB4437;">photo_camera</i>
+
+
+Background sky google :
+https://www.google.com/sky/

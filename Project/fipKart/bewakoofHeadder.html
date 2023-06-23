@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab|Roboto:300,400,500,700"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      .FirstHeadDiv {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        border-bottom: 1px solid #000;
+        background-color: rgb(240, 236, 236);
+        font-family: montserrat, sans-serif;
+        /* font-size: 100%; */
+        color: rgba(0, 0, 0, 0.8);
+      }
+      .leftHeadDiv {
+        padding: 4px;
+      }
+      .rightHeadDiv {
+        padding: 4px;
+      }
+      .leftHeadItem {
+        cursor: pointer;
+        padding: 4px;
+        font-size: 12px;
+        font-weight: 500;
+      }
+      .rightHeadItem {
+        cursor: pointer;
+        padding: 4px;
+        font-size: 12px;
+        font-weight: 500;
+      }
+      .shopping-bag-link {
+        text-decoration: none;
+        color: #454444; /* Adjust the color as needed */
+      }
+
+      .shopping-bag-link:hover {
+        color: #242424; /* Adjust the hover color as needed */
+      }
+      .login {
+        text-decoration: none;
+        color: #454444;
+      }
+      .secondHeadDiv {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 16px 0 16px 0;
+        border-bottom: 1px solid black;
+        padding: 0 4px 0 4px;
+      }
+      .leftSecondHeadDiv {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+      }
+      .rightSecondHeadDiv {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+      }
+      .bewakoofIcon {
+        padding: 6px;
+      }
+      .searchDiv {
+        display: flex;
+        flex-direction: row;
+        /* justify-content: center; */
+        align-items: center;
+        gap: 12px;
+        background-color: rgb(231, 228, 228);
+      }
+      .seperator {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        font-weight: 600px;
+      }
+      .loginDiv {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+      }
+      .searchItem {
+        /* width: 100%; */
+        /* flex: 1; */
+        border: none;
+        outline: none;
+        font-size: 12px;
+        width: 220px;
+        background-color: transparent;
+      }
+      /* .mobileText {
+        width: 70%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      } */
+      .thirdDiv {
+        margin: 0px 30.6px 0 30.6px;
+        padding: 0px 12px 0 12px;
+      }
+      .thirdHeadderDiv {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        gap: 12px;
+        padding: 12px 0 12px 0;
+        vertical-align: baseline;
+      }
+      .slantSeperator {
+        padding-left: 14px;
+      }
+      .thirdDivHeadder {
+        font-size: 14px;
+        color: #454444;
+      }
+    </style>
+  </head>
+  <body>
+    <headder>
+      <div class="FirstHeadDiv">
+        <div class="leftHeadDiv">
+          <span class="leftHeadItem">Offers</span>
+          <span class="leftHeadItem">Fanbook</span>
+          <span class="leftHeadItem">Download App</span>
+          <span class="leftHeadItem">TriBe Membership</span>
+        </div>
+        <div class="rightHeadDiv">
+          <span class="rightHeadItem">Contact Us</span>
+          <span class="rightHeadItem">Track Order</span>
+        </div>
+      </div>
+      <div class="secondHeadDiv">
+        <div class="leftSecondHeadDiv">
+          <div class="bewakoofIcon">
+            <img
+              src="https://images.bewakoof.com/web/ic-desktop-bwkf-trademark-logo.svg"
+              alt="bewakoof_logo"
+              title="Bewakoof.com"
+              style="
+                height: 20px;
+                vertical-align: middle;
+                margin-bottom: 5px;
+                width: 147px;
+              "
+            />
+          </div>
+          <span>MEN</span>
+          <span>WOMEN</span>
+          <span class="mobileText">MOBILE COVERS</span>
+        </div>
+        <div class="rightSecondHeadDiv">
+          <div class="searchDiv">
+            <div class="searchIcon">
+              <i class="material-icons" style="color: #6b6b6b">search</i>
+            </div>
+            <div class="seachInput">
+              <input
+                class="searchItem"
+                type="search"
+                placeholder="Search by product, category or collection"
+              />
+            </div>
+          </div>
+          <div class="seperator">|</div>
+          <div class="loginDiv">
+            <a href="" class="login">Login</a>
+          </div>
+          <div class="wishlistDiv">
+            <img
+              src="https://images.bewakoof.com/web/Wishlist.svg"
+              alt="wishlist"
+            />
+          </div>
+          <div class="cartDiv">
+            <a href="#" class="shopping-bag-link">
+              <i class="material-icons">shopping_bag</i>
+            </a>
+          </div>
+          <div class="country">
+            <img
+              src="https://images.bewakoof.com/web/india-flag-round-1639566913.png"
+              alt="country"
+              height="30"
+              width="30"
+              class="countryIcon"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="thirdDiv">
+        <div class="thirdHeadderDiv">
+          <div class="thirdDivHeadder">Home</div>
+          <div class="slantSeperator">/</div>
+          <div class="thirdDivHeadder">Women Clothing</div>
+          <div class="slantSeperator">/</div>
+          <div class="thirdDivHeadder">Oversized T-shirts</div>
+          <div class="slantSeperator">/</div>
+          <div class="thirdDivHeadder">Women's Oversized T-Shirts</div>
+        </div>
+      </div>
+    </headder>
+  </body>
+</html>
