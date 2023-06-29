@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        color: antiquewhite;
+      }
+      .outter {
+        background-color: blue;
+        padding: 6px;
+      }
+      .inner1 {
+        background-color: blueviolet;
+        padding: 6px;
+        position: relative;
+      }
+      .inner2 {
+        background-color: brown;
+        padding: 6px;
+        position: relative;
+      }
+      .content {
+        background-color: black;
+        position: absolute;
+        top: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outter">
+      outter
+      <div class="inner1">
+        inner1
+        <div class="inner2">
+          inner2
+          <div class="content">Content</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

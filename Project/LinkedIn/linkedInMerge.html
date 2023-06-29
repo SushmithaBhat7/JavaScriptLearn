@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab|Roboto:300,400,500,700"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Roboto";
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #f5f5f5;
+      }
+      .leftDiv {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+      }
+      .headerContainer {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 12px;
+        background-color: #fff;
+      }
+      .linkedInIconDiv {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        min-width: 80px;
+        color: #0a66c2;
+      }
+      .linkedInIconDiv svg {
+        font-size: 100%;
+        width: 45px;
+        height: 45px;
+      }
+      .searchDiv {
+        display: flex;
+        flex-direction: row;
+        background-color: #eef3f8;
+        padding: 5px;
+
+        align-items: center;
+        border-radius: 4px;
+        position: relative;
+      }
+      .searchInput {
+        height: 34px;
+        border: none;
+        background-color: transparent;
+        padding: 0px 40px 0px 40px;
+        font-family: inherit;
+        font-size: 16px;
+        font-weight: 500;
+      }
+      .seachIcon {
+        background-color: transparent;
+        position: absolute;
+        left: 10px;
+        color: rgb(0 0 0 / 60%);
+      }
+      .navBarItems {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        padding: 4px;
+        color: rgb(0 0 0 / 60%);
+        font-size: 14px;
+      }
+      .navIcon {
+        position: relative;
+        padding: 2px;
+      }
+      .navBarItemBox:hover {
+        color: rgba(0, 0, 0, 0.9);
+        cursor: pointer;
+      }
+      .navIcon svg {
+        font-size: 100%;
+        width: 30px;
+        height: 30px;
+      }
+      .redRoundedDiv {
+        height: 18px;
+        width: 18px;
+        background-color: #cc1016;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+      }
+      .whiteInnerText {
+        font-size: 10px;
+        background-color: transparent;
+        color: #fff;
+        font-weight: 600;
+      }
+
+      .navIconRoundImg {
+        font-size: 100%;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+      }
+      .navtextLink {
+        color: #915907;
+        width: 100px;
+        height: 52px;
+        font-size: 12px;
+        text-align: center;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+      }
+      .navBarItemBox {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        justify-content: center;
+        align-items: center;
+      }
+      .lowerTextArea {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+      .navtext {
+        font-size: 12px;
+      }
+      .seperation {
+        height: 69.2px;
+        border-right: 1px solid rgba(148, 146, 146, 0.6);
+      }
+      .bodyDiv {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 25px;
+        font-family: system-ui, "Segoe UI", "Roboto", "Open Sans",
+          "Helvetica Neue", sans-serif;
+          margin-top: 15px;
+          /* width: 80%; */
+         
+      }
+      .leftBodyDiv {
+        width: 15%;
+        background-color: transparent;
+        border-radius: 9px;
+        gap: 12px;
+        display: flex;
+       flex-direction: column;
+      }
+      .midBodyDiv {
+        width: 40%;
+        background-color: #d87275;
+      }
+      .rightBodyDiv {
+        width: 20%;
+        background-color: transparent;
+      }
+      .upperLeftDiv{
+       background-color: white;
+       display: flex;
+       flex-direction: column;
+       border-radius: 9px;
+       box-shadow:0px 0px 0px 1px rgba(193, 192, 192, 0.6);
+      }
+      .lowerLeftDiv{
+        background-color: white;
+       display: flex;
+       flex-direction: column;
+       border-radius: 9px;
+       padding: 8px 0 8px 0;
+      box-shadow:0px 0px 0px 1px rgba(194, 192, 192, 0.6);
+       
+      }
+      .topUpperleftBodyDiv{
+        padding: 9px;
+        border-radius: 8px;
+        border-bottom: 1px solid rgba(147, 146, 146, 0.6);
+        position: relative;
+        /* position: absolute; */
+
+      }
+      .profileImageTopUpperLeftDiv {
+        height: 70px;
+        background-color: rgb(167, 164, 164);
+        /* position: relative; */
+        margin-left: -9px;
+        margin-right: -9px;
+        margin-top: -9px;
+        border-top-left-radius: 9px;
+        border-top-right-radius: 9px;
+       
+      }
+      .profileImageMidupperLeftDiv {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 25px; 
+        left: 60px 
+        /* z-index: 10000; */
+       
+      }
+      .profileImageMidupperLeftDiv img {
+        border-radius: 50%;
+        border: 3px solid white;
+      }
+      .profileImageBottomUpperLeftDiv {
+        height: 59px;
+        background-color: white;
+      }
+      
+      .profileInfoNameupperLeftDiv {
+        font-family: "Roboto";
+        font-weight: 600;
+        font-size: 16px;
+        text-align: center;
+        margin-top: 10px;
+        
+      }
+      .profileInfoWorkSplupperLeftDiv{
+        font-family: "Roboto";
+        font-size: 14px;
+        text-align: center;
+        color: rgba(0,0,0,0.6);
+        padding-top: 8px;
+        
+      }
+      .midUpperleftTopBodyDiv{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 4px;
+        align-items: center;
+      }
+      .midUpperleftTextBodyDiv{
+        display: flex;
+        flex-direction: column;
+      }
+      
+
+      .lightColoredLeftUpperDiv{
+        font-family: "Roboto";
+        font-size: 14px;
+        color: rgba(0,0,0,0.6);
+
+      }
+      .darkColoredLeftUpperdiv {
+        font-family: "Roboto";
+        font-weight: 600;
+        font-size: 12px;
+        color: black;
+        
+      }
+      .blueBoldText{
+        font-family: "Roboto";
+        font-weight: 600;
+        font-size: 13px;
+        color: #0a66c2;
+      }
+      .midUpperleftBodyDiv{
+        padding: 12px 8px 12px 8px;
+        border-bottom: 1px solid rgba(147, 146, 146, 0.6);
+      }
+      .midUpperleftTextBottomBodyDiv{
+        font-family: "Roboto";
+        font-weight: 600;
+        font-size: 14px;
+      }
+      .midUpperleftNumBodyDiv{
+        font-family: "Roboto";
+        font-weight: 600;
+        font-size: 14px;
+        color: #0a66c2;
+
+      }
+      .midUpperleftBottomBodyDiv{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+      }
+                
+    .lowerleftBodyDiv{
+      display: flex;
+      flex-direction: row;
+      gap:6px;
+      align-items: center;
+      padding: 12px;
+  
+    }
+    .midLowerleftBottomBodyDiv{
+      display: flex;
+      flex-direction: row;
+      gap: 6px;
+      align-items:center;
+      /* justify-content: flex-start; */
+   
+    }
+    .midLowerleftBodyDiv{
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid rgba(147, 146, 146, 0.6);
+      padding: 8px;
+    }
+    .midLowerleftBotIconBodyDiv{
+      display: flex;
+      align-items: center;
+    }
+    .midLowerleftBotIconBodyDiv svg{
+      height: 18px;
+      width: 18px;
+    }
+    .lowerleftTextBodyDiv{
+      display: flex;
+      align-items: center;
+    }
+    .lowerleftIconBodyDiv{
+      display: flex;
+      align-items: center;
+    }
+    .recentItems::before{
+      font-family: 'material icons';
+    font-weight: 600;
+    content: '\e9ef';
+    margin:0 10px 0 15px;
+    color: rgba(0,0,0,0.6);
+    
+    }
+    .recentItems{
+      list-style-type: none;
+      /* font-family: "Roboto"; */
+        font-size: 14px;
+        font-weight: 500;
+        color: rgba(0,0,0,0.6);
+        display: flex;
+        align-items: center;
+        padding: 4px 12px 4px 0px;
+        
+    }
+    .recent{
+      margin: 0;
+    }
+    .recentTopContainer{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0px 8px 0px 20px;
+    }
+    .recentText{
+      display: flex;
+     align-items: center;
+     margin: 0;
+    }
+    .recentContainer{
+      display: flex;
+      flex-direction: column;
+    }
+    .hoverRound{
+      /*  */
+      height: 35px;
+      width: 35px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .hoverRound svg{
+      /* height: 20px;
+      width: 20px; */
+      color: rgba(0,0,0,0.6);
+    }
+    .hoverRound:hover{
+      background-color: rgba(138, 136, 136, 0.6);
+    }
+    .groupsDivLeft{
+      padding: 12px 8px 4px 12px;
+      display: flex;
+      align-items: center;
+
+    }
+    .eventsDivLeft{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 4px 8px 4px 12px;
+
+    }
+    .eventaddIconLeft{
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .eventaddIconLeft svg{
+      /* width: 20px;
+      height: 20px; */
+      color: rgba(0,0,0,0.6);
+    }
+    .eventaddIconLeft:hover{
+      background-color: rgba(138, 136, 136, 0.6);
+    }
+    .showLeftLower{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      border-bottom: 1px solid rgba(147, 146, 146, 0.6);
+    }
+    .leftlowerSpan{
+      /* font-family: "Roboto"; */
+        font-size: 14px;
+        font-weight: 600;
+        color: rgba(0,0,0,0.6);
+        padding: 2px;
+        
+    }
+    
+    .showIcon{
+      display: flex;
+      /* justify-content: center; */
+      align-items: center;
+    }
+    .showIcon svg {
+      color: rgba(0,0,0,0.6);
+    }
+    .discoverLeft{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 12px;
+    }
+    .discoverSpan{
+     
+        font-size: 16px;
+        font-weight: 600;
+        color: rgba(0,0,0,0.6);
+
+    }
+   .LinkedInNewsListItems{
+    list-style-type: none;
+    font-weight: 500;
+        color: black;
+        padding: 4px 12px 4px 0px;
+        font-size: 14px;
+        margin-top: 4px;
+       
+
+   }
+    .LinkedInNewsList{
+      margin: 0;
+
+    }
+    .LinkedInNewsListItems::before{
+      font-family: 'material icons';
+    font-weight: 600;
+    content: '\e837';
+    margin:0 10px 0 15px;
+    color: rgba(0,0,0,0.6);
+    
+    }
+    .listBotText{
+      font-size: 12px;
+        color: rgba(0,0,0,0.6);
+        padding-left: 38px;
+    }
+    .showRightLower{
+      display: flex;
+      /* justify-content: center; */
+      align-items: center;
+      gap: 6px;
+      padding: 6px 6px 6px 20px;
+    }
+    .LinkedInText{
+      font-weight: 500;
+        color: black;
+        padding: 0px;
+        font-size: 16px;
+    }
+    .linkedInTopContainer{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .listSupport{
+      list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 16px 24px 16px 24px;
+    padding: 0px;
+    gap: 6px;
+    color: rgba(0,0,0,0.6);
+    font-size: 12px;
+    }
+    .helpIconDiv span{
+      /* width: 10px;
+      height: 10px; */
+      font-size: 20px;
+    }
+    .listSupportItems{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    .listLink{
+      color: rgba(0,0,0,0.6);
+      margin: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+    }
+    .listLink:hover{
+      text-decoration: underline;
+    }
+    .listLink:hover .downLastIcon{
+      text-decoration: none;
+    }
+    .rightLastLinkedInLogo{
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+      /* padding-left: 15px; */
+      justify-content: center;
+    }
+    .linkedInRightLongIcon{
+      color: #0a66c2;
+    }
+    .linkedInCorp{
+      font-size: 12px;
+    }
+    ul{
+      /* padding-left: 40px; */
+    }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="headerContainer">
+        <div class="leftDiv">
+          <div class="linkedInIconDiv">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              data-supported-dps="24x24"
+              fill="currentColor"
+              class="mercado-match"
+              width="24"
+              height="24"
+              focusable="false"
+            >
+              <path
+                d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"
+              ></path>
+            </svg>
+          </div>
+          <div class="searchDiv">
+            <div class="seachIcon">
+              <i class="material-icons">search</i>
+            </div>
+            <div class="searchInputDiv">
+              <input class="searchInput" type="search" placeholder="Search" />
+            </div>
+          </div>
+        </div>
+        <div class="navBarItems">
+          <div class="navBarItemBox">
+            <div class="navIcon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                data-supported-dps="24x24"
+                fill="currentColor"
+                class="mercado-match"
+                width="24"
+                height="24"
+                focusable="false"
+              >
+                <path
+                  d="M23 9v2h-2v7a3 3 0 01-3 3h-4v-6h-4v6H6a3 3 0 01-3-3v-7H1V9l11-7 5 3.18V2h3v5.09z"
+                ></path>
+              </svg>
+              <div class="navNotification">
+                <div class="navNotification">
+                  <div class="redRoundedDiv">
+                    <div class="whiteInnerText">0</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="lowerTextArea">
+              <div class="navtext">Home</div>
+            </div>
+          </div>
+          <div class="navBarItemBox">
+            <div class="navIcon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                data-supported-dps="24x24"
+                fill="currentColor"
+                class="mercado-match"
+                width="24"
+                height="24"
+                focusable="false"
+              >
+                <path
+                  d="M12 6.5a4.5 4.5 0 114.5 4.5A4.49 4.49 0 0112 6.5zm6 6.5h-3a3 3 0 00-3 3v6h9v-6a3 3 0 00-3-3zM6.5 6A3.5 3.5 0 1010 9.5 3.5 3.5 0 006.5 6zm1 9h-2A2.5 2.5 0 003 17.5V22h7v-4.5A2.5 2.5 0 007.5 15z"
+                ></path>
+              </svg>
+            </div>
+            <div class="lowerTextArea">
+              <div class="navtext">My Network</div>
+            </div>
+          </div>
+          <div class="navBarItemBox">
+            <div class="navIcon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                data-supported-dps="24x24"
+                fill="currentColor"
+                class="mercado-match"
+                width="24"
+                height="24"
+                focusable="false"
+              >
+                <path
+                  d="M17 6V5a3 3 0 00-3-3h-4a3 3 0 00-3 3v1H2v4a3 3 0 003 3h14a3 3 0 003-3V6zM9 5a1 1 0 011-1h4a1 1 0 011 1v1H9zm10 9a4 4 0 003-1.38V17a3 3 0 01-3 3H5a3 3 0 01-3-3v-4.38A4 4 0 005 14z"
+                ></path>
+              </svg>
+            </div>
+            <div class="lowerTextArea">
+              <div class="navtext">Jobs</div>
+            </div>
+          </div>
+          <div class="navBarItemBox">
+            <div class="navIcon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                data-supported-dps="24x24"
+                fill="currentColor"
+                class="mercado-match"
+                width="24"
+                height="24"
+                focusable="false"
+              >
+                <path
+                  d="M16 4H8a7 7 0 000 14h4v4l8.16-5.39A6.78 6.78 0 0023 11a7 7 0 00-7-7zm-8 8.25A1.25 1.25 0 119.25 11 1.25 1.25 0 018 12.25zm4 0A1.25 1.25 0 1113.25 11 1.25 1.25 0 0112 12.25zm4 0A1.25 1.25 0 1117.25 11 1.25 1.25 0 0116 12.25z"
+                ></path>
+              </svg>
+              <div class="navNotification">
+                <div class="redRoundedDiv">
+                  <div class="whiteInnerText">3</div>
+                </div>
+              </div>
+            </div>
+            <div class="lowerTextArea">
+              <div class="navtext">Messaging</div>
+            </div>
+          </div>
+          <div class="navBarItemBox">
+            <div class="navIcon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                data-supported-dps="24x24"
+                fill="currentColor"
+                class="mercado-match"
+                width="24"
+                height="24"
+                focusable="false"
+              >
+                <path
+                  d="M22 19h-8.28a2 2 0 11-3.44 0H2v-1a4.52 4.52 0 011.17-2.83l1-1.17h15.7l1 1.17A4.42 4.42 0 0122 18zM18.21 7.44A6.27 6.27 0 0012 2a6.27 6.27 0 00-6.21 5.44L5 13h14z"
+                ></path>
+              </svg>
+              <div class="navNotification">
+                <div class="redRoundedDiv">
+                  <div class="whiteInnerText">24</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="lowerTextArea">
+              <div class="navtext">Notifications</div>
+              <span class="material-icons-round"> arrow_drop_down </span>
+            </div>
+          </div>
+          <div class="navBarItemBox">
+            <div class="navIcon">
+              <img
+                width="24"
+                src="https://media.licdn.com/dms/image/C5603AQGRRgflL15gTA/profile-displayphoto-shrink_100_100/0/1571580299394?e=1693440000&amp;v=beta&amp;t=N4tdUPMgbhmg9uenSqZn5NCaEc-Dja--6xuGjHZfE_w"
+                height="24"
+                alt="Sushmitha Bhat"
+                id="ember17"
+                class="global-nav__me-photo evi-image ember-view navIconRoundImg"
+              />
+            </div>
+            <div class="lowerTextArea">
+              <div class="navtext">Me</div>
+              <span class="material-icons-round"> arrow_drop_down </span>
+            </div>
+          </div>
+          <div class="seperation"></div>
+          <div class="navBarItemBox">
+            <div class="navIcon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                data-supported-dps="24x24"
+                fill="currentColor"
+                class="mercado-match"
+                width="24"
+                height="24"
+                focusable="false"
+              >
+                <path
+                  d="M3 3h4v4H3zm7 4h4V3h-4zm7-4v4h4V3zM3 14h4v-4H3zm7 0h4v-4h-4zm7 0h4v-4h-4zM3 21h4v-4H3zm7 0h4v-4h-4zm7 0h4v-4h-4z"
+                ></path>
+              </svg>
+            </div>
+            <div class="lowerTextArea">
+              <div class="navtext">For Business</div>
+              <span class="material-icons-round"> arrow_drop_down </span>
+            </div>
+          </div>
+          <div class="navBarItemBox">
+            <a href="" class="navtextLink">Try Premium for free</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="bodyDiv">
+      <div class="leftBodyDiv">
+        <div class="upperLeftDiv">
+          <div class="topUpperleftBodyDiv">
+            <div class="profileImageupperLeftDiv">
+              <div class="profileImageTopUpperLeftDiv"></div>
+              <div class="profileImageMidupperLeftDiv">
+                <img
+                  src="https://media.licdn.com/dms/image/C5603AQGRRgflL15gTA/profile-displayphoto-shrink_100_100/0/1571580299394?e=1693440000&amp;v=beta&amp;t=N4tdUPMgbhmg9uenSqZn5NCaEc-Dja--6xuGjHZfE_w"
+                  class="da-card-creative__profile-image"
+                  alt="Sushmitha"
+                />
+              </div>
+              <div class="profileImageBottomUpperLeftDiv"></div>
+            </div>
+            <div class="profileInfoupperLeftDiv">
+              <div class="profileInfoNameupperLeftDiv">
+                <span>Sushmitha Bhat</span>
+              </div>
+              <div class="profileInfoWorkSplupperLeftDiv">
+                <span
+                  >iOS App Developer at SHARP Software Development India</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="midUpperleftBodyDiv">
+            <div class="midUpperleftTopBodyDiv">
+              <div class="midUpperleftTextBodyDiv">
+                <span class="lightColoredLeftUpperDiv">Connections</span>
+                <span class="midUpperleftTextBottomBodyDiv"
+                  >Grow your network</span
+                >
+              </div>
+              <div class="midUpperleftnumberBodyDiv">
+                <span class="midUpperleftNumBodyDiv">83</span>
+              </div>
+            </div>
+            <div class="midUpperleftBottomBodyDiv">
+              <div class="midUpperleftBottomTextBodyDiv">
+                <span class="lightColoredLeftUpperDiv"
+                  >Who's viewed your profile</span
+                >
+              </div>
+              <div class="midUpperleftBottomnumberBodyDiv">
+                <span class="midUpperleftNumBodyDiv">37</span>
+              </div>
+            </div>
+          </div>
+          <div class="midLowerleftBodyDiv">
+            <div class="midLowerleftTopBodyDiv">
+              <span class="lightColoredLeftUpperDiv"
+                >Access exclusive tools & insights</span
+              >
+            </div>
+            <div class="midLowerleftBottomBodyDiv">
+              <div class="midLowerleftBotIconBodyDiv">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  data-supported-dps="24x24"
+                  class="mercado-match"
+                  width="24"
+                  height="24"
+                  focusable="false"
+                >
+                  <path
+                    d="M20 20a3.36 3.36 0 001-2.39V6.38A3.38 3.38 0 0017.62 3H6.38A3.36 3.36 0 004 4z"
+                    fill="#f8c77e"
+                  ></path>
+                  <path
+                    d="M4 4a3.36 3.36 0 00-1 2.38v11.24A3.38 3.38 0 006.38 21h11.24A3.36 3.36 0 0020 20z"
+                    fill="#e7a33e"
+                  ></path>
+                </svg>
+              </div>
+              <div class="midLowerleftBotTextBodyDiv">
+                <a href="" class="darkColoredLeftUpperdiv">Try Premium for free</a>
+              </div>
+            </div>
+          </div>
+          <div class="lowerleftBodyDiv">
+            <div class="lowerleftIconBodyDiv">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16"
+                data-supported-dps="16x16"
+                fill="currentColor"
+                class="mercado-match"
+                width="16"
+                height="16"
+                focusable="false"
+              >
+                <path d="M13 4a3 3 0 00-3-3H3v14l5-4.5 5 4.5z"></path>
+              </svg>
+            </div>
+            <div class="lowerleftTextBodyDiv">
+              <span class="lowerleftTextBodyDivText">My items</span>
+            </div>
+          </div>
+        </div>
+        <div class="lowerLeftDiv">
+          <div class="recentContainer">
+            <div class="recentTopContainer">
+              <p class="recentText">Recent</p>
+              <div class="recentIcon">
+                <div class="hoverRound">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" class="mercado-match" width="16" height="16" focusable="false">
+                    <path d="M1 5l7 4.61L15 5v2.39L8 12 1 7.39z"></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            
+          <ul class="recent">
+            <li class="recentItems">team</li>
+            <li class="recentItems">hiring</li>
+            <li class="recentItems">iOS</li>
+            <li class="recentItems">agilesoftwaredevelopment</li>
+            <li class="recentItems">iphoneapps</li>
+          </ul>
+          </div>
+          <div class="groupsDivLeft">
+            <span class="blueBoldText">Groups</span>
+          </div>
+          <div class="eventsDivLeft">
+            <span class="blueBoldText">Events</span>
+            <div class="eventaddIconLeft">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" class="mercado-match" width="16" height="16" focusable="false">
+                <path d="M14 9H9v5H7V9H2V7h5V2h2v5h5z"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="eventsDivLeft">
+            <span class="blueBoldText">Followed Hashtags</span>
+            <div class="eventaddIconLeft">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" class="mercado-match" width="16" height="16" focusable="false">
+                <path d="M1 5l7 4.61L15 5v2.39L8 12 1 7.39z"></path>
+              </svg>
+            </div>
+          </div>
+          <ul class="recent">
+            <li class="recentItems">team</li>
+            <li class="recentItems">hiring</li>
+            <li class="recentItems">iOS</li>
+          </ul>
+          <div class="showLeftLower">
+            <span class="leftlowerSpan">Show more</span>
+            <div class="showIcon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" class="mercado-match" width="16" height="16" focusable="false">
+                <path d="M1 5l7 4.61L15 5v2.39L8 12 1 7.39z"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="discoverLeft">
+            <span class="discoverSpan">Discover more</span>
+          </div>
+
+
+        </div>
+      </div>
+      <div class="midBodyDiv">B</div>
+      <div class="rightBodyDiv">
+        <div class="lowerLeftDiv">
+          <div class="recentContainer">
+            <div class="linkedInTopContainer">
+              <p class="LinkedInText">LinkedIn News</p>
+              <div class="recentIcon">
+                <div class="helpIconDiv">
+                  <span class="material-icons-round">
+                    help_center
+                    </span>
+                </div>
+              </div>
+            </div>
+            
+          <ul class="LinkedInNewsList">
+            <li class="LinkedInNewsListItems">Top trends in AI, finance, and retail<br><span class="listBotText">Top news</span></li>
+            <li class="LinkedInNewsListItems">Tech top priority for India-US ties<br><span class="listBotText">1d ago</span></li>
+            <li class="LinkedInNewsListItems">HR leaders talk Pride<br><span class="listBotText">2d ago</span></li>
+            <li class="LinkedInNewsListItems">HR embraces AI potential<br><span class="listBotText">2d ago</span></li>
+            <li class="LinkedInNewsListItems">True equality, a matter of Pride<br><span class="listBotText">2d ago</span></li>
+          </ul>
+          <div class="showRightLower">
+            <span class="leftlowerSpan">Show more</span>
+            <div class="showIcon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" class="mercado-match" width="16" height="16" focusable="false">
+                <path d="M1 5l7 4.61L15 5v2.39L8 12 1 7.39z"></path>
+              </svg>
+            </div>
+          </div>
+          </div>
+      </div>
+      <div class="rightLowerlast">
+        <div class="listAbout">
+          <ul class="listSupport">
+            <li class="listSupportItems"><a href="" class="listLink">About</a></li>
+            <li class="listSupportItems"><a href="" class="listLink">Accessibility</a></li>
+            <li class="listSupportItems"><a href="" class="listLink">Help Center</a></li>
+            <li class="listSupportItems "><a href="" class="listLink">Privacy & Terms<span class="material-icons-round downLastIcon"> arrow_drop_down </span></a></li>
+            <li class="listSupportItems"><a href="" class="listLink">Ad Choices</a></li>
+            <li class="listSupportItems"><a href="" class="listLink">Advertising</a></li>
+            <li class="listSupportItems "><a href="" class="listLink">Business Services<span class="material-icons-round downLastIcon"> arrow_drop_down </span></a></li>
+            <li class="listSupportItems"><a href="" class="listLink">Get the LinkedIn app</a></li>
+            <li class="listSupportItems"><a href="" class="listLink">More</a></li>
+          </ul>
+        </div>
+        <div class="rightLastLinkedInLogo">
+          <div class="linkedInRightLongIcon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 14" data-supported-dps="56x14" fill="currentColor" class="mercado-match" width="56" height="14" focusable="false">
+              <g>
+                <path class="background-mercado" d="M22.1 8.2l3.09 3.8h-2.44L20 8.51V12h-2V2h2v5.88L22.54 5h2.55zm-8-3.4A2.71 2.71 0 0011.89 6V5H10v7h2V8.73a1.74 1.74 0 011.66-1.93C14.82 6.8 15 7.94 15 8.73V12h2V8.29c0-2.2-.73-3.49-2.86-3.49zM32 8.66a4.22 4.22 0 010 .44h-5.25v.07a1.79 1.79 0 001.83 1.43 2.51 2.51 0 001.84-.69l1.33 1a4.31 4.31 0 01-3.25 1.29 3.49 3.49 0 01-3.7-3.75 3.58 3.58 0 013.76-3.65C30.44 4.8 32 6.13 32 8.66zm-1.86-.86a1.46 1.46 0 00-1.59-1.4 1.64 1.64 0 00-1.8 1.4zM2 2H0v10h6v-2H2zm36 0h2v10h-1.89v-.7a2.44 2.44 0 01-2 .9 3.41 3.41 0 01-3.31-3.7 3.36 3.36 0 013.3-3.7 2.62 2.62 0 011.9.7zm.15 6.5a1.63 1.63 0 00-1.62-1.85A1.76 1.76 0 0034.9 8.5a1.76 1.76 0 001.63 1.85 1.63 1.63 0 001.62-1.85zM8 1.8A1.27 1.27 0 006.75 3a1.25 1.25 0 002.5 0A1.27 1.27 0 008 1.8zM7 12h2V5H7zM56 1v12a1 1 0 01-1 1H43a1 1 0 01-1-1V1a1 1 0 011-1h12a1 1 0 011 1zM46 5h-2v7h2zm.25-2a1.25 1.25 0 00-2.5 0 1.25 1.25 0 002.5 0zM54 8.29c0-2.2-.73-3.49-2.86-3.49A2.71 2.71 0 0048.89 6V5H47v7h2V8.73a1.74 1.74 0 011.66-1.93C51.82 6.8 52 7.94 52 8.73V12h2z"></path>
+              </g>
+            </svg>
+          </div>
+          <span class="linkedInCorp">LinkedIn Corporation © 2023</span>
+          
+        </div>
+      </div>
+  </body>
+</html>

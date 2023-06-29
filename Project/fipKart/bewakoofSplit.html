@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab|Roboto:300,400,500,700"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        /* font-family: "Roboto"; */
+      }
+      .grid {
+        display: flex;
+        flex-wrap: wrap;
+        width: 70%;
+        gap: 12px;
+        padding: 4px;
+        justify-content:left;
+      }
+      .box {
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        /* background-color: rgb(69, 57, 57); */
+        box-sizing: border-box;
+      }
+      .box .imageDiv img {
+        /* height: 375; */
+        width: 100%;
+      }
+      .discriptionDiv {
+        display: flex;
+        flex-direction: row;
+        /* background-color: gray; */
+        justify-content: space-between;
+        padding-left: 6px;
+        align-items: center;
+        box-sizing: border-box;
+        max-height: 50px;
+      }
+
+      .wishList img {
+        height: auto;
+        width: 50px;
+      }
+      .brandNameDiscription {
+        /* background-color: aquamarine; */
+        display: flex;
+        flex-direction: column;
+        /* max-width: 90%; */
+        width: 80%;
+      }
+      .brandName {
+        font-size: 16px;
+      }
+      .discription {
+        /* background-color: blueviolet; */
+        max-width: 90%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 13px;
+      }
+      .price {
+        /* background-color: rgb(177, 226, 43); */
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+      .actualPrice {
+        text-decoration: line-through;
+        font-size: 12px;
+        color: rgb(69, 68, 68);
+      }
+      .discountedPrice {
+        /* background-color: brown; */
+        padding: 5px;
+        font-weight: 450;
+      }
+      .tribe {
+        /* background-color: chocolate; */
+        display: flex;
+        align-items: center;
+        font-weight: 450;
+        font-size: 12px;
+      }
+      .tribePrice {
+        /* background-color: rgb(83, 83, 227); */
+        padding: 5px;
+      }
+      .cotton {
+        /* background-color: aqua; */
+      }
+      .cottenContent {
+        /* background-color: rgb(159, 77, 77); */
+        padding: 2px;
+        margin: 4px;
+        display: inline-block;
+        border: 1px solid black;
+      }
+      .topTextDiv {
+        opacity: 0.6;
+      }
+      .lower {
+        width: 300px;
+      }
+      .FirstHeadDiv {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        border-bottom: 1px solid #000;
+        background-color: rgb(240, 236, 236);
+        font-family: montserrat, sans-serif;
+        color: rgba(0, 0, 0, 0.8);
+      }
+      .leftHeadDiv {
+        padding: 4px;
+      }
+      .rightHeadDiv {
+        padding: 4px;
+      }
+      .leftHeadItem {
+        cursor: pointer;
+        padding: 4px;
+        font-size: 12px;
+        font-weight: 500;
+      }
+      .rightHeadItem {
+        cursor: pointer;
+        padding: 4px;
+        font-size: 12px;
+        font-weight: 500;
+      }
+      .shopping-bag-link {
+        text-decoration: none;
+        color: #828080; /* Adjust the color as needed */
+      }
+
+      .shopping-bag-link:hover {
+        color: #242424; /* Adjust the hover color as needed */
+      }
+      .login {
+        text-decoration: none;
+        color: #454444;
+      }
+      .secondHeadDiv {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 16px 0 16px 0;
+        border-bottom: 1px solid black;
+        padding: 0 4px 0 4px;
+      }
+      .leftSecondHeadDiv {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+      }
+      .rightSecondHeadDiv {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+      }
+      .bewakoofIcon {
+        padding: 6px;
+      }
+      .searchDiv {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        background-color: rgb(231, 228, 228);
+      }
+      .seperator {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        font-weight: 600px;
+      }
+      .loginDiv {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+      }
+      .searchItem {
+        border: none;
+        outline: none;
+        font-size: 12px;
+        width: 220px;
+        background-color: transparent;
+        height: 30px;
+      }
+      .thirdDiv {
+        margin: 0px 30.6px 0 30.6px;
+        padding: 0px 12px 0 12px;
+      }
+      .thirdHeadderDiv {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        gap: 12px;
+        padding: 12px 0 12px 0;
+        vertical-align: baseline;
+      }
+      .slantSeperator {
+        padding-left: 14px;
+      }
+      .thirdDivHeadder {
+        font-size: 14px;
+        color: #454444;
+      }
+      .topTextDiv {
+        position: absolute;
+        top: 0;
+      }
+      .imageDiv {
+        position: relative;
+      }
+      .topTextDivSpan{
+        background-color: #828080;
+        color: white;
+        font-size: 12px;
+        padding: 4px;
+      }
+
+      .reviewDiv{
+        display: flex;
+        position: absolute;
+        bottom: 20%;
+        align-items: center;
+        background-color: #828080;
+        padding: 0 5px 0 5px;
+        gap: 4px;
+      }
+      
+      .reviewSpan{  
+        color: white;
+      }
+      .reviewSpan i {
+        size: 4px;
+      }
+      .sectionWomen{
+        margin-left: 30px;
+        margin-right: 30px;
+        line-height: 14px;
+        height: 80px;
+        display: flex;
+        align-items: flex-end;
+        padding-bottom: 12px;
+      }
+      .sectionText{
+        font-family: 'montserrat', sans-serif;
+        font-size: 30px;
+        font-weight: 700;
+        display: flex;
+      }
+      .numbers{
+        font-family: 'montserrat', sans-serif;
+        font-size: 30px;
+        color: #828080;
+      }
+      .innerSectionWomen{
+        display: flex;
+        align-items: center;
+       
+      }
+      .splitBodyMain{
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+        justify-content: center;
+      }
+      .filterDiv{
+        width: 20%;
+        padding: 0px 15px 13px;
+        /* background-color: aquamarine; */
+        display: flex;
+        flex-direction: column;
+      }
+      .filterHeaddingItem{
+        font-family: 'montserrat', sans-serif;
+        font-size: 18px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        font-weight: 700;
+        color: #7d7c7c;
+
+      }
+      .filterItem{
+        display: flex;
+        /* background-color: #ee9090; */
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 16px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid #6b6b6b;
+      }
+      .fiterItemName{
+        font-family: 'montserrat', sans-serif;
+        color: #333;
+        font-weight: 500;
+        font-size: 16px;
+      }
+      .materialIcon{
+        font-size: 12px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <headder>
+      <div class="FirstHeadDiv">
+        <div class="leftHeadDiv">
+          <span class="leftHeadItem">Offers</span>
+          <span class="leftHeadItem">Fanbook</span>
+          <span class="leftHeadItem">Download App</span>
+          <span class="leftHeadItem">TriBe Membership</span>
+        </div>
+        <div class="rightHeadDiv">
+          <span class="rightHeadItem">Contact Us</span>
+          <span class="rightHeadItem">Track Order</span>
+        </div>
+      </div>
+      <div class="secondHeadDiv">
+        <div class="leftSecondHeadDiv">
+          <div class="bewakoofIcon">
+            <img
+              src="https://images.bewakoof.com/web/ic-desktop-bwkf-trademark-logo.svg"
+              alt="bewakoof_logo"
+              title="Bewakoof.com"
+              style="
+                height: 20px;
+                vertical-align: middle;
+                margin-bottom: 5px;
+                width: 147px;
+              "
+            />
+          </div>
+          <span>MEN</span>
+          <span>WOMEN</span>
+          <span class="mobileText">MOBILE COVERS</span>
+        </div>
+        <div class="rightSecondHeadDiv">
+          <div class="searchDiv">
+            <div class="searchIcon">
+              <i class="material-icons" style="color: #6b6b6b">search</i>
+            </div>
+            <div class="seachInput">
+              <input
+                class="searchItem"
+                type="search"
+                placeholder="Search by product, category or collection"
+              />
+            </div>
+          </div>
+          <div class="seperator">|</div>
+          <div class="loginDiv">
+            <a href="" class="login">Login</a>
+          </div>
+          <div class="wishlistDiv">
+            <img
+              src="https://images.bewakoof.com/web/Wishlist.svg"
+              alt="wishlist"
+            />
+          </div>
+          <div class="cartDiv">
+            <a href="#" class="shopping-bag-link">
+              <i class="material-icons">shopping_bag</i>
+            </a>
+          </div>
+          <div class="country">
+            <img
+              src="https://images.bewakoof.com/web/india-flag-round-1639566913.png"
+              alt="country"
+              height="30"
+              width="30"
+              class="countryIcon"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="thirdDiv">
+        <div class="thirdHeadderDiv">
+          <div class="thirdDivHeadder">Home</div>
+          <div class="slantSeperator">/</div>
+          <div class="thirdDivHeadder">Women Clothing</div>
+          <div class="slantSeperator">/</div>
+          <div class="thirdDivHeadder">Oversized T-shirts</div>
+          <div class="slantSeperator">/</div>
+          <div class="thirdDivHeadder">Women's Oversized T-Shirts</div>
+        </div>
+      </div>
+    </headder>
+    <div class="sectionWomen">
+      <div class="innerSectionWomen">
+        <span class="sectionText">Women's Clothing</span>
+        <span class="numbers">(2593)</span>
+      </div>
+    </div>
+    <div class="splitBodyMain">
+        <div class="filterDiv">
+            <div class="filterHeaddingItem">Filters</div>
+            <div class="filterItem">  
+                <span class="fiterItemName">category</span>
+                <i class="material-icons" style="color: gray;">keyboard_arrow_down</i>
+            </div>
+            <div class="filterItem">
+                <span class="fiterItemName">sizes</span>
+                <i class="material-icons" style="color: gray;">keyboard_arrow_down</i>
+            </div>
+            <div class="filterItem">
+                <span class="fiterItemName">Brand</span>
+                <i class="material-icons" style="color: gray;">keyboard_arrow_down</i>
+            </div>
+            <div class="filterItem">
+                <span class="fiterItemName">Color</span>
+                <i class="material-icons" style="color: gray;">keyboard_arrow_down</i>
+            </div>
+            <div class="filterItem">
+                <span class="fiterItemName">Design</span>
+                <i class="material-icons" style="color: gray;">keyboard_arrow_down</i>
+            </div>
+            <div class="filterItem">
+                <span class="fiterItemName">Fit</span>
+                <i class="material-icons" style="color: gray;">keyboard_arrow_down</i>
+            </div>
+            <div class="filterItem">
+                <span class="fiterItemName">Sleeve</span>
+                <i class="material-icons" style="color: gray;">keyboard_arrow_down</i>
+            </div>
+            <div class="filterItem">
+                <span class="fiterItemName">Neck</span>
+                <i class="material-icons" style="color: gray;">keyboard_arrow_down</i>
+            </div>
+            <div class="filterItem">
+                <span class="fiterItemName">Type</span>
+                <i class="material-icons" style="color: gray;">keyboard_arrow_down</i>
+            </div>
+            <div class="filterItem">
+                <span class="fiterItemName">Ratings</span>
+                <i class="material-icons" style="color: gray;">keyboard_arrow_down</i>
+            </div>
+            <div class="filterItem">
+                <span class="fiterItemName">Discount</span>
+                <i class="material-icons" style="color: gray;">keyboard_arrow_down</i>
+            </div>
+            <div class="filterItem">
+                <span class="fiterItemName">Sort By</span>
+                <i class="material-icons" style="color: gray;">keyboard_arrow_down</i>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="box">
+              <div class="imageDiv">
+                <div class="image">
+                  <img
+                    src="https://images.bewakoof.com/t640/women-s-black-tropical-vibes-typography-oversized-t-shirt-493433-1667493507-1.jpg"
+                    alt="Shop Women's Black Tropical Vibes Typography Oversized T-shirt-Front"
+                    width="100%"
+                    height="100%"
+                  />
+                  <div class="topTextontainer">
+                    <div class="topTextDiv">
+                      <span class="topTextDivSpan">OVERSIZED FIT</soan>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="lower">
+                <div class="discriptionDiv">
+                  <div class="brandNameDiscription">
+                    <div class="brandName"><b>Bewakoof®</b></div>
+                    <div class="discription">
+                      Women's Black Tropical Vibes Typography Oversized T-shirt
+                    </div>
+                  </div>
+                  <div class="wishList">
+                    <img
+                      src="https://images.bewakoof.com/web/Wishlist.svg"
+                      alt="wishlist"
+                    />
+                  </div>
+                </div>
+                <div class="price">
+                  <div class="discountedPrice">₹549</div>
+                  <div class="actualPrice">₹1299</div>
+                </div>
+                <div class="tribe">
+                  <span class="tribePrice">₹509</span>
+                  <p class="tribetitle">For TriBe Members</p>
+                </div>
+                <div class="cotton">
+                  <span class="cottenContent">100% COTTON</span>
+                </div>
+              </div>
+            </div>
+            <div class="box">
+              <div class="imageDiv">
+                <div class="image">
+                  <img
+                    src="https://images.bewakoof.com/t640/women-s-brown-calm-down-graphic-printed-oversized-t-shirt-596130-1686321647-1.jpg"
+                    class="productImgTag"
+                    title="Women's Brown Calm Down Graphic Printed Oversized T-shirt-Front Bewakoof"
+                    alt="Shop Women's Brown Calm Down Graphic Printed Oversized T-shirt-Front"
+                    width="100%"
+                    height="100%"
+                  />
+                  <div class="topTextontainer">
+                    <div class="topTextDiv">
+                      <span class="topTextDivSpan">OVERSIZED FIT</span>
+                    </div>
+                  </div>
+                  <div class="reviewContainer">
+                    <div class="reviewDiv">
+                      <span class="reviewSpan">4.7</span>
+                      <i class="material-icons materialIcon" style="color: yellow;">star</i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="lower">
+                <div class="discriptionDiv">
+                  <div class="brandNameDiscription">
+                    <div class="brandName"><b>Bewakoof®</b></div>
+                    <div class="discription">
+                      Women's Black Tropical Vibes Typography Oversized T-shirt
+                    </div>
+                  </div>
+                  <div class="wishList">
+                    <img
+                      src="https://images.bewakoof.com/web/Wishlist.svg"
+                      alt="wishlist"
+                    />
+                  </div>
+                </div>
+                <div class="price">
+                  <div class="discountedPrice">₹549</div>
+                  <div class="actualPrice">₹1299</div>
+                </div>
+                <div class="tribe">
+                  <span class="tribePrice">₹509</span>
+                  <p class="tribetitle">For TriBe Members</p>
+                </div>
+                <div class="cotton">
+                  <span class="cottenContent">100% COTTON</span>
+                </div>
+              </div>
+            </div>
+      
+            <div class="box">
+              <div class="imageDiv">
+                <div class="image">
+                  <img
+                    src="https://images.bewakoof.com/t640/women-s-black-scar-lion-graphic-printed-oversized-t-shirt-597025-1687083991-1.jpg"
+                    class="productImgTag"
+                    title="Women's Black Scar Lion Graphic Printed Oversized T-shirt-Front Bewakoof"
+                    alt="Shop Women's Black Scar Lion Graphic Printed Oversized T-shirt-Front"
+                    width="100%"
+                    height="100%"
+                  />
+                  <div class="topTextontainer">
+                    <div class="topTextDiv">
+                      <span class="topTextDivSpan">OVERSIZED FIT</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="lower">
+                <div class="discriptionDiv">
+                  <div class="brandNameDiscription">
+                    <div class="brandName"><b>Bewakoof®</b></div>
+                    <div class="discription">
+                      Women's Black Tropical Vibes Typography Oversized T-shirt
+                    </div>
+                  </div>
+                  <div class="wishList">
+                    <img
+                      src="https://images.bewakoof.com/web/Wishlist.svg"
+                      alt="wishlist"
+                    />
+                  </div>
+                </div>
+                <div class="price">
+                  <div class="discountedPrice">₹549</div>
+                  <div class="actualPrice">₹1299</div>
+                </div>
+                <div class="tribe">
+                  <span class="tribePrice">₹509</span>
+                  <p class="tribetitle">For TriBe Members</p>
+                </div>
+                <div class="cotton">
+                  <span class="cottenContent">100% COTTON</span>
+                </div>
+              </div>
+            </div>
+            <div class="box">
+              <div class="imageDiv">
+                <div class="image">
+                  <img
+                    src="https://images.bewakoof.com/t640/women-s-purple-power-up-graphic-printed-oversized-t-shirt-516913-1667491643-1.jpg"
+                    class="productImgTag"
+                    title="Women's Purple Power Up Graphic Printed Oversized T-shirt-Front Bewakoof"
+                    alt="Shop Women's Purple Power Up Graphic Printed Oversized T-shirt-Front"
+                    width="100%"
+                    height="100%"
+                  />
+                  <div class="topTextontainer">
+                    <div class="topTextDiv">
+                      <span class="topTextDivSpan">OVERSIZED FIT</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="lower">
+                <div class="discriptionDiv">
+                  <div class="brandNameDiscription">
+                    <div class="brandName"><b>Bewakoof®</b></div>
+                    <div class="discription">
+                      Women's Black Tropical Vibes Typography Oversized T-shirt
+                    </div>
+                  </div>
+                  <div class="wishList">
+                    <img
+                      src="https://images.bewakoof.com/web/Wishlist.svg"
+                      alt="wishlist"
+                    />
+                  </div>
+                </div>
+                <div class="price">
+                  <div class="discountedPrice">₹549</div>
+                  <div class="actualPrice">₹1299</div>
+                </div>
+                <div class="tribe">
+                  <span class="tribePrice">₹509</span>
+                  <p class="tribetitle">For TriBe Members</p>
+                </div>
+                <div class="cotton">
+                  <span class="cottenContent">100% COTTON</span>
+                </div>
+              </div>
+            </div>
+            <div class="box">
+              <div class="imageDiv">
+                <div class="image">
+                  <img
+                    src="https://images.bewakoof.com/t640/women-s-red-feel-n-hot-graphic-printed-oversized-t-shirt-582327-1678254655-1.jpg"
+                    class="productImgTag"
+                    title="Women's Red Feel'n Hot Graphic Printed Oversized T-shirt-Front Bewakoof"
+                    alt="Shop Women's Red Feel'n Hot Graphic Printed Oversized T-shirt-Front"
+                    width="100%"
+                    height="100%"
+                  />
+                  <div class="topTextontainer">
+                    <div class="topTextDiv">
+                      <span class="topTextDivSpan">OVERSIZED FIT</span>
+                    </div>
+                  </div>
+                  <div class="reviewContainer">
+                    <div class="reviewDiv">
+                      <span class="reviewSpan">3.8</span>
+                      <i class="material-icons materialIcon" style="color: yellow;">star</i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="lower">
+                <div class="discriptionDiv">
+                  <div class="brandNameDiscription">
+                    <span class="brandName"><b>Bewakoof®</b></span>
+                    <span class="discription">
+                      Women's Black Tropical Vibes Typography Oversized T-shirt
+                    </span>
+                  </div>
+                  <div class="wishList">
+                    <img
+                      src="https://images.bewakoof.com/web/Wishlist.svg"
+                      alt="wishlist"
+                    />
+                  </div>
+                </div>
+                <div class="price">
+                  <div class="discountedPrice">₹549</div>
+                  <div class="actualPrice">₹1299</div>
+                </div>
+                <div class="tribe">
+                  <span class="tribePrice">₹509</span>
+                  <p class="tribetitle">For TriBe Members</p>
+                </div>
+                <div class="cotton">
+                  <span class="cottenContent">100% COTTON</span>
+                </div>
+              </div>
+            </div>
+            <div class="box">
+              <div class="imageDiv">
+                <div class="image">
+                  <img
+                    src="https://images.bewakoof.com/t640/women-s-white-donald-quack-off-women-s-s-streetwear-t-shirt-592318-1684751006-1.jpg"
+                    class="productImgTag"
+                    title="Women's White Donald Quack Off Graphic Printed Oversized T-shirt-Front Bewakoof"
+                    alt="Shop Women's White Donald Quack Off Graphic Printed Oversized T-shirt-Front"
+                    width="100%"
+                    height="100%"
+                  />
+                  <div class="topTextontainer">
+                    <div class="topTextDiv">
+                      <span class="topTextDivSpan">OVERSIZED FIT</span>
+                    </div>
+                  </div>
+                  <div class="reviewContainer">
+                    <div class="reviewDiv">
+                      <span class="reviewSpan">4.1</span>
+                      <i class="material-icons materialIcon" style="color: yellow;">star</i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="lower">
+                <div class="discriptionDiv">
+                  <div class="brandNameDiscription">
+                    <div class="brandName"><b>Bewakoof®</b></div>
+                    <div class="discription">
+                      Women's Black Tropical Vibes Typography Oversized T-shirt
+                    </div>
+                  </div>
+                  <div class="wishList">
+                    <img
+                      src="https://images.bewakoof.com/web/Wishlist.svg"
+                      alt="wishlist"
+                    />
+                  </div>
+                </div>
+                <div class="price">
+                  <div class="discountedPrice">₹549</div>
+                  <div class="actualPrice">₹1299</div>
+                </div>
+                <div class="tribe">
+                  <span class="tribePrice">₹509</span>
+                  <p class="tribetitle">For TriBe Members</p>
+                </div>
+                <div class="cotton">
+                  <span class="cottenContent">100% COTTON</span>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+  </body>
+</html>
