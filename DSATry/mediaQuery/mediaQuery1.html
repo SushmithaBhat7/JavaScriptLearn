@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 320px — 480px: Red, 12px Font
+481px — 768px: Blue, 13px Font
+769px — 1024px: Green, 14px Font
+1025px — 1200px: Pink, 16px Font
+1201px and more —  Magenta, 18px Font */
+      @media screen and (min-width: 320px) and (max-width: 480px) {
+        .mobile {
+          background-color: red;
+          padding: 12px;
+        }
+      }
+      @media screen and (min-width: 481px) and (max-width: 768px) {
+        .tablet {
+          background-color: blue;
+          padding: 12px;
+        }
+      }
+      @media screen and (min-width: 769px) and (max-width: 1024px) {
+        .laptop {
+          background-color: green;
+          padding: 12px;
+        }
+      }
+      @media screen and (min-width: 1025px) and (max-width: 1200px) {
+        .desktop {
+          background-color: pink;
+          padding: 12px;
+        }
+      }
+      @media screen and (min-width: 1201px) {
+        .container {
+          background-color: magenta;
+          padding: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mobile">
+      <p>Mobile</p>
+    </div>
+    <div class="tablet">
+      <p>Tablet</p>
+    </div>
+    <div class="laptop">
+      <p>Laptop</p>
+    </div>
+    <div class="container">
+      <p>Hello</p>
+    </div>
+    <div class="container">
+      <p>Hello</p>
+    </div>
+  </body>
+</html>

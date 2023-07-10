@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        background-color: #e9e9e9;
+      }
+
+      #mobile-header,
+      #desktop-header {
+        display: none;
+        background-color: white;
+      }
+
+      @media screen and (max-width: 990px) {
+        #mobile-header {
+          display: flex;
+          justify-content: space-between;
+          padding: 12px;
+          height: 72px;
+          align-items: center;
+        }
+      }
+
+      @media screen and (min-width: 991px) {
+        #desktop-header {
+          display: flex;
+          justify-content: space-between;
+          padding: 16px;
+          height: 48px;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div id="mobile-header">
+        <div class="mobile-header-left">
+          <span>IC 1</span>
+          <span>IC 2</span>
+        </div>
+        <div class="mobile-header-right">
+          <span>IC 1</span>
+          <span>IC 2</span>
+          <span>IC 3</span>
+        </div>
+      </div>
+      <div id="desktop-header">
+        <p>Desktop Header</p>
+      </div>
+    </header>
+  </body>
+</html>

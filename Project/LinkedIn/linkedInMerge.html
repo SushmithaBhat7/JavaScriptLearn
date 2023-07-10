@@ -12,6 +12,7 @@
       href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
     <style>
       * {
         margin: 0;
@@ -21,6 +22,7 @@
       }
       body {
         background-color: #f5f5f5;
+        margin-top: 90px;
       }
       .leftDiv {
         display: flex;
@@ -33,6 +35,10 @@
         align-items: center;
         gap: 12px;
         background-color: #fff;
+        position: fixed;
+        z-index: 1000;
+        width: 100%;
+        top: 0;
       }
       .linkedInIconDiv {
         display: flex;
@@ -43,59 +49,62 @@
       }
       .linkedInIconDiv svg {
         font-size: 100%;
-        width: 45px;
-        height: 45px;
+        width: 41px;
+        height: 41px;
       }
       .searchDiv {
         display: flex;
         flex-direction: row;
         background-color: #eef3f8;
         padding: 5px;
-
+        gap: 5px;
         align-items: center;
         border-radius: 4px;
-        position: relative;
+       
       }
       .searchInput {
-        height: 34px;
+        height: 30px;
         border: none;
         background-color: transparent;
-        padding: 0px 40px 0px 40px;
+        /* padding: 0px 40px 0px 40px; */
         font-family: inherit;
-        font-size: 16px;
-        font-weight: 500;
+        font-size: 15px;
+        font-weight: 400;
+        width: 300px;
+        outline: none;
       }
       .seachIcon {
         background-color: transparent;
         position: absolute;
-        left: 10px;
+        left: 15px;
         color: rgb(0 0 0 / 60%);
+        font-size: 22px;
       }
       .navBarItems {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 12px;
-        padding: 4px;
+        gap: 14px;
+        /* padding: 4px; */
         color: rgb(0 0 0 / 60%);
         font-size: 14px;
       }
       .navIcon {
         position: relative;
-        padding: 2px;
+        padding: 4px 4px 0 4px;
       }
       .navBarItemBox:hover {
         color: rgba(0, 0, 0, 0.9);
         cursor: pointer;
       }
       .navIcon svg {
-        font-size: 100%;
-        width: 30px;
-        height: 30px;
+        /* font-size: 100%; */
+        width: 27px;
+        height: 27px;
       }
       .redRoundedDiv {
-        height: 18px;
-        width: 18px;
+        height: 17px;
+        width: 17px;
         background-color: #cc1016;
         border-radius: 50%;
         display: flex;
@@ -106,7 +115,7 @@
         right: 0px;
       }
       .whiteInnerText {
-        font-size: 10px;
+        font-size: 9px;
         background-color: transparent;
         color: #fff;
         font-weight: 600;
@@ -156,10 +165,11 @@
           "Helvetica Neue", sans-serif;
           margin-top: 15px;
           /* width: 80%; */
+          flex-wrap: wrap;
          
       }
       .leftBodyDiv {
-        width: 15%;
+        width: 220px;
         background-color: transparent;
         border-radius: 9px;
         gap: 12px;
@@ -167,11 +177,16 @@
        flex-direction: column;
       }
       .midBodyDiv {
-        width: 40%;
-        background-color: #d87275;
+        width: 500px;
+        height: 5000px;
+        background-color: transparent;
+        border-radius: 9px;
+        gap: 12px;
+        display: flex;
+       flex-direction: column;
       }
       .rightBodyDiv {
-        width: 20%;
+        width: 325px;
         background-color: transparent;
       }
       .upperLeftDiv{
@@ -188,11 +203,16 @@
        border-radius: 9px;
        padding: 8px 0 8px 0;
       box-shadow:0px 0px 0px 1px rgba(194, 192, 192, 0.6);
+      
+      }
+      .positionLower{
+        position: sticky;
+      top: 80px;
        
+
       }
       .topUpperleftBodyDiv{
         padding: 9px;
-        border-radius: 8px;
         border-bottom: 1px solid rgba(147, 146, 146, 0.6);
         position: relative;
         /* position: absolute; */
@@ -237,7 +257,7 @@
       }
       .profileInfoWorkSplupperLeftDiv{
         font-family: "Roboto";
-        font-size: 14px;
+        font-size: 13px;
         text-align: center;
         color: rgba(0,0,0,0.6);
         padding-top: 8px;
@@ -258,7 +278,7 @@
 
       .lightColoredLeftUpperDiv{
         font-family: "Roboto";
-        font-size: 14px;
+        font-size: 13px;
         color: rgba(0,0,0,0.6);
 
       }
@@ -282,7 +302,7 @@
       .midUpperleftTextBottomBodyDiv{
         font-family: "Roboto";
         font-weight: 600;
-        font-size: 14px;
+        font-size: 13px;
       }
       .midUpperleftNumBodyDiv{
         font-family: "Roboto";
@@ -365,6 +385,12 @@
       justify-content: space-between;
       padding: 0px 8px 0px 20px;
     }
+    .recentTopContainer:hover{
+      .hoverRound svg{
+        display: block;
+      }
+
+    }
     .recentText{
       display: flex;
      align-items: center;
@@ -375,7 +401,7 @@
       flex-direction: column;
     }
     .hoverRound{
-      /*  */
+      display: none;
       height: 35px;
       width: 35px;
       border-radius: 50%;
@@ -387,10 +413,11 @@
     .hoverRound svg{
       /* height: 20px;
       width: 20px; */
-      color: rgba(0,0,0,0.6);
+      display: none;
+      color: rgba(125, 122, 122, 0.6);
     }
     .hoverRound:hover{
-      background-color: rgba(138, 136, 136, 0.6);
+      background-color: rgba(208, 205, 205, 0.6);
     }
     .groupsDivLeft{
       padding: 12px 8px 4px 12px;
@@ -406,6 +433,10 @@
       padding: 4px 8px 4px 12px;
 
     }
+    .eventsDivLeft:hover{
+
+    }
+    
     .eventaddIconLeft{
       width: 35px;
       height: 35px;
@@ -420,7 +451,7 @@
       color: rgba(0,0,0,0.6);
     }
     .eventaddIconLeft:hover{
-      background-color: rgba(138, 136, 136, 0.6);
+      background-color: rgba(208, 205, 205, 0.6);
     }
     .showLeftLower{
       display: flex;
@@ -523,6 +554,7 @@
       /* width: 10px;
       height: 10px; */
       font-size: 20px;
+      color: rgb(26, 26, 26);
     }
     .listSupportItems{
       display: flex;
@@ -558,9 +590,143 @@
     .linkedInCorp{
       font-size: 12px;
     }
-    ul{
-      /* padding-left: 40px; */
+    .midTopDiv{
+      background-color: white;
+       display: flex;
+       flex-direction: column;
+       border-radius: 9px;
+       padding: 12px 16px 16px 16px;
+      box-shadow:0px 0px 0px 1px rgba(194, 192, 192, 0.6);
+      position: relative;
     }
+    
+    .closeHover{
+      position: absolute;
+      top: 12px;
+      right: 12px;
+    }
+    .closeHover span{
+      color: rgba(0,0,0,0.6);
+      font-weight: 500;
+      font-size: 22px;
+    }
+    .midTopWorkmage{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .willingToWorkText{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 21px;
+      font-weight: 450;
+      padding-bottom: 8px;
+      color: rgba(0,0,0,0.9);
+
+    }
+    .midTopResponceText{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 16px;
+      padding-bottom: 16px;
+      color: rgba(0,0,0,0.6);
+    }
+    .midTopResponceOption{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+    }
+   .midTopResponceOptionYes{
+    font-size: 16px;
+      padding: 6px 16px 6px 16px;
+      color: #0a66c2;
+      /* border-color: #0a66c2; */
+      border-radius: 20px;
+      width: 45%;
+      background-color: transparent;
+      border: 1px solid #0a66c2;
+
+   }
+   .midTopResponceOptionYes:hover{
+    background-color: #d5eff0;
+    border: 2px solid #0a66c2;
+   }
+   .midTopResponceOptionNo{
+    font-size: 16px;
+      padding: 6px 16px 6px 16px;
+      color: #0a66c2;
+      /* border-color: #0a66c2; */
+      border-radius: 20px;
+      width: 45%;
+      background-color: transparent;
+      border: 1px solid #0a66c2;
+   }
+   .midTopResponceOptionNo:hover{
+    background-color: #d5eff0;
+    border: 2px solid #0a66c2;
+   }
+   .midSecDiv{
+    background-color: white;
+       display: flex;
+       flex-direction: column;
+       border-radius: 9px;
+       padding: 12px 16px 16px 16px;
+      box-shadow:0px 0px 0px 1px rgba(194, 192, 192, 0.6);
+      /* position: relative; */
+
+   }
+   .midSecDivUpperSection{
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    justify-content: center;
+    height: 56px;
+    margin: 8px 16px 0px 16px;
+
+   }
+   .searchBarStartPost{
+    display: flex;
+    width: 100%;
+   }
+   .searchBarStartPost input{
+    border-radius: 30px;
+    border: 1px solid  rgba(0,0,0,0.6);
+    padding: 10px 8px 10px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    flex-grow: 1;
+   }
+   .myProfileImage img{
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+   }
+   .postEvents{
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 8px;
+
+   }
+   .postEventItems{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-evenly;
+   }
+
     </style>
   </head>
   <body>
@@ -584,9 +750,9 @@
             </svg>
           </div>
           <div class="searchDiv">
-            <div class="seachIcon">
+            <!-- <div class="seachIcon"> -->
               <i class="material-icons">search</i>
-            </div>
+            <!-- </div> -->
             <div class="searchInputDiv">
               <input class="searchInput" type="search" placeholder="Search" />
             </div>
@@ -714,7 +880,7 @@
 
             <div class="lowerTextArea">
               <div class="navtext">Notifications</div>
-              <span class="material-icons-round"> arrow_drop_down </span>
+              <!-- <span class="material-icons-round"> arrow_drop_down </span> -->
             </div>
           </div>
           <div class="navBarItemBox">
@@ -843,6 +1009,7 @@
               </div>
             </div>
           </div>
+         
           <div class="lowerleftBodyDiv">
             <div class="lowerleftIconBodyDiv">
               <svg
@@ -863,6 +1030,7 @@
             </div>
           </div>
         </div>
+        <div class="positionLower">  
         <div class="lowerLeftDiv">
           <div class="recentContainer">
             <div class="recentTopContainer">
@@ -919,11 +1087,132 @@
           <div class="discoverLeft">
             <span class="discoverSpan">Discover more</span>
           </div>
-
-
+        </div>
         </div>
       </div>
-      <div class="midBodyDiv">B</div>
+
+      <div class="midBodyDiv">
+          <div class="midTopDiv">
+            <div class="midTopWorkmage">
+              <img width="128" src="https://media.licdn.com/media/AAYQAgSuAAgAAQAAAAAAABlvNp5yzndgSdCsu3q6Pw22qA.png" loading="lazy" height="128" alt="" id="ember25" class="ivm-view-attr__img--centered ivm-view-attr__img   evi-image lazy-image ember-view">
+              <div class="hoverRound closeHover">
+                <span class="material-symbols-rounded closeIconMidTop">
+                  close
+                  </span>
+              </div>
+            </div>
+            <div class="willingToWorkText">
+              <span>Hi Sushmitha, are you looking for a job right now?</span>
+            </div>
+            <div class="midTopResponceText">
+              <span>Your response is only visible to you.</span>
+            </div>
+            <div class="midTopResponceOption">
+              
+              <button class="midTopResponceOptionYes">
+                <span>Yes</span>
+              </button>
+              <button class="midTopResponceOptionNo">
+                <span>No, but I'm open</span>
+              </button>
+            </div>
+          </div>
+          <div class="midSecDiv">
+            <div class="midSecDivUpperSection">
+              <div class="myProfileImage">
+                <img
+                  width="24"
+                  src="https://media.licdn.com/dms/image/C5603AQGRRgflL15gTA/profile-displayphoto-shrink_100_100/0/1571580299394?e=1693440000&amp;v=beta&amp;t=N4tdUPMgbhmg9uenSqZn5NCaEc-Dja--6xuGjHZfE_w"
+                   height="24"
+                    alt="Sushmitha Bhat"
+                    id="ember17"
+                    class="global-nav__me-photo evi-image ember-view"
+                 />
+              </div>
+              <div class="searchBarStartPost">
+                <input type="search"
+                placeholder="Start a post">
+              </div>
+            </div>
+              <div class="postEvents">
+                <div class="postEventItems">
+                  <div class="postEventItemsImage">
+                    <span class="material-icons" style="color: #0a66c2;">
+                      wallpaper
+                      </span>
+                  </div>
+                  <div class="postEventItemstext">Photo</div>
+                </div>
+                <div class="postEventItems">
+                  <div class="postEventItemsImage">
+                    <span class="material-icons" style="color: #5f9b41;">
+                      smart_display
+                      </span>
+                  </div>
+                  <div class="postEventItemstext"><span>Video</span></div>
+                </div>
+                <div class="postEventItems">
+                  <div class="postEventItemsImage" style="color: #c37d16;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
+                    <path d="M3 3v15a3 3 0 003 3h12a3 3 0 003-3V3zm13 1.75A1.25 1.25 0 1114.75 6 1.25 1.25 0 0116 4.75zm-8 0A1.25 1.25 0 116.75 6 1.25 1.25 0 018 4.75zM19 18a1 1 0 01-1 1H6a1 1 0 01-1-1V9h14zm-5.9-3a1 1 0 00-1-1H12a3.12 3.12 0 00-1 .2l-1-.2v-3h3.9v1H11v1.15a3.7 3.7 0 011.05-.15 1.89 1.89 0 012 1.78V15a1.92 1.92 0 01-1.84 2H12a1.88 1.88 0 01-2-1.75 1 1 0 010-.25h1a.89.89 0 001 1h.1a.94.94 0 001-.88z"></path>
+                  </svg></div>
+                  <div class="postEventItemstext"><span>Event</span></div>
+                </div>
+                <div class="postEventItems">
+                  <div class="postEventItemsImage">
+                    <svg xmlns="http://www.w3.org/2000/svg" style="color: #e16745;" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
+                      <path d="M21 3v2H3V3zm-6 6h6V7h-6zm0 4h6v-2h-6zm0 4h6v-2h-6zM3 21h18v-2H3zM13 7H3v10h10z"></path>
+                    </svg>
+                  </div>
+                  <div class="postEventItemstext">
+                    <span>Write article</span>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="midSecDivUpperSection">
+            <div class="postImage">
+              <img width="600" src="https://media.licdn.com/dms/image/D4D22AQEcj6mrpfVZzQ/feedshare-shrink_800/0/1687731242171?e=1691020800&amp;v=beta&amp;t=UEBOZz01MoB4PPQZtH1t25XutBHvptxmRW48pYEPspQ" loading="lazy" height="566" alt="Image preview" id="ember464" class="ivm-view-attr__img--centered  update-components-image__image update-components-image__image--constrained evi-image lazy-image ember-view">
+            </div>
+          
+          <div class="postEvents">
+            <div class="postEventItems">
+              <div class="postEventItemsImage">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="thumbs-up-outline-medium" data-supported-dps="24x24" fill="currentColor">
+                  <path d="M19.46 11l-3.91-3.91a7 7 0 01-1.69-2.74l-.49-1.47A2.76 2.76 0 0010.76 1 2.75 2.75 0 008 3.74v1.12a9.19 9.19 0 00.46 2.85L8.89 9H4.12A2.12 2.12 0 002 11.12a2.16 2.16 0 00.92 1.76A2.11 2.11 0 002 14.62a2.14 2.14 0 001.28 2 2 2 0 00-.28 1 2.12 2.12 0 002 2.12v.14A2.12 2.12 0 007.12 22h7.49a8.08 8.08 0 003.58-.84l.31-.16H21V11zM19 19h-1l-.73.37a6.14 6.14 0 01-2.69.63H7.72a1 1 0 01-1-.72l-.25-.87-.85-.41A1 1 0 015 17l.17-1-.76-.74A1 1 0 014.27 14l.66-1.09-.73-1.1a.49.49 0 01.08-.7.48.48 0 01.34-.11h7.05l-1.31-3.92A7 7 0 0110 4.86V3.75a.77.77 0 01.75-.75.75.75 0 01.71.51L12 5a9 9 0 002.13 3.5l4.5 4.5H19z"/>
+                </svg>
+              </div>
+              <div class="postEventItemstext">Like</div>
+            </div>
+            <div class="postEventItems">
+              <div class="postEventItemsImage">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
+                  <path d="M7 9h10v1H7zm0 4h7v-1H7zm16-2a6.78 6.78 0 01-2.84 5.61L12 22v-4H8A7 7 0 018 4h8a7 7 0 017 7zm-2 0a5 5 0 00-5-5H8a5 5 0 000 10h6v2.28L19 15a4.79 4.79 0 002-4z"/>
+                </svg>
+              </div>
+              <div class="postEventItemstext"><span>Comment</span></div>
+            </div>
+            <div class="postEventItems">
+              <div class="postEventItemsImage">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="repost-medium" data-supported-dps="24x24" fill="currentColor" width="24" height="24">
+                  <path d="M13.96 5H6c-.55 0-1 .45-1 1v10H3V6c0-1.66 1.34-3 3-3h7.96L12 0h2.37L17 4l-2.63 4H12l1.96-3zm5.54 3H19v10c0 .55-.45 1-1 1h-7.96L12 16H9.63L7 20l2.63 4H12l-1.96-3H18c1.66 0 3-1.34 3-3V8h-1.5z"/>
+                </svg>
+            </div>
+              <div class="postEventItemstext"><span>Repost</span></div>
+            </div>
+            <div class="postEventItems">
+              <div class="postEventItemsImage">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
+                  <path d="M21 3L0 10l7.66 4.26L16 8l-6.26 8.34L14 24l7-21z"/>
+                </svg>
+              </div>
+              <div class="postEventItemstext">
+                <span>Send</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
       <div class="rightBodyDiv">
         <div class="lowerLeftDiv">
           <div class="recentContainer">
@@ -961,10 +1250,10 @@
             <li class="listSupportItems"><a href="" class="listLink">About</a></li>
             <li class="listSupportItems"><a href="" class="listLink">Accessibility</a></li>
             <li class="listSupportItems"><a href="" class="listLink">Help Center</a></li>
-            <li class="listSupportItems "><a href="" class="listLink">Privacy & Terms<span class="material-icons-round downLastIcon"> arrow_drop_down </span></a></li>
+            <li class="listSupportItems "><a href="" class="listLink">Privacy & Terms</a><span class="material-icons-round downLastIcon"> arrow_drop_down </span></li>
             <li class="listSupportItems"><a href="" class="listLink">Ad Choices</a></li>
             <li class="listSupportItems"><a href="" class="listLink">Advertising</a></li>
-            <li class="listSupportItems "><a href="" class="listLink">Business Services<span class="material-icons-round downLastIcon"> arrow_drop_down </span></a></li>
+            <li class="listSupportItems "><a href="" class="listLink">Business Services</a><span class="material-icons-round downLastIcon"> arrow_drop_down </span></li>
             <li class="listSupportItems"><a href="" class="listLink">Get the LinkedIn app</a></li>
             <li class="listSupportItems"><a href="" class="listLink">More</a></li>
           </ul>
@@ -978,7 +1267,7 @@
             </svg>
           </div>
           <span class="linkedInCorp">LinkedIn Corporation © 2023</span>
-          
+          </div>
         </div>
       </div>
   </body>
