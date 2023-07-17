@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <p id="romesh">Hello Pankaj</p>
+  </body>
+</html>
+
+<script>
+  // paraElem is a HTML Node
+  const paraElem = document.getElementById("romesh");
+
+  console.log("ParaElem: ", paraElem);
+
+  // CSS Change
+  paraElem.style.backgroundColor = "blue";
+  paraElem.style.color = "white";
+  paraElem.style.padding = "12px";
+  paraElem.style.borderRadius = "6px";
+  paraElem.style.border = "2px solid black";
+
+  //paraElem.innerText = "<strong>Hello Romesh</strong>";
+  paraElem.innerHTML = "<strong>Hello Romesh</strong>";
+</script>

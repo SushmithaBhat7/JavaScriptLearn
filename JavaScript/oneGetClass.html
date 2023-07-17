@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      ul {
+        display: flex;
+        padding: 0;
+        margin: 0;
+        gap: 22px;
+        justify-content: center;
+        background-color: #e9e9e9;
+        padding: 12px;
+      }
+      li {
+        cursor: pointer;
+        list-style-type: none;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="list">
+      <li class="item" style="color: rgb(209, 255, 71)">Home</li>
+      <li class="item">Food</li>
+      <li class="item">Blogs</li>
+      <li class="item">About</li>
+      <li class="item">Contact Us</li>
+    </ul>
+  </body>
+</html>
+
+<script>
+  const listElem = document.getElementById("list");
+  const listItemsElem = document.getElementsByClassName("item");
+
+  listElem.addEventListener("click", onListClick);
+
+  function onListClick(e) {
+    //e is event
+    e.stopPropagation();
+
+    const currentElement = e.target.innerText; // target is action for that
+    e.target.style.color = "red";
+    console.log(currentElement);
+
+    for (let i = 0; i < listItemsElem.length; i++) {
+      if (listItemsElem[i].innerText !== currentElement) {
+        listItemsElem[i].style.color = "black";
+      }
+    }
+  }
+</script>

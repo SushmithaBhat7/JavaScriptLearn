@@ -3,6 +3,7 @@
     "start": "vite"
   },
   "dependencies": {
+    "socket.io": "^4.7.1",
     "vite": "^4.3.9"
   }
 }

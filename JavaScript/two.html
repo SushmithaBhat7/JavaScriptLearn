@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <p id="romesh">Hello Pankaj</p>
+  </body>
+</html>
+
+<script>
+  const paraElem = document.getElementById("romesh");
+
+  console.log("ParaElem: ", paraElem);
+
+  // Read the text inside the element
+  const paraElemTxt = paraElem.innerText;
+
+  console.log("paraElemTxt: ", paraElemTxt);
+
+  // Update the text to Hello "Palak"
+
+  paraElem.innerHTML =
+    "<strong>Hello Sanket, how are you doing at Google?</strong>";
+  paraElem.style.color = "red";
+</script>

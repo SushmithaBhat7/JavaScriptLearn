@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cards"></div>
+  </body>
+</html>
+
+<script>
+  const idNode = document.getElementById("cards");
+  let numbers = [
+    10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100,
+    105,
+  ];
+  for (let i = 0; i < numbers.length; i++) {
+    const tag = document.createElement("span");
+    tag.innerText = numbers[i];
+    tag.style.width = "80px";
+    tag.style.height = "80px";
+    tag.style.textAlign = "center";
+    tag.style.display = "flex";
+    tag.style.justifyContent = "center";
+    tag.style.alignItems = "center";
+
+    if (numbers[i] % 2 == 0) {
+      tag.style.backgroundColor = "red";
+    } else {
+      tag.style.backgroundColor = "blue";
+    }
+
+    idNode.appendChild(tag);
+  }
+</script>

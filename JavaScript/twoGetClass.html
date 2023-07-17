@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="names"></div>
+  </body>
+</html>
+<script>
+  const idElement = document.getElementById("names");
+  console.log(idElement);
+  const nameArr = ["Sush", "Sush1", "Sush2", "Sush3", "Sush4"];
+  for (let i = 0; i < nameArr.length; i++) {
+    const pTag = document.createElement("p");
+    pTag.innerText = nameArr[i];
+    pTag.style.color = "blue";
+    console.log(pTag);
+    idElement.appendChild(pTag);
+    console.log(idElement);
+  }
+</script>

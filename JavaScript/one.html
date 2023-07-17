@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+      #todos {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .todo {
+        width: 200px;
+        height: 100px;
+        padding: 6px;
+        border: 1px solid silver;
+      }
+
+      /* The snackbar - position it at the bottom and in the middle of the screen */
+      #snackbar {
+        visibility: hidden; /* Hidden by default. Visible on click */
+        min-width: 250px; /* Set a default minimum width */
+        margin-left: -125px; /* Divide value of min-width by 2 */
+        background-color: #333; /* Black background color */
+        color: #fff; /* White text color */
+        text-align: center; /* Centered text */
+        border-radius: 10px; /* Rounded borders */
+        padding: 16px; /* Padding */
+        position: fixed; /* Sit on top of the screen */
+        z-index: 1; /* Add a z-index if needed */
+        right: 30px;
+        top: 30px;
+      }
+
+      /* Show the snackbar when clicking on a button (class added with JavaScript) */
+      #snackbar.show {
+        visibility: visible; /* Show the snackbar */
+        /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+      }
+
+      /* Animations to fade the snackbar in and out */
+      @-webkit-keyframes fadein {
+        from {
+          top: 0;
+          opacity: 0;
+        }
+        to {
+          top: 30px;
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadein {
+        from {
+          top: 0;
+          opacity: 0;
+        }
+        to {
+          top: 30px;
+          opacity: 1;
+        }
+      }
+
+      @-webkit-keyframes fadeout {
+        from {
+          top: 30px;
+          opacity: 1;
+        }
+        to {
+          top: 0;
+          opacity: 0;
+        }
+      }
+
+      @keyframes fadeout {
+        from {
+          top: 30px;
+          opacity: 1;
+        }
+        to {
+          top: 0;
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <section>
+        <h1>Add new Todo</h1>
+        <div class="new-todo-form">
+          <div class="form-group">
+            <p>Title</p>
+            <input type="text" id="todo-title" placeholder="Enter title" />
+          </div>
+          <div class="form-group">
+            <p>Description</p>
+            <textarea
+              id="todo-description"
+              cols="40"
+              rows="5"
+              placeholder="Enter description"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <button id="add-todo-btn">Add Todo</button>
+          </div>
+        </div>
+      </section>
+      <hr />
+      <section>
+        <h1>My Todos</h1>
+        <div id="todos"></div>
+      </section>
+    </section>
+    <div id="snackbar"></div>
+  </body>
+</html>
+
+<script>
+  /**
+   * 1- Get all elements i.e., input or button
+   * 2- Add btn to event listener
+   * 3- Validate on submit that user has submitted valid data
+   * 3.1 - Show error if there's no valid data
+   * 4- Create new element & update on the list card
+   * 5- Render the UI
+   */
+
+  // Grab all elements
+  const todoTitleElem = document.getElementById("todo-title");
+  const todoDescriptionElem = document.getElementById("todo-description");
+  const addTodoBtn = document.getElementById("add-todo-btn");
+  const todosList = document.getElementById("todos");
+  const snackbarElem = document.getElementById("snackbar");
+
+  // Method to handle add event
+  function addNewTodo() {
+    const todoTitleData = todoTitleElem.value;
+    const todoDescriptionData = todoDescriptionElem.value;
+    console.log("AddNewTodo clicked: ", todoTitleData, todoDescriptionData);
+
+    if (todoTitleData === "") {
+      // It's an empty string
+      toggleSnackbar("Please enter todo title");
+      return;
+    }
+
+    if (todoDescriptionData === "") {
+      // It's an empty string
+      toggleSnackbar("Please enter todo description");
+      return;
+    }
+
+    console.log("It's a valid data");
+
+    const todoElement = document.createElement("div");
+    todoElement.className = "todo";
+
+    // Title element
+    const todoTitleText = document.createElement("p");
+    todoTitleText.innerText = todoTitleData;
+
+    // Description element
+
+    const todoTitleDescription = document.createElement("p");
+    todoTitleDescription.innerText = todoDescriptionData;
+
+    // Push data into todo element
+    todoElement.appendChild(todoTitleText);
+    todoElement.appendChild(todoTitleDescription);
+
+    // Update the final list
+    todosList.appendChild(todoElement);
+
+    // Reset the fields
+    todoTitleElem.value = "";
+    todoDescriptionElem.value = "";
+  }
+
+  function toggleSnackbar(message) {
+    snackbarElem.className = "show";
+    snackbarElem.innerText = message;
+
+    // After 3 seconds, remove the show class from DIV
+    setTimeout(function () {
+      snackbarElem.className = snackbarElem.className.replace("show", "");
+      snackbarElem.innerText = "";
+    }, 3000);
+  }
+
+  // Add an event listener to the button
+  addTodoBtn.addEventListener("click", addNewTodo);
+</script>
