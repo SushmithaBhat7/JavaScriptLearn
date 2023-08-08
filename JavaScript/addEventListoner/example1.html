@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="homeBtnClicked()">Home</button>
+    <button onclick="prompt('Enter your Mail ID')">mail</button>
+    <button id="aboutBtn">About</button>
+    <button id="helpBtn">Help</button>
+    <button id="pricingBtn">pricing</button>
+    <button id="hello">Hello</button>
+    <button id="home-btn">Home2</button>
+    <button
+      onmouseover="alert('sushmithabhat7 joined')"
+      onmouseleave="alert('sushmithabhat7 left')"
+    >
+      testOnMouse
+    </button>
+  </body>
+</html>
+<script>
+  function homeBtnClicked() {
+    alert("You have clicked Home");
+  }
+  let abtBtn = document.getElementById("aboutBtn");
+  let helpButton = document.getElementById("helpBtn");
+  let pricingButton = document.getElementById("pricingBtn");
+
+  abtBtn.addEventListener("click", function () {
+    alert("Home is clicked");
+  });
+
+  helpButton.addEventListener("click", () => {
+    alert("About is clicked");
+  });
+
+  function onPriceClicked() {
+    alert("pricing is clicked");
+  }
+  pricingButton.addEventListener("click", onPriceClicked);
+
+  //   Another Way
+  let hello = (document.getElementById("hello").onclick = function hello() {
+    alert("hello");
+  });
+
+  const homeBtn = document.getElementById("home-btn");
+
+  /*   homeBtn.addEventListener("click", function (e) {
+  console.log(e.target);
+  e.target.innerText = "Clicked Button";
+}); */
+
+  homeBtn.addEventListener("click", function () {
+    console.log(this);
+    this.innerText = "Sushmitha clicked the button";
+    this.style.backgroundColor = "tomato";
+    //this.style.display = "none";
+  });
+</script>

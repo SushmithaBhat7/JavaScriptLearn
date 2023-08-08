@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Add Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #f5f5f5;
+      }
+      #products {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .childProducts {
+        width: 350px;
+        height: 350px;
+        /* background-color: aqua; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 8px;
+        transition: transform 0.3s ease;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        background-color: white;
+      }
+      .childProducts:hover {
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="container mt-5 d-flex p-4">
+        <div class="row justify-content-center col-8">
+          <div class="col-lg-6">
+            <form class="d-flex">
+              <input
+                id="searchInput"
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button
+                id="searchButton"
+                class="btn btn-outline-primary"
+                type="button"
+              >
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="row col-4">
+          <div class="d-flex align-items-center">
+            <label
+              for="validationCustom04"
+              class="form-label mr-2"
+              style="width: 80px; color: gray"
+              >Sort By</label
+            >
+            <select class="form-select" id="validationCustom04" required>
+              <option selected disabled value="">Choose...</option>
+              <option value="priceLowToHigh">Price: Low to High</option>
+              <option value="priceHighToLow">Price: High to Low</option>
+              <option value="titleAZ">Title: A-Z</option>
+              <option value="titleZA">Title: Z-A</option>
+            </select>
+            <div class="invalid-feedback">Please select a valid state.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add this div for the loader animation -->
+      <div
+        id="loader"
+        class="d-flex justify-content-center align-items-center"
+        style="height: 200px"
+      >
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+      <div id="products"></div>
+    </div>
+  </body>
+</html>
+<!-- Add Bootstrap JS (jQuery is required) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Function to show the loader animation
+  function showLoader() {
+    const loader = document.getElementById("loader");
+    // loader.style.display = "flex";
+    loader.setAttribute("style", "display:flex !important");
+  }
+
+  // Function to hide the loader animation
+  function hideLoader() {
+    const loader = document.getElementById("loader");
+    // loader.style.display = "none";
+    loader.setAttribute("style", "display:none !important");
+  }
+  const parentProduct = document.getElementById("products");
+  showLoader(); // Show loader before the fetch begins
+  const result = fetch("https://fakestoreapi.com/products");
+  result
+    .then((promiseData) => promiseData.json())
+    .then((parsedPromiseData) => {
+      //   console.log(parsedPromiseData);
+      hideLoader(); // Hide the loader once data is fetched and before rendering UI
+      renderUI(parsedPromiseData);
+      hideLoader(); // Hide the loader once data is fetched
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+      //   hideLoader(); // Hide the loader in case of an error
+    });
+
+  let realData = "";
+
+  function renderUI(data) {
+    hideLoader(); // Hide the loader once data is fetched and before rendering UI
+
+    console.log(data);
+    realData = data;
+    for (let i = 0; i < data.length; i++) {
+      const childProduct = document.createElement("div");
+      childProduct.className = "childProducts";
+      const imgElement = document.createElement("img");
+      imgElement.src = data[i].image;
+      imgElement.style.width = "200px";
+      imgElement.style.height = "200px";
+      const titleElement = document.createElement("span");
+      titleElement.innerText = data[i].title;
+      const priceElement = document.createElement("span");
+      priceElement.innerText = data[i].price;
+      priceElement.style.fontSize = "18px";
+      childProduct.appendChild(imgElement);
+      childProduct.appendChild(titleElement);
+      childProduct.appendChild(priceElement);
+      parentProduct.appendChild(childProduct);
+    }
+  }
+  function searchItems(query) {
+    query = query.trim().toLowerCase(); // Convert query to lowercase and remove leading/trailing spaces
+    return realData.filter((realData) =>
+      realData.title.toLowerCase().includes(query)
+    );
+  }
+
+  // Function to handle search button click
+  function handleSearch() {
+    const searchInput = document.getElementById("searchInput");
+    const query = searchInput.value;
+
+    const searchResults = searchItems(query);
+    console.log("Search Results:", searchResults);
+    // display the search results on the page
+    displaySearchResults(searchResults);
+  }
+
+  // Function to display the search results
+  function displaySearchResults(results) {
+    parentProduct.innerHTML = ""; // Clear the previous results
+
+    if (results.length === 0) {
+      // Display a message when no results are found
+      const noResultsItem = document.createElement("li");
+      noResultsItem.classList.add("list-group-item");
+      noResultsItem.textContent = "No results found";
+      searchResultsList.appendChild(noResultsItem);
+    } else {
+      // Display each matching item in the results
+      for (let i = 0; i < results.length; i++) {
+        const childProduct = document.createElement("div");
+        childProduct.className = "childProducts";
+        const imgElement = document.createElement("img");
+        imgElement.src = realData[results[i].id - 1].image;
+        imgElement.style.width = "200px";
+        imgElement.style.height = "200px";
+        const titleElement = document.createElement("span");
+        titleElement.innerText = realData[results[i].id - 1].title;
+        const priceElement = document.createElement("span");
+        priceElement.innerText = realData[results[i].id - 1].price;
+        priceElement.style.fontSize = "18px";
+        childProduct.appendChild(imgElement);
+        childProduct.appendChild(titleElement);
+        childProduct.appendChild(priceElement);
+        parentProduct.appendChild(childProduct);
+      }
+    }
+  }
+
+  // Attach click event listener to the search button
+  const searchButton = document.getElementById("searchButton");
+  searchButton.addEventListener("click", handleSearch);
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const sortSelect = document.getElementById("validationCustom04");
+
+    // Function to render the product list
+    function renderUI(data) {
+      parentProduct.innerHTML = "";
+      console.log(data);
+      realData = data;
+      for (let i = 0; i < data.length; i++) {
+        const childProduct = document.createElement("div");
+        childProduct.className = "childProducts";
+        const imgElement = document.createElement("img");
+        imgElement.src = data[i].image;
+        imgElement.style.width = "150px";
+        imgElement.style.height = "150px";
+        const titleElement = document.createElement("span");
+        titleElement.innerText = data[i].title;
+        const priceElement = document.createElement("span");
+        priceElement.innerText = data[i].price;
+        priceElement.style.fontSize = "18px";
+        childProduct.appendChild(imgElement);
+        childProduct.appendChild(titleElement);
+        childProduct.appendChild(priceElement);
+        parentProduct.appendChild(childProduct);
+      }
+    }
+
+    // Function to sort products by price
+    function sortByPrice(order) {
+      const sortedProducts = realData.slice().sort((a, b) => {
+        console.log("a", a);
+        console.log("b", b);
+
+        if (order === "priceLowToHigh") {
+          return a.price - b.price;
+        } else if (order === "priceHighToLow") {
+          return b.price - a.price;
+        } else if (order === "titleAZ") {
+          return a.name.localeCompare(b.name);
+        } else if (order === "titleZA") {
+          return b.name.localeCompare(a.name);
+        }
+
+        return order;
+
+        // return order === "priceLowToHigh"
+        //   ? a.price - b.price
+        //   : b.price - a.price;
+      });
+      renderUI(sortedProducts);
+    }
+
+    // Event listener for changes in the sorting selection
+    sortSelect.addEventListener("change", function () {
+      const selectedValue = this.value;
+      sortByPrice(selectedValue);
+    });
+
+    // Initially render the product list
+    renderUI(realData);
+  });
+</script>

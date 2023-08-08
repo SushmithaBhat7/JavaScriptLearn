@@ -4,6 +4,9 @@ a.push(10);
 a.push(11);
 a.push(12);
 console.log(a);
+console.log(a.push(13));
+const ele = a.push(14);
+console.log(ele);
 
 a.pop();
 a.pop(2);//it does same as previous remove the last element

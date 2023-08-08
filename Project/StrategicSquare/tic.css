@@ -1,0 +1,285 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  @media (prefers-color-scheme: light) {
+    .containerBody {
+      background: #e55d87; /* fallback for old browsers */
+      background: -webkit-linear-gradient(
+        10deg,
+        #2980b9,
+        #6dd5fa,
+        #92efde,
+        #ffffff
+      ); /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(
+        10deg,
+        #186ca3,
+        #60c1c8,
+        #e09ad3,
+        #ffffff
+        
+      ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+    .custom-shape-divider-bottom-1688879603 .shape-fill {
+      fill: #ffffff;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    .containerBody {
+      background: #e55d87; /* fallback for old browsers */
+      background: -webkit-linear-gradient(
+        10deg,
+        #081d2b,
+        #0d3b53,
+        #66237b,
+        #969595
+      ); /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(
+        10deg,
+        #081d2b,
+        #0d3b53,
+        #66237b,
+        #858383
+      ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+    .custom-shape-divider-bottom-1688879603 .shape-fill {
+      fill: #62868b;
+    }
+  }
+  .containerBody {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: tomato; */
+    height: 100vh;
+    width: 100%;
+    background-size: 200% 200%;
+    animation: gradient 7s linear infinite;
+  }
+  @keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+  }
+  .custom-shape-divider-bottom-1688879603 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+  }
+
+  .custom-shape-divider-bottom-1688879603 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+  }
+  .totalContent{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+.sectionMain{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: space-around; */
+    /* gap: 12px; */
+}
+.leftSection{
+    width: 30%;
+    padding-left: 40px;
+    padding-right: 10px;
+}
+.rightSection{
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    gap: 30px;
+}
+.congragulateGif{
+    display: none;
+}
+#matchTieGif{
+   display: none;
+}
+.toptitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #4fa7e1;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+  
+h1 {
+	color: rgb(41, 3, 57);
+    width: 200px;
+    font-size: 38px;
+    background-color: #be9dc6;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+h1::first-letter{
+    initial-letter: 2;
+    padding-right: 4px;
+    color: rgb(61, 8, 83);
+}
+p {
+	margin-bottom: -10px;
+}
+.ui {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.row {
+	display: flex;
+}
+.cell {
+	border: none;
+	width: 80px;
+	height: 80px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 24px;
+	text-align: center;
+	cursor: pointer;
+    border-radius: 10%;
+    margin: 2.5px;
+    transform: scale(1); /* Initial scale */
+    transition: transform 0.3s ease;
+}
+.cell:hover{
+    transform: scale(1.1); /* Scale up on hover */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    background-color: #f5f5f5;
+}
+.cell:active {
+	outline: none;
+}
+/* 3*3 Grid */
+#b1{
+	border-bottom: 1px solid gray;
+	border-right: 1px solid gray;
+}
+
+#b2 {
+	border-bottom: 1px solid gray;
+	border-right: 1px solid gray;
+	border-left: 1px solid gray;
+}
+
+#b3 {
+	border-bottom: 1px solid gray;
+	border-left: 1px solid gray;
+}
+
+#b4 {
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+	border-right: 1px solid gray;
+}
+	
+#b5 {
+	border: 1px solid gray;
+}
+
+#b6 {
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+	border-left: 1px solid gray;
+}
+
+#b7 {
+	border-top: 1px solid gray;
+	border-right: 1px solid gray;
+}
+
+#b8 {
+	border-top: 1px solid gray;
+	border-right: 1px solid gray;
+	border-left: 1px solid gray;
+}
+
+#b9 {
+	border-top: 1px solid gray;
+	border-left: 1px solid gray;
+}
+/* Start Over Button */
+#but {
+	box-sizing: border-box;
+	width: 200px;
+	height: 40px;
+	border: 1px solid rgb(76, 155, 235);
+	margin-left: auto;
+	border-radius: 8px;
+	font-family: Verdana,
+		Geneva, Tahoma, sans-serif;
+
+	background-color: whitesmoke;
+	color: rgb(19, 79, 140);
+	font-size: 20px;
+	cursor: pointer;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Player turn space */
+#print {
+	font-family: Verdana,
+		Geneva, Tahoma, sans-serif;
+	color: rgb(20, 23, 90);
+	font-size: 30px;
+    padding-left: 10px;
+    margin: 20px 4px;
+}
+
+/* Main Container */
+#main {
+	text-align: center;
+    width: 40%;
+    margin-top: 30px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Game Instruction Text */
+#ins {
+	font-family: Verdana,Geneva,
+					Tahoma, sans-serif;
+	color: rgb(13, 61, 110);
+    font-size: 18px;
+    animation: moveUpDown 7s ease-in-out infinite;
+}
+
+/* Define animation keyframes */
+@keyframes moveUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-80px);
+  }
+}
+
+
+/* <div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/X9izlczKyCpmCSZu0l" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/HollerStudios-animation-reaction-gif-holler-studios-X9izlczKyCpmCSZu0l">via GIPHY</a></p> */
+/* <iframe src="https://giphy.com/embed/X9izlczKyCpmCSZu0l" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/HollerStudios-animation-reaction-gif-holler-studios-X9izlczKyCpmCSZu0l">via GIPHY</a></p> */
+
+/*<div style="width:100%;height:0;padding-bottom:73%;position:relative;"><iframe src="https://giphy.com/embed/8JQ4flkrY8HewPqvrT" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/8JQ4flkrY8HewPqvrT">via GIPHY</a></p>*/

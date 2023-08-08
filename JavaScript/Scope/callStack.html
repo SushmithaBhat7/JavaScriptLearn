@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  let a = 10;
+  const b = 30;
+
+  function grandParent() {
+    let gp1 = 10;
+    let gp2 = 30;
+
+    function ourParents() {
+      let op1 = true;
+      let op2 = false;
+      console.log({ gp1, gp2 });
+
+      function us() {
+        let us1 = op1;
+        let us2 = "Mitesh";
+      }
+
+      us(); // Calling us
+    }
+
+    ourParents(); // Calling our parent
+  }
+
+  grandParent();
+</script>

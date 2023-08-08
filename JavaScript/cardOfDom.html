@@ -20,6 +20,9 @@
       .red {
         background-color: red;
       }
+      .blue {
+        background-color: blue;
+      }
     </style>
   </head>
   <body>
@@ -36,13 +39,16 @@
 
   for (let i = 0; i < numbers.length; i++) {
     const tag = document.createElement("span");
-    // tag.innerText = numbers[i];
+    tag.innerText = numbers[i];
     tag.className = "tagClass";
+    // tag.classList.add("tagClass");
 
     if (numbers[i] % 2 == 0) {
       tag.className += " red";
+      //   tag.classList.add("red");
     } else {
       tag.style.backgroundColor = "blue";
+      tag.classList.add("blue");
     }
     // function funName(e){
 

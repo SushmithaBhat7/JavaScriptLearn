@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  let x = 5;
+
+  function example() {
+    console.log(x);
+
+    if (true) {
+      x = 10;
+      const y = 15;
+      z = 20; //Accidental variable : it becomes global variable
+      console.log(x + y + z);
+    }
+
+    console.log(x);
+  }
+
+  example();
+  console.log(x);
+  console.log(z);
+</script>
