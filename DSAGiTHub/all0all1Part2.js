@@ -12,9 +12,7 @@ function zerosOnes(arr) {
             j--;
         } else {
             // Swap arr[i] and arr[j]
-            hold = arr[i];
-            arr[i] = arr[j];
-            arr[j] = hold;
+           [arr[i], arr[j]] = [arr[j],arr[i]];
             i++;
             j--;
         }

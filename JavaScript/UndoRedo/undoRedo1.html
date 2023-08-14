@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="inputName" placeholder="Type Name here..." />
+    <input type="text" id="inputEmail" placeholder="Type Email here..." />
+    <input type="text" id="inputPassword" placeholder="Type password here..." />
+    <button id="undo">UNDO</button>
+    <button id="redo">REDO</button>
+  </body>
+</html>
+<script>
+  let inputValue = [];
+  let newInputValue = [];
+  let inputName = document.getElementById("inputName");
+  let inputEmail = document.getElementById("inputEmail");
+  let inputPassword = document.getElementById("inputPassword");
+  let undoBtn = document.getElementById("undo");
+  let redoBtn = document.getElementById("redo");
+  undoBtn.addEventListener("click", undoFunction);
+  redoBtn.addEventListener("click", redoFunction);
+  inputName.addEventListener("click", inputNameAction);
+  inputEmail.addEventListener("click", inputEmailAction);
+  inputPassword.addEventListener("click", inputPasswordAction);
+  function undoFunction() {
+    if (inputValue.length != 0) {
+      newInputValue = inputValue.pop();
+    }
+  }
+  function redoFunction() {
+    if (newInputValue.length != 0) {
+      inputValue.push(newInputValue(pop));
+    }
+  }
+  function inputNameAction() {
+    inputValue.push(inputName.value);
+    console.log(inputValue);
+  }
+  function inputEmailAction() {
+    inputValue.push(inputEmail.value);
+    console.log(inputValue);
+  }
+  function inputPasswordAction() {
+    inputValue.push(inputPassword.value);
+    console.log(inputValue);
+  }
+</script>

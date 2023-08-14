@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  var g1 = 100;
+  var g2 = 200;
+  function parent() {
+    var p1 = 10;
+    var p2 = 20;
+    console.log("This parent: ", this);
+    function child() {
+      var c1 = 10;
+      var c2 = 20;
+      console.log("This child: ", this);
+    }
+
+    const childArrowFunc = () => {
+      console.log("This childArrowFunc: ", this);
+    };
+
+    child();
+    childArrowFunc.call({ name: "Shahid" });
+    childArrowFunc();
+  }
+
+  console.log("This GEC: ", this);
+  console.log("This is GEC :", window);
+  parent.call({ name: "Satyma", city: "Jabalpur" });
+</script>

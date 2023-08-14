@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  var profile = {
+    uname: "sush",
+    uCity: "Chennai",
+    uAge: 28,
+  };
+  var uname = profile.uname;
+  var userCity = profile.uCity;
+  var uAge = profile.uAge || "NA";
+  var uCountry = profile.uCountry || "NA";
+  console.log({ uname, userCity, uAge, uCountry, profile });
+</script>
+<script>
+  const profile2 = {
+    uName: "Abhiram",
+    uCity: "Mysore",
+  };
+  const { uName = "NA", uCity = "NA", uPhone = "NA" } = profile2;
+  console.log({ uName, uCity, uPhone, profile2 });
+</script>

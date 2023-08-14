@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  console.log(a); //whole function will be printed
+  var a = 10;
+  a = 30;
+  function a() {
+    console.log("i am function a");
+  }
+  // a();
+  console.log(a); //a value is 30
+</script>
+
+<!-- Initially in creation phase :
+a=undefined
+a= ƒ a()
+in execution phase:
+a=10
+a=30
+ie, a value is 30
+so we cant get a() which is like 30() so we get type error -->

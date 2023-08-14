@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  const profile = {
+    uName: "Shubham",
+    uCity: "Indore",
+    uState: "MP",
+    getName: function () {
+      console.log("This: ", this);
+      function innerFunc1() {
+        console.log("Inner Func: ", this);
+      }
+
+      const innerFunc2 = () => {
+        console.log("this innerFunc: ", this);
+      };
+      innerFunc1();
+      innerFunc2();
+      return this.uName;
+    },
+  };
+
+  console.log("Name: ", profile.getName());
+</script>

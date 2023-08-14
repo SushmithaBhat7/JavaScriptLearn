@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Undo Redo Example</title>
+  </head>
+  <body>
+    <label for="name">Name:</label>
+    <input type="text" id="name" />
+    <br />
+    <label for="email">Email:</label>
+    <input type="text" id="email" />
+    <br />
+    <label for="password">Password:</label>
+    <input type="password" id="password" />
+    <br />
+    <button id="undo">Undo</button>
+    <button id="redo">Redo</button>
+
+    <script>
+      const nameInput = document.getElementById("name");
+      const emailInput = document.getElementById("email");
+      const passwordInput = document.getElementById("password");
+      const undoButton = document.getElementById("undo");
+      const redoButton = document.getElementById("redo");
+
+      let history = [];
+      let index = -1;
+
+      function saveState() {
+        history.push({
+          name: nameInput.value,
+          email: emailInput.value,
+          password: passwordInput.value,
+        });
+        index++;
+      }
+
+      function updateFields(data) {
+        nameInput.value = data.name;
+        emailInput.value = data.email;
+        passwordInput.value = data.password;
+      }
+
+      function undo() {
+        if (index > 0) {
+          index--;
+          updateFields(history[index]);
+        }
+      }
+
+      function redo() {
+        if (index < history.length - 1) {
+          index++;
+          updateFields(history[index]);
+        }
+      }
+
+      nameInput.addEventListener("input", saveState);
+      emailInput.addEventListener("input", saveState);
+      passwordInput.addEventListener("input", saveState);
+      undoButton.addEventListener("click", undo);
+      redoButton.addEventListener("click", redo);
+    </script>
+  </body>
+</html>
