@@ -6,9 +6,9 @@ function zerosOnes(arr) {
     let hold = 0;
 
     while (i < j) {
-        if (arr[i] === 0) {
+        if (arr[i] == 0) {
             i++;
-        } else if (arr[j] === 1) {
+        } else if (arr[j] == 1) {
             j--;
         } else {
             // Swap arr[i] and arr[j]
