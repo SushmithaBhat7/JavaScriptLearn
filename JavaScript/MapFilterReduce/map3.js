@@ -32,11 +32,14 @@
 
 
 const outArrMap = arrObjc.map((item,index)=>{
+    
     const newItem = {...item};
-    if(newItem.isActive===true){
+    const {isActive}=newItem;
+    if(isActive===true){
         newItem.isActive = "Available"; 
+    }else{
+        newItem.isActive = "Not Available";
     }
-    newItem.isActive = "NotAvailable";
     return newItem
   });
 
