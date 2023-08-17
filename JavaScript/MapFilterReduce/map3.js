@@ -42,5 +42,15 @@ const outArrMap = arrObjc.map((item,index)=>{
     }
     return newItem
   });
+  const outArrMap2 = arrObjc.map((item,index)=>{
+    const result = p.map((item) => ({
+        ...item,
+        isActive: item.isActive ? "Available" : "Not Available",
+      }));
+   
+  });
+
+
+
 
   console.log({arrObjc,outArrMap});
