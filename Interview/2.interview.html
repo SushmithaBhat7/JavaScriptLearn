@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  let namee = "siddhant1";
+  var uname = "siddhant";
+
+  let Myobject = {
+    namee: "suraj",
+    normalFunction: function () {
+      console.log(this.uname); //undefined no "uname" variable inside it
+      console.log(this.namee); //suraj, present in this scope
+      console.log(this.nameeeeee); //undefined no "uname" variable inside it
+    },
+    arrowFunction: () => {
+      console.log(this.uname); //as it is var present in global scope
+      console.log(this.namee); //undefined , not in global scope it is in script scope
+      console.log(this.nameeeeee); //undefined, not defined anywhere
+      console.log("this Arrow :", this);
+    },
+  };
+
+  Myobject.normalFunction();
+  //normal fuction respects its scope
+  Myobject.arrowFunction();
+  //undefined when let namee = "siddhant"; because it is in script scope
+  //Arrow function respects it parents scope
+</script>
+
+<!-- "this"  will point to global window scope only
+     var and accidental variable comes in global window scope
+    let and const will be in script scope accesing those variable 
+    in this gives undefined-->
+
+<!-- "this.newVariable" new variable which is not defined anywhere gives undefined -->
