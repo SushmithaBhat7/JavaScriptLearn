@@ -21,7 +21,8 @@ var isValid = function (s) {
       return false; // If characters don't match, return false
     } else if (
       strArr[i + 1] !== obj[strArr[i]] &&
-      strArr[j] !== obj[strArr[i]]
+      strArr[j] !== obj[strArr[i]] &&
+      strArr[j - 1] !== obj[strArr[j - 1]]
     ) {
       console.log("strArr[i + 1] :", strArr[i + 1]);
       console.log("obj[strArr[i]] :", obj[strArr[i]]);
@@ -34,6 +35,8 @@ var isValid = function (s) {
     }
     if (strArr[i + 1] === obj[strArr[i]]) {
       i = i + 2;
+    } else if (strArr[j - 1] === obj[strArr[j - 1]]) {
+      j = j - 2;
     } else if (strArr[j] === obj[strArr[i]]) {
       i++;
       j--;

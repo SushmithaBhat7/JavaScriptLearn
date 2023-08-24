@@ -1,0 +1,71 @@
+//https://sass-lang.com/playground/#MTElMkYlMkYlMjBEZWZpbmUlMjBjb2xvciUyMHZhcmlhYmxlcyUwQSUyNGNvbG9ycyUzQSUyMCglMEElMjAlMjBwcmltYXJ5JTNBJTIwJTIzMDA3YmZmJTJDJTBBJTIwJTIwc2Vjb25kYXJ5JTNBJTIwJTIzNmM3NTdkJTJDJTBBJTIwJTIwc3VjY2VzcyUzQSUyMCUyMzI4YTc0NSUyQyUwQSUyMCUyMHdhcm5pbmclM0ElMjAlMjNmZmMxMDclMkMlMEElMjAlMjBlcnJvciUzQSUyMCUyM2RjMzU0NSUwQSklM0IlMEElMEElMkYlMkYlMjBHZW5lcmF0ZSUyMGNvbG9yJTIwY2xhc3NlcyUyMHVzaW5nJTIwYSUyMGxvb3AlMEElNDBlYWNoJTIwJTI0bmFtZSUyQyUyMCUyNGNvbG9yJTIwaW4lMjAlMjRjb2xvcnMlMjAlN0IlMEElMjAlMjAuYmctJTIzJTdCJTI0bmFtZSU3RCUyMCU3QiUwQSUyMCUyMCUyMCUyMGJhY2tncm91bmQtY29sb3IlM0ElMjAlMjRjb2xvciUzQiUwQSUyMCUyMCU3RCUwQSUyMCUyMC50ZXh0LSUyMyU3QiUyNG5hbWUlN0QlMjAlN0IlMEElMjAlMjAlMjAlMjBjb2xvciUzQSUyMCUyNGNvbG9yJTNCJTBBJTIwJTIwJTdEJTBBJTdEJTBBJTBBJTJGJTJGJTIwRGVmaW5lJTIwZ3JpZCUyMHZhcmlhYmxlcyUwQSUyNGdyaWQtY29sdW1ucyUzQSUyMDEyJTNCJTBBJTI0Z3JpZC1ndXR0ZXIlM0ElMjAyMHB4JTNCJTBBJTBBJTJGJTJGJTIwQmFzaWMlMjBncmlkJTIwc3R5bGVzJTBBLmNvbnRhaW5lciUyMCU3QiUwQSUyMCUyMHdpZHRoJTNBJTIwMTAwJTI1JTNCJTBBJTIwJTIwbWF4LXdpZHRoJTNBJTIwMTIwMHB4JTNCJTBBJTIwJTIwbWFyZ2luJTNBJTIwMCUyMGF1dG8lM0IlMEElMjAlMjBwYWRkaW5nJTNBJTIwMCUyMGNhbGMoJTIzJTdCJTI0Z3JpZC1ndXR0ZXIlN0QlMjAlMkYlMjAyKSUzQiUwQSU3RCUwQSUwQS5yb3clMjAlN0IlMEElMjAlMjBkaXNwbGF5JTNBJTIwZmxleCUzQiUwQSUyMCUyMGZsZXgtd3JhcCUzQSUyMHdyYXAlM0IlMEElMjAlMjBtYXJnaW4lM0ElMjAwJTIwY2FsYyglMjMlN0IlMjRncmlkLWd1dHRlciU3RCUyMCUyRiUyMC0yKSUzQiUwQSU3RCUwQSUwQSUyRiUyRiUyMEdlbmVyYXRlJTIwZ3JpZCUyMGNsYXNzZXMlMjB1c2luZyUyMGElMjBsb29wJTBBJTQwZm9yJTIwJTI0aSUyMGZyb20lMjAxJTIwdGhyb3VnaCUyMCUyNGdyaWQtY29sdW1ucyUyMCU3QiUwQSUyMCUyMC5jb2wtJTIzJTdCJTI0aSU3RCUyMCU3QiUwQSUyMCUyMCUyMCUyMHBhZGRpbmclM0ElMjAwJTIwY2FsYyglMjMlN0IlMjRncmlkLWd1dHRlciU3RCUyMCUyRiUyMDIpJTNCJTBBJTIwJTIwJTdEJTBBJTdEJTBBJTBBJTJGJTJGJTIwVXNhZ2UlMjBleGFtcGxlJTBBLmhlYWRlciUyMCU3QiUwQSUyMCUyMCU0MGV4dGVuZCUyMC5iZy1wcmltYXJ5JTNCJTBBJTIwJTIwcGFkZGluZyUzQSUyMDIwcHglM0IlMEElN0QlMEElMEEuY2FyZCUyMCU3QiUwQSUyMCUyMGJhY2tncm91bmQtY29sb3IlM0ElMjB3aGl0ZSUzQiUwQSUyMCUyMGJveC1zaGFkb3clM0ElMjAwJTIwMnB4JTIwNHB4JTIwcmdiYSgwJTJDJTIwMCUyQyUyMDAlMkMlMjAwLjEpJTNCJTBBJTIwJTIwcGFkZGluZyUzQSUyMDIwcHglM0IlMEElMjAlMjBtYXJnaW4tYm90dG9tJTNBJTIwMjBweCUzQiUwQSU3RCUwQSUwQS5mb290ZXIlMjAlN0IlMEElMjAlMjAlNDBleHRlbmQlMjAuYmctc2Vjb25kYXJ5JTNCJTBBJTIwJTIwcGFkZGluZyUzQSUyMDIwcHglM0IlMEElN0QlMEElMEElMkYlMkYlMjBSZXNwb25zaXZlJTIwZ3JpZCUwQSU0MG1lZGlhJTIwKG1heC13aWR0aCUzQSUyMDc2OHB4KSUyMCU3QiUwQSUyMCUyMC5jb2wtJTIzJTdCJTI0Z3JpZC1jb2x1bW5zJTdEJTIwJTdCJTBBJTIwJTIwJTIwJTIwZmxleCUzQSUyMDAlMjAwJTIwMTAwJTI1JTNCJTBBJTIwJTIwJTIwJTIwbWF4LXdpZHRoJTNBJTIwMTAwJTI1JTNCJTBBJTIwJTIwJTdEJTBBJTdEJTBB
+
+// Define color variables
+$colors: (
+  primary: #007bff,
+  secondary: #6c757d,
+  success: #28a745,
+  warning: #ffc107,
+  error: #dc3545
+);
+
+// Generate color classes using a loop
+@each $name, $color in $colors {
+  .bg-#{$name} {
+    background-color: $color;
+  }
+  .text-#{$name} {
+    color: $color;
+  }
+}
+
+// Define grid variables
+$grid-columns: 12;
+$grid-gutter: 20px;
+
+// Basic grid styles
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 calc(#{$grid-gutter} / 2);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 calc(#{$grid-gutter} / -2);
+}
+
+// Generate grid classes using a loop
+@for $i from 1 through $grid-columns {
+  .col-#{$i} {
+    padding: 0 calc(#{$grid-gutter} / 2);
+  }
+}
+
+// Usage example
+.header {
+  @extend .bg-primary;
+  padding: 20px;
+}
+
+.card {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.footer {
+  @extend .bg-secondary;
+  padding: 20px;
+}
+
+// Responsive grid
+@media (max-width: 768px) {
+  .col-#{$grid-columns} {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
