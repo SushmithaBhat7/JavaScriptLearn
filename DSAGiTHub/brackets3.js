@@ -1,3 +1,5 @@
+//Added a line from GitHub
+
 const validParanthesisV2 = (input) => {
   const splittedArr = input.split("");
 
