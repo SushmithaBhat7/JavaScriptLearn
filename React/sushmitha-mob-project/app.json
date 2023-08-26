@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "sushmitha-mob-project",
+    "slug": "sushmitha-mob-project",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "sushmitha-mob-project"
+}
