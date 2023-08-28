@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="mainContainer">
+      <form class="mainContainerForm">
+        <div>
+          <label for="firstName" class="firstNameLabel">First Name* : </label>
+          <input
+            type="text"
+            id="firstNameInput"
+            pattern="[a-zA-Z]+"
+            placeholder="Charectors only"
+            title="Charectors only"
+            required
+          />
+        </div>
+        <div>
+          <label for="midName" class="midNameLabel">Middle Name* : </label>
+          <input
+            type="text"
+            id="middleNameInput"
+            pattern="[a-zA-Z]+"
+            placeholder="Charectors only"
+            title="Charectors only"
+            required
+          />
+        </div>
+        <div>
+          <label for="lastName" class="lastNameLabel">Last Name* : </label>
+          <input
+            type="text"
+            id="lastNameInput"
+            pattern="[a-zA-Z]+"
+            placeholder="Charectors only"
+            title="Charectors only"
+            required
+          />
+        </div>
+        <div>
+          <label for="email" class="emailLabel">Email* : </label>
+          <input
+            type="email"
+            id="emailInput"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$"
+            placeholder="name@abc.gom"
+            title="name@abc.gom only"
+            required
+          />
+        </div>
+        <div>
+          <label for="password" class="passwordLabel">Password* : </label>
+          <input
+            type="password"
+            id="passwordInput"
+            pattern="(?=.*\d)(?=.*[#?!@$%^&*-]).{8,}"
+            placeholder="min len 8char + 1 num + 1 spl charector"
+            title="Min len 8char + 1 num + 1 spl charector"
+            required
+          />
+        </div>
+        <div>
+          <label for="confirmPassword" id="confirmPasswordLabel"
+            >Confirm password* :
+          </label>
+          <input
+            type="password"
+            id="confirmPasswordInput"
+            pattern="(?=.*\d)(?=.*[#?!@$%^&*-]).{8,}"
+            placeholder="min len 8char + 1 num + 1 spl charector"
+            title="Min len 8char + 1 num + 1 spl charector"
+            required
+          />
+        </div>
+        <input type="submit" id="submit" onclick="return Validate()" />
+      </form>
+    </div>
+  </body>
+  <script src="logic.js"></script>
+</html>
+<!-- /*pattern="(?=.*[0-9])(?=.*[#?!@$%^&*-])[A-Za-z\d#$@!%&*?].{8,}$" */ -->
