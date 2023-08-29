@@ -1,7 +1,7 @@
 // const submitElem = document.getElementById("submit");
 // submitElem.addEventListener("click", validate);
 
-function validate() {
+function Validate() {
   const passwordElement = document.getElementById("passwordLabel");
   const confirmPasswordElement = document.getElementById(
     "confirmPasswordLabel"
