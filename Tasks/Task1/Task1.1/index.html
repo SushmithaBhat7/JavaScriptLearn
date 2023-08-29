@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="mainContainer">
+      <form class="mainContainerForm">
+        <div>
+          <label for="firstName" id="firstNameLabel">First Name* : </label>
+          <input
+            type="text"
+            id="firstNameInput"
+            placeholder="Charectors only"
+            title="Charectors only"
+          />
+        </div>
+        <div>
+          <label for="midName" id="midNameLabel">Middle Name : </label>
+          <input
+            type="text"
+            id="middleNameInput"
+            placeholder="Charectors only"
+            title="Charectors only"
+          />
+        </div>
+        <div>
+          <label for="lastName" id="lastNameLabel">Last Name* : </label>
+          <input
+            type="text"
+            id="lastNameInput"
+            placeholder="Charectors only"
+            title="Charectors only"
+          />
+        </div>
+        <div>
+          <label for="email" id="emailLabel">Email* : </label>
+          <input
+            type="email"
+            id="emailInput"
+            placeholder="name@abc.gom"
+            title="name@abc.gom only"
+          />
+        </div>
+        <div>
+          <label for="password" id="passwordLabel">Password* : </label>
+          <input
+            type="password"
+            id="passwordInput"
+            placeholder="password"
+            title="Min len 8char + 1 num + 1 spl charector"
+          />
+        </div>
+        <div>
+          <label for="confirmPassword" id="confirmPasswordLabel"
+            >Confirm password* :
+          </label>
+          <input
+            type="password"
+            id="confirmPasswordInput"
+            placeholder="Confirm password"
+            title="Min len 8char + 1 num + 1 spl charector"
+          />
+        </div>
+        <!-- <input type="submit" id="submit" onclick=" Validate(e)" /> -->
+        <button onclick="Validate()">submit</button>
+      </form>
+    </div>
+  </body>
+  <script src="logic.js"></script>
+</html>
+<!-- /*pattern="(?=.*[0-9])(?=.*[#?!@$%^&*-])[A-Za-z\d#$@!%&*?].{8,}$" */ -->
