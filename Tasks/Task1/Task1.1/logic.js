@@ -1,53 +1,65 @@
 // const submitElem = document.getElementById("submit");
 // submitElem.addEventListener("click", validate);
 
-function Validate() {
-  //   e.preventDefault;
-  const firstNameElem = document.getElementById("firstNameInput").value;
-  const midNameElem = document.getElementById("middleNameInput").value;
-  const lastNameElem = document.getElementById("lastNameInput").value;
-  const emailElem = document.getElementById("emailInput").value;
-  const passwordElement = document.getElementById("passwordInput").value;
+function Validate(e) {
+  e.preventDefault();
+  const firstNameElem = document.getElementById("firstNameInput");
+  const midNameElem = document.getElementById("middleNameInput");
+  const lastNameElem = document.getElementById("lastNameInput");
+  const emailElem = document.getElementById("emailInput");
+  const passwordElement = document.getElementById("passwordInput");
   const confirmPasswordElement = document.getElementById(
     "confirmPasswordInput"
-  ).value;
+  );
   const charectorpattern = /[a-zA-Z]+/;
   const emailPattern = /[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$/;
   const passwordPattern = /(?=.*d)(?=.*[#?!@$%^&*-])[A-Za-z\d#$@!%&*?].{8,}/;
   const confirmpattern = /(?=.*d)(?=.*[#?!@$%^&*-])[A-Za-z\d#$@!%&*?].{8,}/;
 
-  if (!charectorpattern.exec(firstNameElem)) {
-    firstNameElem.innerText = "Invalid";
+  if (!charectorpattern.test(firstNameElem.value)) {
     firstNameElem.style.color = "red";
     firstNameElem.style.border = "1px solid red";
+  } else {
+    firstNameElem.style.color = "black";
+    firstNameElem.style.border = "1px solid black";
   }
-  if (!charectorpattern.exec(midNameElem)) {
-    midNameElem.innerText = "Invalid";
+  if (!charectorpattern.test(midNameElem.value)) {
     midNameElem.style.color = "red";
     midNameElem.style.border = "1px solid red";
+  } else {
+    midNameElem.style.color = "black";
+    midNameElem.style.border = "1px solid black";
   }
-  if (!charectorpattern.exec(lastNameElem)) {
-    lastNameElem.innerText = "Invalid";
+  if (!charectorpattern.test(lastNameElem.value)) {
     lastNameElem.style.color = "red";
     lastNameElem.style.border = "1px solid red";
+  } else {
+    lastNameElem.style.color = "black";
+    lastNameElem.style.border = "1px solid black";
   }
-  if (!emailPattern.exec(emailElem)) {
-    emailElem.innerText = "Invalid";
+  if (!emailPattern.test(emailElem.value)) {
     emailElem.style.color = "red";
     emailElem.style.border = "1px solid red";
+  } else {
+    emailElem.style.color = "black";
+    emailElem.style.border = "1px solid black";
   }
-  if (!passwordPattern.exec(passwordElement)) {
-    passwordElement.innerText = "Invalid";
+  if (!passwordPattern.test(passwordElement.value)) {
     passwordElement.style.color = "red";
     passwordElement.style.border = "1px solid red";
+  } else {
+    passwordElement.style.color = "black";
+    passwordElement.style.border = "1px solid black";
   }
-  if (!confirmpattern.exec(confirmPasswordElement)) {
-    confirmPasswordElement.innerText = "Invalid";
+  if (!confirmpattern.test(confirmPasswordElement.value)) {
     confirmPasswordElement.style.color = "red";
     confirmPasswordElement.style.border = "1px solid red";
+  } else {
+    confirmPasswordElement.style.color = "black";
+    confirmPasswordElement.style.border = "1px solid black";
   }
 
-  if (passwordElement !== confirmPasswordElement) {
+  if (passwordElement.value !== confirmPasswordElement.value) {
     alert("Passwords do not match.");
   }
   //   alert("Form submitted sucessfully");
