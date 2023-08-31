@@ -8,7 +8,8 @@
   </head>
   <body>
     <div class="mainContainer">
-      <form class="mainContainerForm">
+      <form action="" method="POST" id="registrationform">
+        <div class="alert">Form Submitted Successfully</div>
         <div>
           <label for="firstName" id="firstNameLabel">First Name* : </label>
           <input
@@ -66,10 +67,107 @@
           />
         </div>
         <!-- <input type="submit" id="submit" onclick=" Validate(e)" /> -->
-        <button onclick="Validate(event)">submit</button>
+        <!-- <button onclick="Validate(event)">submit</button> -->
+        <button type="submit" sendMessage()>Register</button>
       </form>
     </div>
   </body>
-  <script src="logic.js"></script>
+  <!-- <script src="logic.js"></script> -->
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyD5DqOFBT0qf-bep4dHdnk_tG_5jfSZfPM",
+      authDomain: "registration-form-b01b3.firebaseapp.com",
+      databaseURL:
+        "https://registration-form-b01b3-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "registration-form-b01b3",
+      storageBucket: "registration-form-b01b3.appspot.com",
+      messagingSenderId: "673413462148",
+      appId: "1:673413462148:web:f89e9d4579a02d3e16aad1",
+      measurementId: "G-HBGMMP2H3Y",
+    };
+
+    // Initialize Firebase
+    const initializeAppIfNecessary = () => {
+      try {
+        return getApp();
+      } catch {
+        return initializeApp(firebaseConfig);
+      }
+    };
+    let app = initializeAppIfNecessary();
+    // const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+
+    import {
+      getDatabase,
+      ref,
+      set,
+    } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+
+    //listen for submit event//(1)
+    document
+      .getElementById("registrationform")
+      .addEventListener("submit", formSubmit);
+
+    function formSubmit(e) {
+      e.preventDefault();
+      const firstNameElem = document.getElementById("firstNameInput");
+      const midNameElem = document.getElementById("middleNameInput");
+      const lastNameElem = document.getElementById("lastNameInput");
+      const emailElem = document.getElementById("emailInput");
+      const passwordElement = document.getElementById("passwordInput");
+      const confirmPasswordElement = document.getElementById(
+        "confirmPasswordInput"
+      );
+      sendMessage(
+        firstNameElem,
+        midNameElem,
+        lastNameElem,
+        emailElem,
+        passwordElement,
+        confirmPasswordElement
+      );
+    }
+    //Send Message to Firebase(4)
+    function sendMessage(
+      firstNameElem,
+      midNameElem,
+      lastNameElem,
+      emailElem,
+      passwordElement,
+      confirmPasswordElement
+    ) {
+      const database = getDatabase();
+
+      set(ref(database, "users/" + Math.floor(Math.random() * 10000000)), {
+        firstNameElem: firstNameElem,
+        midNameElem: midNameElem,
+        lastNameElem: lastNameElem,
+        emailElem: emailElem,
+        passwordElement: passwordElement,
+        confirmPasswordElement: confirmPasswordElement,
+      })
+        .then(() => {
+          //Show Alert Message(5)
+          document.querySelector(".alert").style.display = "block";
+          //Hide Alert Message After Seven Seconds(6)
+          setTimeout(function () {
+            document.querySelector(".alert").style.display = "none";
+          }, 7000);
+          document.getElementById("registrationform").reset();
+        })
+        .catch((error) => {
+          alert(error);
+        });
+    }
+  </script>
 </html>
 <!-- /*pattern="(?=.*[0-9])(?=.*[#?!@$%^&*-])[A-Za-z\d#$@!%&*?].{8,}$" */ -->

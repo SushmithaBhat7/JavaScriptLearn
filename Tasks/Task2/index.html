@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="index.css" />
+    <!-- <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore.js"></script> -->
+  </head>
+  <body>
+    <div class="mainContainer">
+      <form id="registrationForm">
+        <div class="alert" style="display: none">
+          Form Submitted Successfully
+        </div>
+
+        <div>
+          <label for="firstName" id="firstNameLabel">First Name* : </label>
+          <input
+            type="text"
+            id="firstNameInput"
+            placeholder="Charectors only"
+            title="Charectors only"
+          />
+        </div>
+        <div>
+          <label for="midName" id="midNameLabel">Middle Name : </label>
+          <input
+            type="text"
+            id="middleNameInput"
+            placeholder="Charectors only"
+            title="Charectors only"
+          />
+        </div>
+        <div>
+          <label for="lastName" id="lastNameLabel">Last Name* : </label>
+          <input
+            type="text"
+            id="lastNameInput"
+            placeholder="Charectors only"
+            title="Charectors only"
+          />
+        </div>
+        <div>
+          <label for="email" id="emailLabel">Email* : </label>
+          <input
+            type="email"
+            id="emailInput"
+            placeholder="name@abc.gom"
+            title="name@abc.gom only"
+          />
+        </div>
+        <div>
+          <label for="password" id="passwordLabel">Password* : </label>
+          <input
+            type="password"
+            id="passwordInput"
+            placeholder="password"
+            title="Min len 8char + 1 num + 1 spl charector"
+          />
+        </div>
+        <div>
+          <label for="confirmPassword" id="confirmPasswordLabel"
+            >Confirm password* :
+          </label>
+          <input
+            type="password"
+            id="confirmPasswordInput"
+            placeholder="Confirm password"
+            title="Min len 8char + 1 num + 1 spl charector"
+          />
+        </div>
+
+        <button type="submit">Register</button>
+      </form>
+    </div>
+
+    <!-- <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore.js"></script> -->
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-analytics.js";
+      import { getAuth } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js";
+      import { getFirestore } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore.js";
+      // Other Firebase imports
+
+      // Your Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyD5DqOFBT0qf-bep4dHdnk_tG_5jfSZfPM",
+        authDomain: "registration-form-b01b3.firebaseapp.com",
+        databaseURL:
+          "https://registration-form-b01b3-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "registration-form-b01b3",
+        storageBucket: "registration-form-b01b3.appspot.com",
+        messagingSenderId: "673413462148",
+        appId: "1:673413462148:web:f89e9d4579a02d3e16aad1",
+        measurementId: "G-HBGMMP2H3Y",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      const db = getFirestore();
+      // firebase.initializeApp(firebaseConfig);
+      // const db = firebase.firestore();
+
+      const firstNameElem = document.getElementById("firstNameInput");
+      const midNameElem = document.getElementById("middleNameInput");
+      const lastNameElem = document.getElementById("lastNameInput");
+      const emailElem = document.getElementById("emailInput");
+      const passwordElement = document.getElementById("passwordInput");
+      const confirmPasswordElement = document.getElementById(
+        "confirmPasswordInput"
+      );
+
+      // Your Validate function
+      function Validate() {
+        const charectorpattern = /[a-zA-Z]+/;
+        const emailPattern = /[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$/;
+        const passwordPattern =
+          /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+        const confirmpattern =
+          /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+
+        let isValid = true;
+        if (!charectorpattern.test(firstNameElem.value)) {
+          firstNameElem.style.color = "red";
+          firstNameElem.style.border = "1px solid red";
+          isValid = false;
+        } else {
+          firstNameElem.style.color = "black";
+          firstNameElem.style.border = "1px solid black";
+        }
+        if (!charectorpattern.test(midNameElem.value)) {
+          midNameElem.style.color = "red";
+          midNameElem.style.border = "1px solid red";
+          isValid = false;
+        } else {
+          midNameElem.style.color = "black";
+          midNameElem.style.border = "1px solid black";
+        }
+        if (!charectorpattern.test(lastNameElem.value)) {
+          lastNameElem.style.color = "red";
+          lastNameElem.style.border = "1px solid red";
+          isValid = false;
+        } else {
+          lastNameElem.style.color = "black";
+          lastNameElem.style.border = "1px solid black";
+        }
+        if (!emailPattern.test(emailElem.value)) {
+          emailElem.style.color = "red";
+          emailElem.style.border = "1px solid red";
+          isValid = false;
+        } else {
+          emailElem.style.color = "black";
+          emailElem.style.border = "1px solid black";
+        }
+        if (!passwordPattern.test(passwordElement.value)) {
+          passwordElement.style.color = "red";
+          passwordElement.style.border = "1px solid red";
+          isValid = false;
+        } else {
+          passwordElement.style.color = "black";
+          passwordElement.style.border = "1px solid black";
+        }
+        if (!confirmpattern.test(confirmPasswordElement.value)) {
+          confirmPasswordElement.style.color = "red";
+          confirmPasswordElement.style.border = "1px solid red";
+          isValid = false;
+        } else {
+          confirmPasswordElement.style.color = "black";
+          confirmPasswordElement.style.border = "1px solid black";
+        }
+
+        if (passwordElement.value !== confirmPasswordElement.value) {
+          alert("Passwords do not match.");
+          isValid = false;
+        }
+        return isValid;
+      }
+
+      // Get form and add submit event listener
+      const registrationForm = document.getElementById("registrationForm");
+      registrationForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        if (Validate()) {
+          try {
+            // Create user account with email and password
+            const userCredential = await firebase
+              .auth()
+              .createUserWithEmailAndPassword(email, password);
+
+            // Store additional user data in Firestore
+            await db.collection("users").doc(userCredential.user.uid).set({
+              firstName: firstName,
+              middleName: middleName,
+              lastName: lastName,
+              email: email,
+            });
+
+            // Display success message
+            const successMessage = registrationForm.querySelector(".alert");
+            successMessage.style.display = "block";
+            registrationForm.reset();
+          } catch (error) {
+            alert("Registration failed. Error: " + error.message);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
