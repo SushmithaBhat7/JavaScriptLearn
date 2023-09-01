@@ -191,14 +191,17 @@
             // Create user account with email and password
             const userCredential = await firebase
               .auth()
-              .createUserWithEmailAndPassword(email, password);
+              .createUserWithEmailAndPassword(
+                emailElem.value,
+                passwordElement.value
+              );
 
             // Store additional user data in Firestore
             await db.collection("users").doc(userCredential.user.uid).set({
-              firstName: firstName,
-              middleName: middleName,
-              lastName: lastName,
-              email: email,
+              firstName: firstNameElem.value,
+              middleName: midNameElem.value,
+              lastName: lastNameElem.value,
+              email: emailElem.value,
             });
 
             // Display success message

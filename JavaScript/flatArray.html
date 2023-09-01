@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const example = [1, 2, 3, 4, [1, 2], [3, 4, [3, 4]], 5];
+  let newArr = [];
+  function arrayFun(example) {
+    for (i = 0; i < example.length; i++) {
+      if (Array.isArray(example[i])) {
+        arrayFun(example[i]);
+        console.log("upper");
+      } else {
+        newArr.push(example[i]);
+        console.log("hi");
+      }
+    }
+  }
+  arrayFun(example);
+  console.log(newArr);
+</script>
