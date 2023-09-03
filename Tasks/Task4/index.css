@@ -1,0 +1,51 @@
+
+#nameError{
+    display: none;
+  }
+  #registrationForm{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+    border: 3px solid rgb(10, 3, 37);
+    border-radius: 9px;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+  }
+  #signInForm{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+    border: 3px solid rgb(10, 3, 37);
+    border-radius: 9px;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+
+  }
+  #logInContainer{
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+  #signInContainer{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    margin: 15px;
+  }
+  .welcomeHomeAlert{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+    border: 3px solid rgb(10, 3, 37);
+    border-radius: 9px;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+
+  }
