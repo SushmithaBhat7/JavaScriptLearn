@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <span id="displaySpan"></span>
+  </body>
+  <script type="module">
+    import { name, age } from "./person.js";
+    const spanElem = document.getElementById("displaySpan");
+    spanElem.innerHTML = `name is ${name} and age is ${age}`;
+  </script>
+</html>

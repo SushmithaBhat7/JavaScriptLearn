@@ -43,6 +43,10 @@
           />
         </div>
         <div>
+          <label id="DOBLabel">DOB* :</label>
+          <input id="DOBInput" type="date" />
+        </div>
+        <div>
           <label for="email" id="emailLabel">Email* : </label>
           <input
             type="email"
@@ -76,14 +80,13 @@
       </form>
     </div>
 
-    <!-- <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore.js"></script> -->
-
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js";
-      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-analytics.js";
-      import { getAuth } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js";
       import { getFirestore } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore.js";
+      import {
+        doc,
+        setDoc,
+      } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore.js";
       // Other Firebase imports
 
       // Your Firebase configuration
@@ -95,20 +98,19 @@
         projectId: "registration-form-b01b3",
         storageBucket: "registration-form-b01b3.appspot.com",
         messagingSenderId: "673413462148",
-        appId: "1:673413462148:web:f89e9d4579a02d3e16aad1",
-        measurementId: "G-HBGMMP2H3Y",
+        appId: "1:673413462148:web:b3d9d0ccfde5d92716aad1",
+        measurementId: "G-DPF7Z1RDJG",
       };
 
       // Initialize Firebase
       const app = initializeApp(firebaseConfig);
-      const analytics = getAnalytics(app);
-      const db = getFirestore();
-      // firebase.initializeApp(firebaseConfig);
-      // const db = firebase.firestore();
+      const db = getFirestore(app);
+      console.log({ app, db });
 
       const firstNameElem = document.getElementById("firstNameInput");
       const midNameElem = document.getElementById("middleNameInput");
       const lastNameElem = document.getElementById("lastNameInput");
+      const dobElem = document.getElementById("DOBInput");
       const emailElem = document.getElementById("emailInput");
       const passwordElement = document.getElementById("passwordInput");
       const confirmPasswordElement = document.getElementById(
@@ -118,6 +120,8 @@
       // Your Validate function
       function Validate() {
         const charectorpattern = /[a-zA-Z]+/;
+        const datePattern =
+          /^([0]?[1-9]|[1|2][0-9]|[3][0|1])[./-]([0]?[1-9]|[1][0-2])[./-]([0-9]{4}|[0-9]{2})$/;
         const emailPattern = /[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$/;
         const passwordPattern =
           /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
@@ -173,6 +177,14 @@
           confirmPasswordElement.style.color = "black";
           confirmPasswordElement.style.border = "1px solid black";
         }
+        // if (!datePattern.test(dobElem.value)) {
+        //   dobElem.style.color = "red";
+        //   dobElem.style.border = "1px solid red";
+        //   isValid = false;
+        // } else {
+        //   dobElem.style.color = "black";
+        //   dobElem.style.border = "1px solid black";
+        // }
 
         if (passwordElement.value !== confirmPasswordElement.value) {
           alert("Passwords do not match.");
@@ -188,22 +200,13 @@
 
         if (Validate()) {
           try {
-            // Create user account with email and password
-            const userCredential = await firebase
-              .auth()
-              .createUserWithEmailAndPassword(
-                emailElem.value,
-                passwordElement.value
-              );
-
-            // Store additional user data in Firestore
-            await db.collection("users").doc(userCredential.user.uid).set({
+            await setDoc(doc(db, "users", "data"), {
               firstName: firstNameElem.value,
               middleName: midNameElem.value,
               lastName: lastNameElem.value,
               email: emailElem.value,
+              date: dobElem.value,
             });
-
             // Display success message
             const successMessage = registrationForm.querySelector(".alert");
             successMessage.style.display = "block";
