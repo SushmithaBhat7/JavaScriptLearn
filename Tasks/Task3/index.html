@@ -9,8 +9,8 @@
     <span id="displaySpan"></span>
   </body>
   <script type="module">
-    import { name, age } from "./person.js";
+    import { name, age as uAge } from "./person.js";
     const spanElem = document.getElementById("displaySpan");
-    spanElem.innerHTML = `name is ${name} and age is ${age}`;
+    spanElem.innerHTML = `name is ${name} and age is ${uAge}`;
   </script>
 </html>
