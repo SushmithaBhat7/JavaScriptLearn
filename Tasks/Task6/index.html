@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="index.css" />
+    <!-- <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore.js"></script> -->
+  </head>
+  <body>
+    <div id="signInContainer" style="display: flex">
+      <form id="signInForm">
+        <div class="signInAlert" style="display: none">
+          The password that you've entered is incorrect.Or You dont have an
+          account
+        </div>
+        <div>
+          <label for="email" id="emailLabel">Email* : </label>
+          <input
+            type="email"
+            id="emailInputSignIn"
+            placeholder="name@abc.gom"
+            title="name@abc.gom only"
+          />
+        </div>
+        <div>
+          <label for="password" id="passwordLabel">Password* : </label>
+          <input
+            type="password"
+            id="passwordInputSignIn"
+            placeholder="password"
+            title="Min len 8char + 1 num + 1 spl charector"
+          />
+        </div>
+        <div class="button2">
+          <button type="button" id="signInBtn">SignIN</button>
+          <button type="button" id="logInBtn">Create new Account</button>
+        </div>
+        <span>OR</span>
+        <div class="button2">
+          <button type="button" id="signInGoogleBtn">SignIN with Google</button>
+          <button type="button" id="signInFbBtn">SignIN with Facebook</button>
+        </div>
+      </form>
+    </div>
+    <div id="logInContainer" style="display: none">
+      <form id="registrationForm">
+        <div class="alert" style="display: none">
+          Form Submitted Successfully
+        </div>
+
+        <div>
+          <label for="firstName" id="firstNameLabel">First Name* : </label>
+          <input
+            type="text"
+            id="firstNameInput"
+            placeholder="Charectors only"
+            title="Charectors only"
+          />
+        </div>
+        <div>
+          <label for="midName" id="midNameLabel">Middle Name : </label>
+          <input
+            type="text"
+            id="middleNameInput"
+            placeholder="Charectors only"
+            title="Charectors only"
+          />
+        </div>
+        <div>
+          <label for="lastName" id="lastNameLabel">Last Name* : </label>
+          <input
+            type="text"
+            id="lastNameInput"
+            placeholder="Charectors only"
+            title="Charectors only"
+          />
+        </div>
+        <div>
+          <label id="DOBLabel">DOB* :</label>
+          <input id="DOBInput" type="date" />
+        </div>
+        <div>
+          <label for="email" id="emailLabel">Email* : </label>
+          <input
+            type="email"
+            id="emailInput"
+            placeholder="name@abc.gom"
+            title="name@abc.gom only"
+          />
+        </div>
+        <div>
+          <label for="password" id="passwordLabel">Password* : </label>
+          <input
+            type="password"
+            id="passwordInput"
+            placeholder="password"
+            title="Min len 8char + 1 num + 1 spl charector"
+          />
+        </div>
+        <div>
+          <label for="confirmPassword" id="confirmPasswordLabel"
+            >Confirm password* :
+          </label>
+          <input
+            type="password"
+            id="confirmPasswordInput"
+            placeholder="Confirm password"
+            title="Min len 8char + 1 num + 1 spl charector"
+          />
+        </div>
+
+        <button type="submit">Register</button>
+      </form>
+    </div>
+    <div id="homeContainer" style="display: none">
+      <div id="welcomeHomeAlert">
+        <span id="welcomeHeadder">Welcome</span>
+        <div id="userNameHomeDiv"></div>
+        <div id="emailHomeDiv"></div>
+      </div>
+      <div class="gitHubDiv">
+        <h1>GitHub User Search</h1>
+        <input
+          type="search"
+          id="usernameInput"
+          placeholder="Enter a GitHub userName"
+        />
+        <button class="searchGit" onclick="searchGitProfile()">Search</button>
+        <div id="userInfo">
+          <!-- User profile information will be displayed here -->
+        </div>
+
+        <div id="repos">
+          <!-- User repositories will be displayed here -->
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function searchGitProfile() {
+        const username = document.getElementById("usernameInput").value;
+        const userInfoElement = document.getElementById("userInfo");
+        const reposElement = document.getElementById("repos");
+
+        // Clear previous search results
+        userInfoElement.innerHTML = "";
+        reposElement.innerHTML = "";
+
+        // Fetch user profile data
+        fetch(`https://api.github.com/users/${username}`)
+          .then((response) => response.json())
+          .then((data) => {
+            // Display user profile information
+            const userHtml = `
+                      <h2>${data.login}</h2>
+                      <img src="${data.avatar_url}" alt="${data.login}" width="100">
+                      <p>Name: ${data.name}</p>
+                      <p>Location: ${data.location}</p>
+                      <p>Followers: ${data.followers}</p>
+                      <p>Following: ${data.following}</p>
+                      <p>Public Repositories: ${data.public_repos}</p>
+                  `;
+            userInfoElement.innerHTML = userHtml;
+
+            // Fetch user repositories
+            return fetch(`https://api.github.com/users/${username}/repos`);
+          })
+          .then((response) => response.json())
+          .then((repos) => {
+            // Display user repositories
+            const reposHtml = repos
+              .map((repo) => {
+                return `<li><a href="${repo.html_url}" target="_blank">${repo.name}</a></li>`;
+              })
+              .join("");
+            reposElement.innerHTML = `<h3>Repositories:</h3><ul>${reposHtml}</ul>`;
+          })
+          .catch((error) => {
+            userInfoElement.innerHTML = `<p>Error: User not found</p>`;
+          });
+      }
+    </script>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js";
+      import { getFirestore } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore.js";
+      import {
+        doc,
+        setDoc,
+        addDoc,
+      } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore.js";
+      import {
+        collection,
+        query,
+        where,
+        getDocs,
+      } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore.js";
+      import {
+        getAuth,
+        GoogleAuthProvider,
+        signInWithRedirect,
+        getRedirectResult,
+      } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js";
+      import {
+        FacebookAuthProvider,
+        signInWithPopup,
+      } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js";
+      // Other Firebase imports
+
+      // Your Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyD5DqOFBT0qf-bep4dHdnk_tG_5jfSZfPM",
+        authDomain: "registration-form-b01b3.firebaseapp.com",
+        databaseURL:
+          "https://registration-form-b01b3-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "registration-form-b01b3",
+        storageBucket: "registration-form-b01b3.appspot.com",
+        messagingSenderId: "673413462148",
+        appId: "1:673413462148:web:b3d9d0ccfde5d92716aad1",
+        measurementId: "G-DPF7Z1RDJG",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+      console.log({ app, db });
+      const auth = getAuth(app);
+
+      const emailElemSignIn = document.getElementById("emailInputSignIn");
+      const passwordElementSignIn = document.getElementById(
+        "passwordInputSignIn"
+      );
+      const signInContainerElem = document.getElementById("signInContainer");
+      const logInContainerElem = document.getElementById("logInContainer");
+      const homeContainerElem = document.getElementById("homeContainer");
+
+      const firstNameElem = document.getElementById("firstNameInput");
+      const midNameElem = document.getElementById("middleNameInput");
+      const lastNameElem = document.getElementById("lastNameInput");
+      const dobElem = document.getElementById("DOBInput");
+      const emailElem = document.getElementById("emailInput");
+      const passwordElement = document.getElementById("passwordInput");
+      const confirmPasswordElement = document.getElementById(
+        "confirmPasswordInput"
+      );
+
+      const userNameHomeDivElem = document.getElementById("userNameHomeDiv");
+      const emailHomeDivElem = document.getElementById("emailHomeDiv");
+      let imgElem = document.createElement("img");
+
+      // Your Validate function
+      function Validate() {
+        const charectorpattern = /[a-zA-Z]+/;
+        const datePattern =
+          /^([0]?[1-9]|[1|2][0-9]|[3][0|1])[./-]([0]?[1-9]|[1][0-2])[./-]([0-9]{4}|[0-9]{2})$/;
+        const emailPattern = /[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$/;
+        const passwordPattern =
+          /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+        const confirmpattern =
+          /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+
+        let isValid = true;
+        if (!charectorpattern.test(firstNameElem.value)) {
+          firstNameElem.style.color = "red";
+          firstNameElem.style.border = "1px solid red";
+          isValid = false;
+        } else {
+          firstNameElem.style.color = "black";
+          firstNameElem.style.border = "1px solid black";
+        }
+        if (!charectorpattern.test(midNameElem.value)) {
+          midNameElem.style.color = "red";
+          midNameElem.style.border = "1px solid red";
+          isValid = false;
+        } else {
+          midNameElem.style.color = "black";
+          midNameElem.style.border = "1px solid black";
+        }
+        if (!charectorpattern.test(lastNameElem.value)) {
+          lastNameElem.style.color = "red";
+          lastNameElem.style.border = "1px solid red";
+          isValid = false;
+        } else {
+          lastNameElem.style.color = "black";
+          lastNameElem.style.border = "1px solid black";
+        }
+        if (!emailPattern.test(emailElem.value)) {
+          emailElem.style.color = "red";
+          emailElem.style.border = "1px solid red";
+          isValid = false;
+        } else {
+          emailElem.style.color = "black";
+          emailElem.style.border = "1px solid black";
+        }
+        if (!passwordPattern.test(passwordElement.value)) {
+          passwordElement.style.color = "red";
+          passwordElement.style.border = "1px solid red";
+          isValid = false;
+        } else {
+          passwordElement.style.color = "black";
+          passwordElement.style.border = "1px solid black";
+        }
+        if (!confirmpattern.test(confirmPasswordElement.value)) {
+          confirmPasswordElement.style.color = "red";
+          confirmPasswordElement.style.border = "1px solid red";
+          isValid = false;
+        } else {
+          confirmPasswordElement.style.color = "black";
+          confirmPasswordElement.style.border = "1px solid black";
+        }
+        // if (!datePattern.test(dobElem.value)) {
+        //   dobElem.style.color = "red";
+        //   dobElem.style.border = "1px solid red";
+        //   isValid = false;
+        // } else {
+        //   dobElem.style.color = "black";
+        //   dobElem.style.border = "1px solid black";
+        // }
+
+        if (passwordElement.value !== confirmPasswordElement.value) {
+          alert("Passwords do not match.");
+          isValid = false;
+        }
+        return isValid;
+      }
+
+      // Get form for signForm and add 2 submit event listener for login and signIn
+      const signInFormElem = document.getElementById("signInForm");
+      const signInBtnElem = document.getElementById("signInBtn");
+      const logInBtnElem = document.getElementById("logInBtn");
+      const signInGoogleBtnElem = document.getElementById("signInGoogleBtn");
+      const signInFbBtnElem = document.getElementById("signInFbBtn");
+      signInBtnElem.addEventListener("click", async (event) => {
+        const usersData = collection(db, "users");
+        const q = query(
+          collection(db, "users"),
+          where("email", "==", emailElemSignIn.value)
+        );
+
+        const querySnapshot = await getDocs(q);
+        if (querySnapshot.empty) {
+          console.log("No matching documents.");
+          const failureMessage = signInForm.querySelector(".signInAlert");
+          failureMessage.style.display = "block";
+          failureMessage.style.color = "red";
+          return;
+        } else {
+          signInContainerElem.style.display = "none";
+          homeContainerElem.style.display = "block";
+        }
+
+        querySnapshot.forEach((doc) => {
+          // doc.data() is never undefined for query doc snapshots
+          console.log(doc.id, " => ", doc.data());
+        });
+      });
+      logInBtnElem.addEventListener("click", logInFunctionality);
+      signInGoogleBtnElem.addEventListener("click", async (event) => {
+        event.preventDefault();
+        const provider = new GoogleAuthProvider();
+        signInWithRedirect(auth, provider);
+      });
+      const renderUser = (user) => {
+        signInContainerElem.style.display = "none";
+        homeContainerElem.style.display = "block";
+
+        userNameHomeDivElem.innerHTML = user.displayName;
+        imgElem.src = user.reloadUserInfo.photoUrl;
+        emailHomeDivElem.appendChild(imgElem);
+      };
+      getRedirectResult(auth)
+        .then((result) => {
+          // This gives you a Google Access Token. You can use it to access Google APIs.
+          const credential = GoogleAuthProvider.credentialFromResult(result);
+          const token = credential.accessToken;
+
+          // The signed-in user info.
+          const user = result.user;
+          console.log({ user });
+          // IdP data available using getAdditionalUserInfo(result)
+          // ...
+
+          renderUser(user);
+
+          console.log(user.reloadUserInfo.displayName);
+          console.log(user.reloadUserInfo.photoUrl);
+          console.log({ userNameHomeDivElem, emailHomeDivElem });
+        })
+        .catch((error) => {
+          // Handle Errors here.
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          // The email of the user's account used.
+          // const email = error.customData.email;
+          // The AuthCredential type that was used.
+          // const credential = GoogleAuthProvider.credentialFromError(error);
+          // ...
+        });
+      signInFbBtnElem.addEventListener("click", async (event) => {
+        event.preventDefault();
+        const provider = new FacebookAuthProvider();
+        signInWithRedirect(auth, provider);
+      });
+      getRedirectResult(auth)
+        .then((result) => {
+          // This gives you a Facebook Access Token. You careloadListener.displayNamen use it to access the Facebook API.
+          const credential = FacebookAuthProvider.credentialFromResult(result);
+          const token = credential.accessToken;
+
+          const user = result.user;
+          // IdP data available using getAdditionalUserInfo(result)
+          // ...
+        })
+        .catch((error) => {
+          // Handle Errors here.
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          // The email of the user's account used.
+          // const email = error.customData.email;
+          // AuthCredential type that was used.
+          // const credential = FacebookAuthProvider.credentialFromError(error);
+          // ...
+        });
+
+      // Get form and add submit event listener
+      function logInFunctionality() {
+        signInContainerElem.style.display = "none";
+        logInContainerElem.style.display = "flex";
+        const registrationForm = document.getElementById("registrationForm");
+        registrationForm.addEventListener("submit", async (event) => {
+          event.preventDefault();
+
+          if (Validate()) {
+            try {
+              await addDoc(collection(db, "users"), {
+                firstName: firstNameElem.value,
+                middleName: midNameElem.value,
+                lastName: lastNameElem.value,
+                email: emailElem.value,
+                date: dobElem.value,
+                password: passwordElement.value,
+              });
+              // Display success message
+              const successMessage = registrationForm.querySelector(".alert");
+              successMessage.style.display = "block";
+              registrationForm.reset();
+              logInContainerElem.style.display = "none";
+
+              homeContainerElem.style.display = "block";
+            } catch (error) {
+              alert("Registration failed. Error: " + error.message);
+            }
+          }
+        });
+      }
+      const onMount = () => {
+        auth.onAuthStateChanged((user) => {
+          console.log(user);
+          if (user) {
+            renderUser(user);
+          }
+        });
+      };
+      onMount();
+    </script>
+  </body>
+</html>
