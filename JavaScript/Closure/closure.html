@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    function tryMe() {
+      let uName = "sushmitha";
+      let i = 0;
+      return function () {
+        let age = 10;
+        i++;
+        console.log(uName, i, age);
+      };
+    }
+    const result = tryMe();
+    console.log(result());
+    console.log(result());
+  </script>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <span id="textID">Sushmitha</span>
+    <button onclick="changeColor('blue','Abhiram');">Blue Abhiram</button>
+    <button onclick="changeColor('red','Ankit');">Red Ankit</button>
+  </body>
+  <script>
+    function changeColor(color, name) {
+      textID.style.color = color;
+      textID.innerHTML = name;
+    }
+  </script>
+</html>
