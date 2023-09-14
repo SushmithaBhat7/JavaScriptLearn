@@ -6,14 +6,66 @@
     <title>Document</title>
   </head>
   <body>
-    <span id="textID">Sushmitha</span>
-    <button onclick="changeColor('blue','Abhiram');">Blue Abhiram</button>
-    <button onclick="changeColor('red','Ankit');">Red Ankit</button>
+    <div class="container">
+      <div id="header">
+        <ul class="header-list">
+          <li class="footer-list-item para">Home Top</li>
+          <li class="footer-list-item para">About Top</li>
+          <li class="footer-list-item para">Contact Top</li>
+        </ul>
+      </div>
+      <section>
+        <div>
+          <div>
+            <div>
+              <div>
+                <p class="para">Hello para from nested</p>
+              </div>
+            </div>
+            <p class="para">Hello para from nested 2</p>
+            <p class="para">Hello para from nested 3</p>
+            <p class="para">Hello para from nested 4</p>
+            <p class="para">Hello para from nested 5</p>
+          </div>
+        </div>
+      </section>
+      <div id="footer">
+        <ul class="footer-list">
+          <li class="footer-list-item">Home</li>
+          <li class="footer-list-item">About</li>
+          <li class="footer-list-item">Contact</li>
+        </ul>
+      </div>
+    </div>
   </body>
-  <script>
-    function changeColor(color, name) {
-      textID.style.color = color;
-      textID.innerHTML = name;
-    }
-  </script>
 </html>
+
+<script>
+  /*  const paraElems = document.getElementsByClassName("para");
+  console.log("paraElems: ", paraElems);
+
+  for (let item of paraElems) {
+    item.style.color = "red";
+  } */
+
+  const outArr = [];
+
+  function getCustomElementsByClassName(doc, classKey) {
+    let childrens = doc.childNodes;
+    for (let i = 0; i < childrens.length; i++) {
+      if (!childrens[i]) {
+        continue;
+      }
+      if (childrens[i].childNodes.length > 0) {
+        console.log(childrens[i].childNodes);
+        if (childrens[i].childNodes.includes("para")) {
+          outArr.push(childrens[i]);
+        }
+        getCustomElementsByClassName(childrens[i], classKey);
+      }
+    }
+    return outArr;
+  }
+
+  const list = getCustomElementsByClassName(document, "para");
+</script>

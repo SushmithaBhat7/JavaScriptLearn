@@ -3,6 +3,9 @@
     "start": "vite"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.8",
     "socket.io": "^4.7.1",
     "vite": "^4.3.9"
   }

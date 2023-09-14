@@ -1,9 +1,12 @@
 
 import ReactDOM from 'react-dom/client'
-
-
-import { HomeComponent } from './Home.jsx'
+import FormComponent from './Day2/Forms'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <HomeComponent/>
+  <>
+  <FormComponent/>
+  <hr />
+  </>
+  
+  
 )
