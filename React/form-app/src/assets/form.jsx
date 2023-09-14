@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "../../src/index.css";
 
 import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
 import EscalatorWarningIcon from "@mui/icons-material/EscalatorWarning";
@@ -32,14 +31,17 @@ const FormComponent = () => {
     const { name, value } = e.target;
     setHeightWeight({ ...heightWeight, [name]: value });
   };
+  const handleClickgender = (e) => {
+    setGender(e.target.id);
+  };
 
   const handleChangeFamilyHistory = (e) => {
     const { checked, name } = e.target;
     setFamilyHistory({ ...familyHistory, [name]: checked });
   };
   return (
-    <div>
-      <form className="form-Full">
+    <div className="flex flex-col justify-center items-center w-full">
+      <form className="flex flex-col justify-center items-center w-full">
         <div className="form-parent">
           <div className="form-content">
             <label className="familyLabel">Family History :</label>
@@ -74,14 +76,20 @@ const FormComponent = () => {
           </div>
           <div className="form-options">
             <div className="form-element">
-              <input
-                type="radio"
-                value="male"
-                checked={gender === "male"}
-                onChange={handleChange}
-              />
-              Man
-              <ManIcon />
+              <button
+                className="w-10 h-10 rounded-full flex justify-start items-center"
+                id="male"
+                onClick={handleClickgender}
+              >
+                <img
+                  src="../../public/images/403019_avatar_male_man_person_user_icon.png"
+                  alt=""
+                  style={{ pointerEvents: "none" }}
+                  className={`object-cover w-full h-full rounded-full me-3 ${
+                    gender === "female" || gender === "" ? "grayscale" : ""
+                  }`}
+                />
+              </button>
             </div>
             <div className="form-element">
               <input

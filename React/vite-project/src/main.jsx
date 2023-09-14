@@ -1,12 +1,17 @@
+import ReactDOM from "react-dom/client";
+// import FormComponent from './Day2/Forms'
+// import FormComponentColor from "./Day2/form2";
+import ClickMeComponent from "./Day2/clickMe";
+import MissionComponent from "./Day2/missionLaunch";
 
-import ReactDOM from 'react-dom/client'
-import FormComponent from './Day2/Forms'
-
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <>
-  <FormComponent/>
-  <hr />
+    {/* <FormComponent/>
+  <hr /> */}
+    {/* <FormComponentColor /> */}
+    <hr />
+    <ClickMeComponent />
+    <hr />
+    <MissionComponent />
   </>
-  
-  
-)
+);

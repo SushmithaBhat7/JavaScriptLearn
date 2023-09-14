@@ -1,19 +1,32 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.form-content{
+    @apply flex flex-row justify-start items-center
+}
+
+/* body {
     background-color: #aeb0ae;
     font-family: Verdana;
     text-align: center;
 }
 
-/* Styling the Form (Color, Padding, Shadow) */
+
 form {
     background-color: #fff;
     max-width: 1000px;
-    /* margin: 50px auto;
-    padding: 30px 20px; */
+    
     box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .form-Full{
@@ -26,7 +39,7 @@ form {
     padding: 10px;
     justify-content: center;
     align-items: center;
-    /* background-color: #f2f2f2; */
+   
 }
 .form-parent{
     display: flex;
@@ -61,7 +74,7 @@ form {
 .form-element{
     display: flex;
     flex-direction: column-reverse;
-    /* gap: 8px; */
+   
     color: gray;
     justify-content: center;
     align-items: center;
@@ -86,10 +99,10 @@ input[type=text] {
     float: right;
     width: 50%;
   }
-  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+
 @media screen and (max-width: 800px) {
     .form-content, .form-options, input {
       width: 100%;
       margin-top: 0;
     }
-  }
+  } */
