@@ -3,8 +3,31 @@
 @tailwind utilities;
 
 .form-content{
-    @apply flex flex-row justify-start items-center
+    @apply flex w-1/4 justify-end items-end m-2 p-2
 }
+.form-options{
+    @apply flex w-3/4 justify-start items-start m-2 p-2
+}
+.form-parent{
+    @apply flex w-3/4
+}
+#heightWeightID{
+    @apply border border-gray-300 focus:border-blue-300 w-1/2 h-10 text-center
+} 
+.custom-input {
+    padding: 4px 2px; /* Adjust the padding values as needed */
+  }
+
+  .form-heightweight{
+    @apply w-28 custom-input
+  }
+
+  .form-gender{
+    @apply flex flex-row w-28 custom-input justify-start items-center
+  }
+
+
+
 
 /* body {
     background-color: #aeb0ae;

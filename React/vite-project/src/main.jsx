@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 // import FormComponentColor from "./Day2/form2";
 import ClickMeComponent from "./Day2/clickMe";
 import MissionComponent from "./Day2/missionLaunch";
+import CounterComponent from "./Day2/counter";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <>
@@ -13,5 +14,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <ClickMeComponent />
     <hr />
     <MissionComponent />
+    <hr />
+    <CounterComponent />
   </>
 );

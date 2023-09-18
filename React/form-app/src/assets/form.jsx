@@ -13,7 +13,7 @@ const FormComponent = () => {
     parents: false,
     siblings: false,
   });
-  const [gender, setGender] = useState("male");
+  const [gender, setGender] = useState("");
   const [activity, setActivity] = useState("lazy");
   const [heightWeight, setHeightWeight] = useState({
     heightFt: "0",
@@ -32,6 +32,7 @@ const FormComponent = () => {
     setHeightWeight({ ...heightWeight, [name]: value });
   };
   const handleClickgender = (e) => {
+    const {} = e.target;
     setGender(e.target.id);
   };
 
@@ -47,7 +48,7 @@ const FormComponent = () => {
             <label className="familyLabel">Family History :</label>
           </div>
           <div className="form-options">
-            <div className="form-element">
+            <div className="form-element form-gender">
               <input
                 type="checkbox"
                 name="parents"
@@ -55,9 +56,8 @@ const FormComponent = () => {
                 onChange={handleChangeFamilyHistory}
               />
               Parents
-              <SupervisorAccountIcon />
             </div>
-            <div className="form-element">
+            <div className="form-element form-gender">
               <input
                 type="checkbox"
                 name="siblings"
@@ -65,7 +65,6 @@ const FormComponent = () => {
                 onChange={handleChangeFamilyHistory}
               />
               Siblings
-              <EscalatorWarningIcon />
             </div>
           </div>
         </div>
@@ -75,41 +74,38 @@ const FormComponent = () => {
             <label className="genderLbl">Your Gender :</label>
           </div>
           <div className="form-options">
-            <div className="form-element">
+            <div className="form-element form-gender">
+              <button
+                className="w-10 h-10 rounded-full flex justify-start items-center"
+                id="female"
+                onClick={handleClickgender}
+              >
+                <img
+                  src="../../public/images/woman_icon.png"
+                  style={{ pointerEvents: "none" }}
+                  className={`object-cover w-full h-full rounded-full me-3 ${
+                    gender === "male" ? "grayscale" : ""
+                  }`}
+                />
+                Female
+              </button>
+            </div>
+            <div className="form-element form-gender">
               <button
                 className="w-10 h-10 rounded-full flex justify-start items-center"
                 id="male"
                 onClick={handleClickgender}
               >
                 <img
-                  src="../../public/images/403019_avatar_male_man_person_user_icon.png"
+                  src="../../public/images/man_icon.png"
                   alt=""
                   style={{ pointerEvents: "none" }}
                   className={`object-cover w-full h-full rounded-full me-3 ${
                     gender === "female" || gender === "" ? "grayscale" : ""
                   }`}
                 />
+                Male
               </button>
-            </div>
-            <div className="form-element">
-              <input
-                type="radio"
-                value="female"
-                checked={gender === "female"}
-                onChange={handleChange}
-              />
-              Female
-              <WomanIcon />
-            </div>
-            <div className="form-element">
-              <input
-                type="radio"
-                value="transgenger"
-                checked={gender === "transgenger"}
-                onChange={handleChange}
-              />
-              TransGender
-              <TransgenderIcon />
             </div>
           </div>
         </div>
@@ -119,7 +115,7 @@ const FormComponent = () => {
             <label className="activityLbl">Activity Level :</label>
           </div>
           <div className="form-options">
-            <div className="form-element">
+            <div className="form-element ">
               <input
                 type="radio"
                 value="lazy"
@@ -129,7 +125,7 @@ const FormComponent = () => {
               Not so active
               <AirlineSeatIndividualSuiteIcon />
             </div>
-            <div className="form-element">
+            <div className="form-element ">
               <input
                 type="radio"
                 value="active"
@@ -147,27 +143,30 @@ const FormComponent = () => {
             <label className="heightWeightLabel">Height & Weight :</label>
           </div>
           <div className="form-options">
-            <div className="form-element">
+            <div className="form-element form-heightweight">
               <input
                 type="text"
+                id="heightWeightID"
                 name="heightFt"
                 value={heightWeight.heightFt}
                 onChange={handleHeightWeightChange}
               />
               ft.
             </div>
-            <div className="form-element">
+            <div className="form-element form-heightweight">
               <input
                 type="text"
+                id="heightWeightID"
                 name="heightInch"
                 value={heightWeight.heightInch}
                 onChange={handleHeightWeightChange}
               />
               in.
             </div>
-            <div className="form-element">
+            <div className="form-element form-heightweight">
               <input
                 type="text"
+                id="heightWeightID"
                 name="weightLbs"
                 value={heightWeight.weightLbs}
                 onChange={handleHeightWeightChange}
@@ -177,14 +176,15 @@ const FormComponent = () => {
           </div>
         </div>
       </form>
-
-      <p>Family History parents: {familyHistory.parents.toString()}</p>
-      <p>Family History siblings: {familyHistory.siblings.toString()}</p>
-      <p>Gender : {gender}</p>
-      <p>Activity : {activity}</p>
-      <p>Height feet: {heightWeight.heightFt}</p>
-      <p>Height inches: {heightWeight.heightInch}</p>
-      <p>Weight: {heightWeight.weightLbs}</p>
+      <div className="hidden">
+        <p>Family History parents: {familyHistory.parents.toString()}</p>
+        <p>Family History siblings: {familyHistory.siblings.toString()}</p>
+        <p>Gender : {gender}</p>
+        <p>Activity : {activity}</p>
+        <p>Height feet: {heightWeight.heightFt}</p>
+        <p>Height inches: {heightWeight.heightInch}</p>
+        <p>Weight: {heightWeight.weightLbs}</p>
+      </div>
     </div>
   );
 };
