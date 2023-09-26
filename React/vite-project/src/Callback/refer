@@ -1,0 +1,102 @@
+import { useState } from "react";
+import ChildUI from "./2.child-ui";
+import ChildUIV2 from "./3.child-ui";
+
+const ParentUI = () => {
+  const [showMessage, setShowMessage] = useState(false);
+
+  const toggleMessage = () => {
+    //setShowMessage((val) => !val);
+    setShowMessage(!showMessage);
+  };
+  return (
+    <>
+      {/* {showMessage && <p>I am visible Now</p>} */}
+      {showMessage ? <p>I am visible</p> : <p>I a hidden</p>}
+      {/* <button onClick={toggleMessage}>Toggle Message</button> */}
+
+      <ChildUI onToggle={toggleMessage} />
+      <ChildUIV2 onToggle={toggleMessage} />
+    </>
+  );
+};
+
+export default ParentUI;
+
+
+
+
+const ChildUI = (props) => {
+  console.log("Props: ", props);
+  return (
+    <>
+      <p>I am Child Component</p>
+      <button onClick={props.onToggle}>Toggle</button>
+    </>
+  );
+};
+
+export default ChildUI;
+
+
+
+const ChildUIV2 = ({ onToggle }) => {
+  return (
+    <>
+      <p>I am Child Component</p>
+      <button onClick={onToggle}>Toggle</button>
+    </>
+  );
+};
+
+export default ChildUIV2;
+
+
+import { useState } from "react";
+import ChildInput from "./4.child-input";
+
+const ParentInput = () => {
+  const [carName, setCarName] = useState("");
+
+  const onValChange = (val) => {
+    console.log(val);
+    setCarName(val);
+  };
+
+  return (
+    <div>
+      <p>Car: {carName}</p>
+      <ChildInput onValChange={onValChange} />
+    </div>
+  );
+};
+
+export default ParentInput;
+
+
+const ChildInput = ({ onValChange }) => {
+  return (
+    <>
+      <input
+        type="text"
+        placeholder="Enter your car name"
+        /* onChange={(e) => onValChange(e.target.value)} */
+
+        onChange={(e) => onValChange(e.target.value.toUpperCase())}
+        onBlur={(e) => {
+          console.log("e:", e.target.value);
+        }}
+      />
+    </>
+  );
+};
+
+export default ChildInput;
+
+onChange={(e) => onValChange(e.target.value.toUpperCase())}
+onChange={(e) => onValChange(e.target.value)}
+onChange={(e) => onValChange(e)}
+
+or 
+
+onChange={onValChange}

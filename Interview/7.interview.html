@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    console.log("Script Started");
+
+    showLog();
+
+    var showLog = () => {
+      console.log("This is a Log");
+    }; //Error
+
+    const showLog = () => {
+      console.log("This is a Log");
+    }; //Error showLog is undefined
+
+    console.log("Script Ended");
+  </script>
+</html>

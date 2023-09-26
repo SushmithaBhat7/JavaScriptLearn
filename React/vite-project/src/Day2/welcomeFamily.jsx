@@ -9,6 +9,7 @@ const WelcomeComponent = () => {
       [name]: value,
     }));
   };
+  console.log(``);
   return (
     <div className="Container">
       <input

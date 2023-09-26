@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    console.log("5" - -"3"); //'5' - (-3) ie, -*- gives +
+    console.log(-"6" + 2); //Ans = -4
+    console.log(-5 + +"3"); //Ans = -2
+    console.log(-5 + "3"); //Ans = -53
+    console.log(-5 + +3); //Ans = -2
+    console.log(5 ** 3); //Ans = 5 pow 3 ie, ** becomes power
+    let a;
+    a = a ?? "Trust Me"; // ?? = Nullish Coholtion checks if right is Null or undefined if true it takes left
+
+    //Above code works just like below code
+    if (a === undefined || a === null) {
+      a = "trust me";
+    }
+  </script>
+</html>

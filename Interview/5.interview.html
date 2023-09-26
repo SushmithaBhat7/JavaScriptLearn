@@ -58,10 +58,11 @@
       }
       if (childrens[i].childNodes.length > 0) {
         console.log(childrens[i].childNodes);
+        getCustomElementsByClassName(childrens[i], classKey);
+      } else {
         if (childrens[i].childNodes.includes("para")) {
           outArr.push(childrens[i]);
         }
-        getCustomElementsByClassName(childrens[i], classKey);
       }
     }
     return outArr;
