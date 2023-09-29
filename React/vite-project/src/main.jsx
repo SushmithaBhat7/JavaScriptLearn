@@ -12,6 +12,8 @@ import ProductList from "./useEffects/4.useEffect";
 import ParentDay15 from "./useEffects/6.useEffectIssueParent";
 import ParentDay15B from "./Memo/1.memoParent";
 import ParentComponentCounter from "./TaskEve/1.Parent";
+import CodeFlowV1 from "./Memo/3.whyMemo";
+import ParentV2 from "./UseCallBack/1.parent";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <div>
@@ -39,9 +41,13 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <ParentDay15 />
       <hr />
       <ParentDay15B />
+      <hr />
+      <ParentComponentCounter />
+      <hr />
+      <CodeFlowV1 />
     </div>
 
-    <ParentComponentCounter />
+    <ParentV2 />
   </div>
   //
 );
