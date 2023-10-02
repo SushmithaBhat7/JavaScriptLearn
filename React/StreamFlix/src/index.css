@@ -2,9 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
+.headerImg{
+    @apply rounded-full
+}
 .headderContainer{
-    @apply flex flex-row  items-center  my-4 mx-8 px-8 border-b-4
+    @apply flex flex-row justify-center items-center  py-2 px-16 border-b-4 fixed top-0 left-0 w-full z-10 bg-gradient-to-r from-indigo-950 via-blue-800 to-blue-700 text-gray-300
 }
 .headderPTag{
     @apply text-7xl  mx-8  px-8 
+}
+.cardDivContainer{
+    @apply relative flex flex-col w-[300px] h-[400px] gap-2 border border-gray-300 hover:border-gray-100 p-4 transition duration-300 ease-in-out transform hover:scale-105 rounded-md hover:bg-indigo-950 hover:text-gray-300
+}
+.cardImage{
+    @apply rounded-md
+}
+/* .topCardContainer{
+ @apply relative
+} */
+.ratingSpan{
+    @apply absolute top-0 left-0 text-white p-2 bg-black bg-opacity-50 rounded-md
+}
+.twoSpanCard{
+     @apply flex flex-row justify-between items-center gap-2
+}
+.bottomCardContainer{
+    @apply flex flex-col
+}
+.bodyContainer{
+    @apply flex gap-4 flex-wrap justify-center items-center pt-36 pb-10
+}
+.titleCard{
+    @apply text-base
+}
+.appContainer{
+ @apply bg-gradient-to-r from-indigo-800 via-blue-500 to-blue-300
+}
+.footerContainer{
+    @apply fixed bottom-0 w-full bg-indigo-950 flex flex-row text-gray-200 p-3 justify-center items-center gap-16
+}
+.footerInnerDiv{
+    @apply flex flex-col  justify-center items-center
+}
+.paginationContainer{
+    @apply pb-28 flex justify-center items-center 
 }

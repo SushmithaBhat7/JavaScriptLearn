@@ -10,8 +10,10 @@ const StopWatchComponent = () => {
     }, 100);
   };
   let secondsPassed = 0;
+  let millisecond = 0;
   if (startTime != null && currentTime != null) {
-    secondsPassed = (currentTime - startTime) / 1000;
+    const result = (currentTime - startTime) / 1000;
+    const 
   }
   return (
     <>
