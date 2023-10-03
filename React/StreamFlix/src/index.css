@@ -6,7 +6,7 @@
     @apply rounded-full
 }
 .headderContainer{
-    @apply flex flex-row justify-center items-center  py-2 px-16 border-b-4 fixed top-0 left-0 w-full z-10 bg-gradient-to-r from-indigo-950 via-blue-800 to-blue-700 text-gray-300
+    @apply flex flex-row justify-center items-center  py-2 px-16 border-b-4 sticky top-0 left-0 w-full z-10 bg-gradient-to-r from-indigo-950 via-blue-800 to-blue-700 text-gray-300
 }
 .headderPTag{
     @apply text-7xl  mx-8  px-8 
@@ -30,7 +30,7 @@
     @apply flex flex-col
 }
 .bodyContainer{
-    @apply flex gap-4 flex-wrap justify-center items-center pt-36 pb-10
+    @apply flex gap-4 flex-wrap justify-center items-center pt-6 pb-10
 }
 .titleCard{
     @apply text-base

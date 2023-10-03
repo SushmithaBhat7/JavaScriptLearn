@@ -1,12 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { REACT_APP_API_KEY } from "../assets/movieDb.config.local";
-import PaginationComponent from "./pagination";
+import { REACT_APP_API_KEY } from "../../assets/movieDb.config.local";
+import PaginationComponent from "../pagination";
 
 const CardsComponent = (props) => {
   const { poster_path, vote_average, media_type, title, release_date, id } =
     props;
-  console.log(props);
   return (
     <div className="cardDivContainer" key={id}>
       <div className="topCardContainer">
@@ -48,7 +47,6 @@ const MovieBodyComponent = () => {
         setIsLoading(false);
       });
   }, [page]);
-  console.log(data);
 
   return (
     <div>
