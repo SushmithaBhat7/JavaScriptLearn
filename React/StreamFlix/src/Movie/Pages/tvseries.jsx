@@ -1,8 +1,10 @@
+import MovieBodyComponent from "./body";
+
 const TvSeriesComponent = () => {
+  const urlPathTvSeries = "discover/tv";
   return (
-    <div className="tvSeriesComponentContainer">
-      <p>TvSeriesComponent</p>
-      <p>Hi TvSeriesComponent</p>
+    <div className="movieComponetContainer">
+      <MovieBodyComponent urlPath={urlPathTvSeries} />
     </div>
   );
 };

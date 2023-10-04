@@ -1,5 +1,5 @@
 import Pagination from "@mui/material/Pagination";
-const PaginationComponent = ({ setPage }) => {
+const PaginationComponent = ({ setPage, totalPage }) => {
   const handlePageChange = (page) => {
     setPage(page);
     window.scroll(0, 0);
@@ -7,7 +7,7 @@ const PaginationComponent = ({ setPage }) => {
   return (
     <div className="paginationContainer">
       <Pagination
-        count={50}
+        count={totalPage}
         color="primary"
         size="large"
         onChange={(e) => handlePageChange(e.target.textContent)}

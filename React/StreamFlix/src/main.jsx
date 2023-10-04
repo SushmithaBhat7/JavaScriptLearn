@@ -5,50 +5,31 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import SearchComponent from "./Movie/Pages/search";
 import MoviesComponent from "./Movie/Pages/movies";
 import TvSeriesComponent from "./Movie/Pages/tvseries";
-import HeaderComponent from "./Movie/header";
-import FooterComponent from "./Movie/footer";
-//rafce
-const WrapperContainer = ({ children }) => {
-  return (
-    <div className="appContainer">
-      <HeaderComponent />
-      {children}
-      <FooterComponent />
-    </div>
-  );
-};
+// import MovieBodyComponent from "./Movie/Pages/body";
+import TrendingComponet from "./Movie/Pages/trending";
+
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <WrapperContainer>
-        <MovieAppComponent />
-      </WrapperContainer>
-    ),
-  },
-  {
-    path: "/search",
-    element: (
-      <WrapperContainer>
-        <SearchComponent />
-      </WrapperContainer>
-    ),
-  },
-  {
-    path: "/movies",
-    element: (
-      <WrapperContainer>
-        <MoviesComponent />
-      </WrapperContainer>
-    ),
-  },
-  {
-    path: "/tvseries",
-    element: (
-      <WrapperContainer>
-        <TvSeriesComponent />
-      </WrapperContainer>
-    ),
+    element: <MovieAppComponent />,
+    children: [
+      {
+        path: "/",
+        element: <TrendingComponet />,
+      },
+      {
+        path: "/search",
+        element: <SearchComponent />,
+      },
+      {
+        path: "/movies",
+        element: <MoviesComponent />,
+      },
+      {
+        path: "/tvseries",
+        element: <TvSeriesComponent />,
+      },
+    ],
   },
 ]);
 
