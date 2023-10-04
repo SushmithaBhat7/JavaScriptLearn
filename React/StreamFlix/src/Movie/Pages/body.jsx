@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { REACT_APP_API_KEY } from "../../assets/movieDb.config.local";
 import PaginationComponent from "../pagination";
+import GenresComponent from "../genres";
 
 const CardsComponent = (props) => {
   const { poster_path, vote_average, media_type, title, release_date, id } =
@@ -11,11 +12,10 @@ const CardsComponent = (props) => {
       <div className="topCardContainer">
         <img
           src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${poster_path}`}
-          onError={(e) =>
-            (e.target.onerror = null)(
-              (e.target.src = "https://screench.com/upload/no-poster.jpeg")
-            )
-          }
+          onError={(e) => {
+            e.target.onerror = null;
+            e.target.src = "https://screench.com/upload/no-poster.jpeg";
+          }}
           alt="Card Img"
           className="cardImage"
           width={200}
@@ -34,11 +34,14 @@ const CardsComponent = (props) => {
   );
 };
 
-const MovieBodyComponent = ({ urlPath, query }) => {
+const MovieBodyComponent = ({ urlPath, query, type }) => {
   const [data, setdata] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [totalPage, setTotalPage] = useState(0);
+  const [selectedGenres, setSelectedGeners] = useState([]);
+  const [genres, setGenres] = useState([]);
+
   useEffect(() => {
     console.log(urlPath);
     axios
@@ -58,6 +61,16 @@ const MovieBodyComponent = ({ urlPath, query }) => {
 
   return (
     <div>
+      {type !== "trending" && (
+        <GenresComponent
+          type={type}
+          selectedGenres={selectedGenres}
+          setSelectedGeners={setSelectedGeners}
+          setGenres={setGenres}
+          genres={genres}
+        />
+      )}
+
       <div className="bodyContainer">
         {isLoading ? (
           <p>Loading</p>

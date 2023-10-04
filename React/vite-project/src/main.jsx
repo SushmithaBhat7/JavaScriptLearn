@@ -14,25 +14,25 @@ import ParentDay15B from "./Memo/1.memoParent";
 import ParentComponentCounter from "./TaskEve/1.Parent";
 import CodeFlowV1 from "./Memo/3.whyMemo";
 import ParentV2 from "./UseCallBack/1.parent";
-// import { createBrowserRouter, RouterProvider } from "react-router-dom";
-// import HomeComponent from "./Router/home";
-// import ContactComponent from "./Router/contact";
-// import AboutComponent from "./Router/about";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import HomeComponent from "./Router/home";
+import ContactComponent from "./Router/contact";
+import AboutComponent from "./Router/about";
 
-// const myRouter = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <HomeComponent />,
-//   },
-//   {
-//     path: "/contact",
-//     element: <ContactComponent />,
-//   },
-//   {
-//     path: "/about",
-//     element: <AboutComponent />,
-//   },
-// ]);
+const myRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <HomeComponent />,
+  },
+  {
+    path: "/contact",
+    element: <ContactComponent />,
+  },
+  {
+    path: "/about",
+    element: <AboutComponent />,
+  },
+]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <div>
@@ -64,9 +64,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <ParentComponentCounter />
       <hr />
       <CodeFlowV1 />
+      <hr />
+      <ParentV2 />
     </div>
-
-    <ParentV2 />
+    <RouterProvider router={myRouter} />
   </div>
   //
 );

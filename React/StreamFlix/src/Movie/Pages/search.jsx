@@ -44,7 +44,11 @@ const SearchComponent = () => {
         </button>
       </div>
       {showComponent && (
-        <MovieBodyComponent urlPath={urlPathSearch} query={querySearch} />
+        <MovieBodyComponent
+          urlPath={urlPathSearch}
+          query={querySearch}
+          type={typesearch}
+        />
       )}
     </div>
   );
