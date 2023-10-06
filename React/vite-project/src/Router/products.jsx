@@ -1,5 +1,12 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import ProductCard from "./3.product-card";
+import styled from "styled-components";
+
+const ProductListContainer = styled.div`
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+`;
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -17,15 +24,11 @@ const ProductList = () => {
   return (
     <div>
       <h1>My Products</h1>
-      <ul>
+      <ProductListContainer className="list-sonia">
         {products.map((item) => {
-          return (
-            <Link key={item.id} to={`/product-details/${item.id}`}>
-              <li>{item.title}</li>
-            </Link>
-          );
+          return <ProductCard key={item.id} item={item} />;
         })}
-      </ul>
+      </ProductListContainer>
     </div>
   );
 };

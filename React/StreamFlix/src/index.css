@@ -68,3 +68,12 @@
 .searchComponentContainer{
     @apply flex flex-col
 }
+.genresComponent{
+    @apply flex flex-wrap gap-2 m-4  justify-center items-center mx-4
+}
+.genereChip{
+    @apply text-[40px]  font-bold p-2 
+}
+.topBodyText{
+    @apply flex justify-center items-center text-3xl font-bold p-2
+}

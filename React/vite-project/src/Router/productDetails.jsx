@@ -17,5 +17,3 @@ const ProductDetails = () => {
 };
 
 export default ProductDetails;
-
-//https://fakestoreapi.com/products/:productID
