@@ -9,6 +9,8 @@ import axios from "axios";
 import { REACT_APP_API_KEY } from "../../assets/movieDb.config.local";
 import { useState } from "react";
 import { useEffect } from "react";
+import YouTubeIcon from "@mui/icons-material/YouTube";
+import "./contentModal.css";
 
 const style = {
   position: "absolute",
@@ -18,13 +20,13 @@ const style = {
   width: "90%",
   height: "80%",
   borderRadius: 10,
-  background: "linear-gradient(#090979, #00a8ff)",
+  background: "linear-gradient( #00a8ff,#090979)",
   border: "1px solid #282c34",
   boxShadow: "1px 2px 9px #F4AAB9",
   p: 4,
 };
 
-export default function ContentModal({ children, media_type, id }) {
+export default function ContentModal({ children, media_type, id, type }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -32,21 +34,27 @@ export default function ContentModal({ children, media_type, id }) {
   const [video, setVideo] = useState({});
   const fetchData = async () => {
     const { data } = await axios.get(
-      `https://api.themoviedb.org/3/${media_type}/${id}?api_key=${REACT_APP_API_KEY}&language=en-US`
+      `https://api.themoviedb.org/3/${
+        media_type ? media_type : type
+      }/${id}?api_key=${REACT_APP_API_KEY}&language=en-US`
     );
+    console.log("data content :", content);
     setContent(data);
   };
   const fetchVideo = async () => {
     const { data } = await axios.get(
-      `https://api.themoviedb.org/3/${media_type}/${id}/videos?api_key=${REACT_APP_API_KEY}&language=en-US`
+      `https://api.themoviedb.org/3/${
+        media_type ? media_type : type
+      }/${id}/videos?api_key=${REACT_APP_API_KEY}&language=en-US`
     );
-    console.log("data video :", data);
+    // console.log("data video :", data);
     setVideo(data.results[0]?.key);
   };
   useEffect(() => {
     fetchData();
     fetchVideo();
   }, []);
+
   return (
     <div>
       <Button className="cardDivContainer" onClick={handleOpen}>
@@ -78,8 +86,47 @@ export default function ContentModal({ children, media_type, id }) {
                         "https://screench.com/upload/no-poster.jpeg";
                     }}
                     alt="Card Img"
-                    className="contentPortrait"
+                    className="contentModalPortrait"
                   />
+                  <img
+                    src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${content.backdrop_path}`}
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src =
+                        "https://screench.com/upload/no-poster.jpeg";
+                    }}
+                    alt="Card Img"
+                    className="contentModalLandScape"
+                  />
+                  <div className="contentModalAbout">
+                    <span className="contentModalTitle">
+                      {content.name || content.title}(
+                      {
+                        (
+                          content.first_air_date ||
+                          content.release_date ||
+                          "--/--/----"
+                        ).split("-")[0]
+                      }
+                      )
+                    </span>
+                    {content.tagline && (
+                      <i className="tagline">{content.tagline}</i>
+                    )}
+                    <span className="contentModalDescription">
+                      {content.overview}
+                    </span>
+                    <div></div>
+                    <Button
+                      variant="contained"
+                      startIcon={<YouTubeIcon />}
+                      color="error"
+                      target="_blank"
+                      href={`https://www.youtube.com/watch?v=${video}`}
+                    >
+                      Watch the trailer
+                    </Button>
+                  </div>
                 </div>
               </div>
             )}

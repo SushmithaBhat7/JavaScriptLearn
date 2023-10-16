@@ -5,12 +5,20 @@ import PaginationComponent from "../pagination";
 import GenresComponent from "../genres";
 import useGenres from "../../hooks/useGenres";
 import ContentModal from "../ContentModal/contentModal";
+import ContentLoader from "react-content-loader";
 
 const CardsComponent = (props) => {
-  const { poster_path, vote_average, media_type, title, release_date, id } =
-    props;
+  const {
+    poster_path,
+    vote_average,
+    media_type,
+    title,
+    release_date,
+    id,
+    type,
+  } = props;
   return (
-    <ContentModal media_type={media_type} id={id} key={id}>
+    <ContentModal media_type={media_type} id={id} key={id} type={type}>
       <div className="topCardContainer">
         <img
           src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${poster_path}`}
@@ -79,8 +87,118 @@ const MovieBodyComponent = ({ urlPath, query, type, topText }) => {
       )}
 
       <div className="bodyContainer">
-        {isLoading ? (
-          <p>Loading</p>
+        {!isLoading ? (
+          <div className="products">
+            <ContentLoader>
+              {/* Only SVG shapes */}
+              <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
+              <rect x="0" y="80" rx="4" ry="4" width="156" height="13" />
+              <rect x="0" y="100" rx="3" ry="3" width="156" height="10" />
+            </ContentLoader>
+            <ContentLoader>
+              {/* Only SVG shapes */}
+              <rect x="0" y="0" rx="5" ry="5" width="350" height="350" />
+              <rect x="0" y="400" rx="4" ry="4" width="350" height="13" />
+              <rect x="0" y="450" rx="3" ry="3" width="350" height="10" />
+            </ContentLoader>
+            <ContentLoader>
+              {/* Only SVG shapes */}
+              <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
+              <rect x="80" y="17" rx="4" ry="4" width="156" height="13" />
+              <rect x="80" y="40" rx="3" ry="3" width="156" height="10" />
+            </ContentLoader>
+            <ContentLoader>
+              {/* Only SVG shapes */}
+              <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
+              <rect x="80" y="17" rx="4" ry="4" width="156" height="13" />
+              <rect x="80" y="40" rx="3" ry="3" width="156" height="10" />
+            </ContentLoader>
+            <ContentLoader>
+              {/* Only SVG shapes */}
+              <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
+              <rect x="80" y="17" rx="4" ry="4" width="156" height="13" />
+              <rect x="80" y="40" rx="3" ry="3" width="156" height="10" />
+            </ContentLoader>
+            <ContentLoader>
+              {/* Only SVG shapes */}
+              <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
+              <rect x="80" y="17" rx="4" ry="4" width="156" height="13" />
+              <rect x="80" y="40" rx="3" ry="3" width="156" height="10" />
+            </ContentLoader>
+            <ContentLoader>
+              {/* Only SVG shapes */}
+              <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
+              <rect x="80" y="17" rx="4" ry="4" width="156" height="13" />
+              <rect x="80" y="40" rx="3" ry="3" width="156" height="10" />
+            </ContentLoader>
+            <ContentLoader>
+              {/* Only SVG shapes */}
+              <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
+              <rect x="80" y="17" rx="4" ry="4" width="156" height="13" />
+              <rect x="80" y="40" rx="3" ry="3" width="156" height="10" />
+            </ContentLoader>
+            <ContentLoader>
+              {/* Only SVG shapes */}
+              <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
+              <rect x="80" y="17" rx="4" ry="4" width="156" height="13" />
+              <rect x="80" y="40" rx="3" ry="3" width="156" height="10" />
+            </ContentLoader>
+            <ContentLoader>
+              {/* Only SVG shapes */}
+              <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
+              <rect x="80" y="17" rx="4" ry="4" width="156" height="13" />
+              <rect x="80" y="40" rx="3" ry="3" width="156" height="10" />
+            </ContentLoader>
+            <ContentLoader>
+              {/* Only SVG shapes */}
+              <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
+              <rect x="80" y="17" rx="4" ry="4" width="156" height="13" />
+              <rect x="80" y="40" rx="3" ry="3" width="156" height="10" />
+            </ContentLoader>
+            <ContentLoader>
+              {/* Only SVG shapes */}
+              <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
+              <rect x="80" y="17" rx="4" ry="4" width="156" height="13" />
+              <rect x="80" y="40" rx="3" ry="3" width="156" height="10" />
+            </ContentLoader>
+
+            <ContentLoader>
+              {/* Only SVG shapes */}
+              <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
+              <rect x="80" y="17" rx="4" ry="4" width="156" height="13" />
+              <rect x="80" y="40" rx="3" ry="3" width="156" height="10" />
+            </ContentLoader>
+            <ContentLoader>
+              {/* Only SVG shapes */}
+              <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
+              <rect x="80" y="17" rx="4" ry="4" width="156" height="13" />
+              <rect x="80" y="40" rx="3" ry="3" width="156" height="10" />
+            </ContentLoader>
+            <ContentLoader>
+              {/* Only SVG shapes */}
+              <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
+              <rect x="80" y="17" rx="4" ry="4" width="156" height="13" />
+              <rect x="80" y="40" rx="3" ry="3" width="156" height="10" />
+            </ContentLoader>
+            <ContentLoader>
+              {/* Only SVG shapes */}
+              <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
+              <rect x="80" y="17" rx="4" ry="4" width="156" height="13" />
+              <rect x="80" y="40" rx="3" ry="3" width="156" height="10" />
+            </ContentLoader>
+            <ContentLoader>
+              {/* Only SVG shapes */}
+              <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
+              <rect x="80" y="17" rx="4" ry="4" width="156" height="13" />
+              <rect x="80" y="40" rx="3" ry="3" width="156" height="10" />
+            </ContentLoader>
+            <ContentLoader>
+              {/* Only SVG shapes */}
+              <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
+              <rect x="80" y="17" rx="4" ry="4" width="156" height="13" />
+              <rect x="80" y="40" rx="3" ry="3" width="156" height="10" />
+            </ContentLoader>
+          </div>
         ) : (
           data.map((item) => {
             return (
@@ -93,6 +211,7 @@ const MovieBodyComponent = ({ urlPath, query, type, topText }) => {
                   title={item.title || item.name}
                   release_date={item.release_date || item.first_air_date}
                   id={item.id}
+                  type={type}
                 />
               </>
             );
