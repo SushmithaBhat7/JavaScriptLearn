@@ -35,9 +35,9 @@
 .titleCard{
     @apply text-base text-center font-bold
 }
-.appContainer{
+/* .appContainer{
  @apply bg-gradient-to-r from-indigo-800 via-blue-500 to-blue-300
-}
+} */
 .footerContainer{
     @apply fixed bottom-0 w-full bg-indigo-950 flex flex-row text-gray-200 p-3 justify-center items-center gap-16
 }

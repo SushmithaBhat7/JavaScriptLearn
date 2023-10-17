@@ -6,6 +6,7 @@ import GenresComponent from "../genres";
 import useGenres from "../../hooks/useGenres";
 import ContentModal from "../ContentModal/contentModal";
 import ContentLoader from "react-content-loader";
+import "./style.css";
 
 const CardsComponent = (props) => {
   const {
@@ -91,106 +92,15 @@ const MovieBodyComponent = ({ urlPath, query, type, topText }) => {
           <div className="products">
             <ContentLoader>
               {/* Only SVG shapes */}
-              <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
+              <rect x="0" y="0" rx="5" ry="5" width="200" height="300" />
               <rect x="0" y="80" rx="4" ry="4" width="156" height="13" />
               <rect x="0" y="100" rx="3" ry="3" width="156" height="10" />
             </ContentLoader>
             <ContentLoader>
               {/* Only SVG shapes */}
-              <rect x="0" y="0" rx="5" ry="5" width="350" height="350" />
-              <rect x="0" y="400" rx="4" ry="4" width="350" height="13" />
-              <rect x="0" y="450" rx="3" ry="3" width="350" height="10" />
-            </ContentLoader>
-            <ContentLoader>
-              {/* Only SVG shapes */}
               <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
-              <rect x="80" y="17" rx="4" ry="4" width="156" height="13" />
-              <rect x="80" y="40" rx="3" ry="3" width="156" height="10" />
-            </ContentLoader>
-            <ContentLoader>
-              {/* Only SVG shapes */}
-              <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
-              <rect x="80" y="17" rx="4" ry="4" width="156" height="13" />
-              <rect x="80" y="40" rx="3" ry="3" width="156" height="10" />
-            </ContentLoader>
-            <ContentLoader>
-              {/* Only SVG shapes */}
-              <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
-              <rect x="80" y="17" rx="4" ry="4" width="156" height="13" />
-              <rect x="80" y="40" rx="3" ry="3" width="156" height="10" />
-            </ContentLoader>
-            <ContentLoader>
-              {/* Only SVG shapes */}
-              <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
-              <rect x="80" y="17" rx="4" ry="4" width="156" height="13" />
-              <rect x="80" y="40" rx="3" ry="3" width="156" height="10" />
-            </ContentLoader>
-            <ContentLoader>
-              {/* Only SVG shapes */}
-              <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
-              <rect x="80" y="17" rx="4" ry="4" width="156" height="13" />
-              <rect x="80" y="40" rx="3" ry="3" width="156" height="10" />
-            </ContentLoader>
-            <ContentLoader>
-              {/* Only SVG shapes */}
-              <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
-              <rect x="80" y="17" rx="4" ry="4" width="156" height="13" />
-              <rect x="80" y="40" rx="3" ry="3" width="156" height="10" />
-            </ContentLoader>
-            <ContentLoader>
-              {/* Only SVG shapes */}
-              <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
-              <rect x="80" y="17" rx="4" ry="4" width="156" height="13" />
-              <rect x="80" y="40" rx="3" ry="3" width="156" height="10" />
-            </ContentLoader>
-            <ContentLoader>
-              {/* Only SVG shapes */}
-              <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
-              <rect x="80" y="17" rx="4" ry="4" width="156" height="13" />
-              <rect x="80" y="40" rx="3" ry="3" width="156" height="10" />
-            </ContentLoader>
-            <ContentLoader>
-              {/* Only SVG shapes */}
-              <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
-              <rect x="80" y="17" rx="4" ry="4" width="156" height="13" />
-              <rect x="80" y="40" rx="3" ry="3" width="156" height="10" />
-            </ContentLoader>
-            <ContentLoader>
-              {/* Only SVG shapes */}
-              <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
-              <rect x="80" y="17" rx="4" ry="4" width="156" height="13" />
-              <rect x="80" y="40" rx="3" ry="3" width="156" height="10" />
-            </ContentLoader>
-
-            <ContentLoader>
-              {/* Only SVG shapes */}
-              <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
-              <rect x="80" y="17" rx="4" ry="4" width="156" height="13" />
-              <rect x="80" y="40" rx="3" ry="3" width="156" height="10" />
-            </ContentLoader>
-            <ContentLoader>
-              {/* Only SVG shapes */}
-              <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
-              <rect x="80" y="17" rx="4" ry="4" width="156" height="13" />
-              <rect x="80" y="40" rx="3" ry="3" width="156" height="10" />
-            </ContentLoader>
-            <ContentLoader>
-              {/* Only SVG shapes */}
-              <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
-              <rect x="80" y="17" rx="4" ry="4" width="156" height="13" />
-              <rect x="80" y="40" rx="3" ry="3" width="156" height="10" />
-            </ContentLoader>
-            <ContentLoader>
-              {/* Only SVG shapes */}
-              <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
-              <rect x="80" y="17" rx="4" ry="4" width="156" height="13" />
-              <rect x="80" y="40" rx="3" ry="3" width="156" height="10" />
-            </ContentLoader>
-            <ContentLoader>
-              {/* Only SVG shapes */}
-              <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
-              <rect x="80" y="17" rx="4" ry="4" width="156" height="13" />
-              <rect x="80" y="40" rx="3" ry="3" width="156" height="10" />
+              <rect x="0" y="400" rx="4" ry="4" width="156" height="13" />
+              <rect x="0" y="450" rx="3" ry="3" width="156" height="10" />
             </ContentLoader>
             <ContentLoader>
               {/* Only SVG shapes */}
