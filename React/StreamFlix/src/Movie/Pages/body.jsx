@@ -88,25 +88,47 @@ const MovieBodyComponent = ({ urlPath, query, type, topText }) => {
       )}
 
       <div className="bodyContainer">
-        {!isLoading ? (
+        {isLoading ? (
           <div className="products">
-            <ContentLoader>
-              {/* Only SVG shapes */}
-              <rect x="0" y="0" rx="5" ry="5" width="200" height="300" />
-              <rect x="0" y="80" rx="4" ry="4" width="156" height="13" />
-              <rect x="0" y="100" rx="3" ry="3" width="156" height="10" />
+            <ContentLoader backgroundColor={"#E2DED0"}>
+              <rect x="0" y="0" rx="5" ry="5" width="250" height="300" />
+              <rect x="0" y="310" rx="4" ry="4" width="250" height="13" />
+              <rect x="0" y="335" rx="3" ry="3" width="250" height="15" />
             </ContentLoader>
-            <ContentLoader>
-              {/* Only SVG shapes */}
-              <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
-              <rect x="0" y="400" rx="4" ry="4" width="156" height="13" />
-              <rect x="0" y="450" rx="3" ry="3" width="156" height="10" />
+            <ContentLoader backgroundColor={"#E2DED0"}>
+              <rect x="0" y="0" rx="5" ry="5" width="250" height="300" />
+              <rect x="0" y="310" rx="4" ry="4" width="250" height="13" />
+              <rect x="0" y="335" rx="3" ry="3" width="250" height="15" />
             </ContentLoader>
-            <ContentLoader>
-              {/* Only SVG shapes */}
-              <rect x="0" y="0" rx="5" ry="5" width="70" height="70" />
-              <rect x="80" y="17" rx="4" ry="4" width="156" height="13" />
-              <rect x="80" y="40" rx="3" ry="3" width="156" height="10" />
+            <ContentLoader backgroundColor={"#E2DED0"}>
+              <rect x="0" y="0" rx="5" ry="5" width="250" height="300" />
+              <rect x="0" y="310" rx="4" ry="4" width="250" height="13" />
+              <rect x="0" y="335" rx="3" ry="3" width="250" height="15" />
+            </ContentLoader>
+            <ContentLoader backgroundColor={"#E2DED0"}>
+              <rect x="0" y="0" rx="5" ry="5" width="250" height="300" />
+              <rect x="0" y="310" rx="4" ry="4" width="250" height="13" />
+              <rect x="0" y="335" rx="3" ry="3" width="250" height="15" />
+            </ContentLoader>
+            <ContentLoader backgroundColor={"#E2DED0"}>
+              <rect x="0" y="0" rx="5" ry="5" width="250" height="300" />
+              <rect x="0" y="310" rx="4" ry="4" width="250" height="13" />
+              <rect x="0" y="335" rx="3" ry="3" width="250" height="15" />
+            </ContentLoader>
+            <ContentLoader backgroundColor={"#E2DED0"}>
+              <rect x="0" y="0" rx="5" ry="5" width="250" height="300" />
+              <rect x="0" y="310" rx="4" ry="4" width="250" height="13" />
+              <rect x="0" y="335" rx="3" ry="3" width="250" height="15" />
+            </ContentLoader>
+            <ContentLoader backgroundColor={"#E2DED0"}>
+              <rect x="0" y="0" rx="5" ry="5" width="250" height="300" />
+              <rect x="0" y="310" rx="4" ry="4" width="250" height="13" />
+              <rect x="0" y="335" rx="3" ry="3" width="250" height="15" />
+            </ContentLoader>
+            <ContentLoader backgroundColor={"#E2DED0"}>
+              <rect x="0" y="0" rx="5" ry="5" width="250" height="300" />
+              <rect x="0" y="310" rx="4" ry="4" width="250" height="13" />
+              <rect x="0" y="335" rx="3" ry="3" width="250" height="15" />
             </ContentLoader>
           </div>
         ) : (

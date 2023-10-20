@@ -11,6 +11,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import "./contentModal.css";
+import SwipeableTextMobileStepper from "./Carousel";
 
 const style = {
   position: "absolute",
@@ -20,7 +21,7 @@ const style = {
   width: "90%",
   height: "80%",
   borderRadius: 10,
-  background: "linear-gradient( #00a8ff,#090979)",
+  background: "linear-gradient( #DBF5F0,#37BEB0)",
   border: "1px solid #282c34",
   boxShadow: "1px 2px 9px #F4AAB9",
   p: 4,
@@ -116,7 +117,9 @@ export default function ContentModal({ children, media_type, id, type }) {
                     <span className="contentModalDescription">
                       {content.overview}
                     </span>
-                    <div></div>
+                    <div>
+                      <SwipeableTextMobileStepper />
+                    </div>
                     <Button
                       variant="contained"
                       startIcon={<YouTubeIcon />}
