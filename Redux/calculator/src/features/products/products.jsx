@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
-
+import "./product.css";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../cart/cartSlice";
 const Products = () => {
   const [productList, setProductList] = useState([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -9,19 +12,24 @@ const Products = () => {
       .then((item) => setProductList(item));
   }, []);
 
-  const handleOnClickAddToCart = () => {
-    console.log("Button clicked");
+  const handleOnClickAddToCart = (item) => {
+    dispatch(addToCart(item));
   };
 
   return (
-    <div>
+    <div className="mainContainerDiv">
       {productList.map((item) => {
         return (
-          <div key={item.id}>
+          <div className="productsDiv" key={item.id}>
             <img className="imageItem" src={item.image} />
-            <div>
+            <div className="lowerDivProducts">
               <span>{item.title}</span>
-              <button onClick={handleOnClickAddToCart}>Add to cart</button>
+              <button
+                className="addCartButton"
+                onClick={() => handleOnClickAddToCart(item)}
+              >
+                Add to cart
+              </button>
             </div>
           </div>
         );

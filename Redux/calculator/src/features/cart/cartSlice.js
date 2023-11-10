@@ -14,9 +14,11 @@ const cartSlice = createSlice({
         (item) => item.id === action.payload.id
       );
       if (index === -1) {
-        state.data.push([...action.payload], (quantity = 1));
+        let newObjc = Object.assign({}, action.payload, { quantity: 1 });
+
+        state.data.push(newObjc);
       } else {
-        state.data.quantity++;
+        state.data[index].quantity++;
       }
     },
     removeFromCart: (state, action) => {},
