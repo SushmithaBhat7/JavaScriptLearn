@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .parentDiv {
+        height: 50vh;
+        display: flex;
+        place-content: center;
+        background-color: blueviolet;
+        height: 100vh;
+        position: relative;
+      }
+      .childCenter {
+        width: 100px;
+        height: 100px;
+        background-color: aquamarine;
+        border: 1px solid gray;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        /* transform: translate(-50%, -50%); */
+        /* margin-top: 40vh;
+        margin-left: 40vh; */
+      }
+      .inline-example {
+        display: inline;
+        width: 100px;
+        height: 100px;
+        background-color: lightblue;
+        margin: 10px;
+        padding: 10px;
+      }
+
+      .inline-block-example {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background-color: lightcoral;
+        margin: 10px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parentDiv">
+      <div class="childCenter">center</div>
+      <progress value="50" max="100"></progress>
+    </div>
+    <p>
+      <div class="inline-example">Inline</div>
+      <div class="inline-block-example">Inline-Block</div>
+    </p>
+    <dl>
+        <dt>Term 1</dt>
+        <dd>Description 1</dd>
+      
+        <dt>Term 2</dt>
+        <dd>Description 2</dd>
+      
+        <dt>Term 3</dt>
+        <dd>Description 3</dd>
+      </dl>
+  </body>
+</html>

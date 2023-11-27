@@ -1,0 +1,20 @@
+$primary-color: #000;
+$secondary-color: #4d4d4d;
+$background-color: #e9e9e9;
+$white-color: #fff;
+$red-color: red;
+
+body {
+  background-color: $background-color;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: $red-color;
+}
+
+h2 {
+  color: $primary-color;
+  background-color: $red-color;
+}

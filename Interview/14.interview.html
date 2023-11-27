@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      .parentDiv {
+        display: flex;
+        flex-direction: column;
+        margin: 8px;
+        padding: 8px;
+        gap: 5px;
+        width: 400px;
+        background-color: beige;
+      }
+      .childDiv {
+        display: flex;
+        flex-direction: column;
+        margin: 5px 5px 5px 50px;
+        padding: 5px;
+        gap: 5px;
+      }
+      .innerChildDiv {
+        display: flex;
+        flex-direction: column;
+        margin: 5px 5px 5px 50px;
+        padding: 5px;
+      }
+      .innerGreatChildDiv {
+        display: flex;
+        flex-direction: column;
+        margin: 5px 5px 5px 50px;
+        padding: 5px;
+      }
+      .iconImg {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: blueviolet;
+      }
+      .aboutDiv {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+      }
+      .nameTitle {
+        font-size: 12px;
+        font-weight: 500;
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        align-items: center;
+      }
+      .discription {
+        font-size: 9px;
+      }
+      .buttonDiv {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 300px;
+      }
+      .rightDiv {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 8px;
+        color: rgb(0, 157, 255);
+        font-weight: 500;
+      }
+      .rightDiv2 {
+        justify-content: flex-start;
+      }
+      .leftDiv {
+        justify-content: flex-end;
+      }
+      .btnDiv {
+        border: 1px solid blue;
+        padding: 3px;
+        border-radius: 10px;
+      }
+      .minutesDiv {
+        font-size: 6px;
+        color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parentDiv">
+      <div class="aboutDiv">
+        <div class="iconImg"></div>
+        <div class="titlediv">
+          <div class="nameTitle">
+            Billy Juarez
+            <div class="minutesDiv">11 minutes ago</div>
+          </div>
+          <div class="discription">
+            Im the discription for the name above..!
+          </div>
+          <div class="buttonDiv">
+            <div class="rightDiv">
+              <span class="btnDiv">Reply</span>
+              <span>...</span>
+            </div>
+            <div class="rightDiv">
+              <span class="btnDiv">Like</span>
+              <span class="btnDiv">Dislike</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="childDiv">
+        <div class="aboutDiv">
+          <div class="iconImg"></div>
+          <div class="titlediv">
+            <div class="nameTitle">
+              Puala mack
+              <div class="minutesDiv">6 minutes ago</div>
+            </div>
+            <div class="discription">
+              Im the discription for the name above..!
+            </div>
+            <div class="buttonDiv">
+              <div class="rightDiv">
+                <span class="btnDiv">Reply</span>
+                <span>...</span>
+              </div>
+              <div class="rightDiv">
+                <span class="btnDiv">Like</span>
+                <span class="btnDiv">Dislike</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="innerChildDiv">
+          <div class="aboutDiv">
+            <div class="iconImg"></div>
+            <div class="titlediv">
+              <div class="nameTitle">
+                Billy Juarez
+                <div class="minutesDiv">8 minutes ago</div>
+              </div>
+              <div class="discription">
+                Im the discription for the name above..!
+              </div>
+              <div class="buttonDiv">
+                <div class="rightDiv">
+                  <span class="btnDiv">Reply</span>
+                  <span>...</span>
+                </div>
+                <div class="rightDiv">
+                  <span class="btnDiv">Like</span>
+                  <span class="btnDiv">Dislike</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="childDiv">
+        <div class="aboutDiv">
+          <div class="iconImg"></div>
+          <div class="titlediv">
+            <div class="nameTitle">
+              Puala mack
+              <div class="minutesDiv">4 minutes ago</div>
+            </div>
+            <div class="discription">
+              Im the discription for the name above..!
+            </div>
+            <div class="buttonDiv">
+              <div class="rightDiv">
+                <span class="btnDiv">Reply</span>
+                <span>...</span>
+              </div>
+              <div class="rightDiv">
+                <span class="btnDiv">Like</span>
+                <span class="btnDiv">Dislike</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="innerChildDiv">
+          <div class="aboutDiv">
+            <div class="iconImg"></div>
+            <div class="titlediv">
+              <div class="nameTitle">
+                Billy Juarez
+                <div class="minutesDiv">3 minutes ago</div>
+              </div>
+              <div class="discription">
+                Im the discription for the name above..!
+              </div>
+              <div class="buttonDiv">
+                <div class="rightDiv">
+                  <span class="btnDiv">Reply</span>
+                  <span>...</span>
+                </div>
+                <div class="rightDiv">
+                  <span class="btnDiv">Like</span>
+                  <span class="btnDiv">Dislike</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="innerGreatChildDiv">
+            <div class="aboutDiv">
+              <div class="iconImg"></div>
+              <div class="titlediv">
+                <div class="nameTitle">
+                  Jimme Davis
+                  <div class="minutesDiv">2 minutes ago</div>
+                </div>
+                <div class="discription">
+                  Im the discription for the name above..!
+                </div>
+                <div class="buttonDiv">
+                  <div class="rightDiv">
+                    <span class="btnDiv">Reply</span>
+                    <span>...</span>
+                  </div>
+                  <div class="rightDiv">
+                    <span class="btnDiv">Like</span>
+                    <span class="btnDiv">Dislike</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
