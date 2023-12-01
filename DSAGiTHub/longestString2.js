@@ -8,11 +8,9 @@ let input = "My name is Ankit Jain & i'm from morena";
 
 const longestString = (str) => {
   let arr = str.split(" ");
-  let len = 0;
   let resultString = "";
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i].length > len) {
-      len = arr[i].length;
+    if (arr[i].length > resultString.length) {
       resultString = arr[i];
     }
   }

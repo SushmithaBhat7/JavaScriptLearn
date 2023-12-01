@@ -1,22 +1,22 @@
 //To find character occurrence from the string
 
 //string to array
-//create an empty object
+//create an empty length variable
 //iterate through an array
-//find the charector and update charector and occurance
-//return obj[keyCharector] = value
+//find the charector and update length
+//return length
 
 let input = "geekkkkss";
 
 const charOccurance = (str, ch) => {
   let arr = str.split("");
-  let obj = {};
+  let len = 0;
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === ch) {
-      obj[arr[i]] = obj.hasOwnProperty(arr[i]) ? obj[arr[i]] + 1 : 1;
+      len += 1;
     }
   }
-  return obj[ch];
+  return len;
 };
 
 console.log("charOccurance :", charOccurance(input, "k"));
