@@ -1,0 +1,87 @@
+/* Container styles */
+.innerBoxView {
+  background-color: white;
+  border: 1px solid black;
+  box-shadow: 0px 10px 20px;
+  height: 400px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Button container */
+.btnComponent {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Button styles */
+.clearBtn,
+.verifyBtn {
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+}
+
+.clearBtn {
+  margin-right: 12px;
+}
+
+.verifyBtn {
+  background: #1075c4;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* Root container */
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Input styles */
+input {
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  outline: none;
+  border-radius: 4px;
+  border: 1px solid black;
+  font-size: 20px;
+}
+
+.inputsContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  padding: 12px 0;
+}
+
+.inputErr {
+  border: 1px solid Red;
+}
+
+/* Remove number input spinner */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+/* General button styles */
+.btn {
+  padding: 8px 12px;
+}
+
+.btn:active {
+  opacity: 0.8;
+}

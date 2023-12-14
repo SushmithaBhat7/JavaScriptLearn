@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Hello world</h1>
+  </body>
+  <script>
+    var a = 10;
+    let b = 20;
+    const c = 30;
+    {
+      var a1 = 10;
+      let b1 = 20;
+      const c1 = 30;
+    }
+    let add = () => {
+      var a2 = 10;
+      let b2 = 20;
+      const c2 = 30;
+      return a2 + b2 + c2;
+    };
+    function sub(a, b, c) {
+      return a - b - c;
+    }
+    let mul = () => {
+      let mulAns = b * c;
+      function mulAbc() {
+        return mulAns;
+      }
+      mulAbc();
+    };
+    add();
+    sub(10, 20, 30);
+    mul();
+  </script>
+</html>
