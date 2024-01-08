@@ -2,78 +2,78 @@
 @tailwind components;
 @tailwind utilities;
 
-.headerImg{
-    @apply rounded-full
+.headerImg {
+  @apply rounded-full;
 }
-.headderContainer{
-    @apply flex flex-row justify-center items-center  py-2 px-16 border-b-4 sticky top-0 left-0 w-full z-10 bg-gradient-to-r from-indigo-950 via-blue-800 to-blue-700 text-gray-300
+.headderContainer {
+  @apply flex flex-row justify-center items-center  py-2 px-16 border-b-4 sticky top-0 left-0 w-full z-10 bg-gradient-to-r from-indigo-950 via-blue-800 to-blue-700 text-gray-300;
 }
-.headderPTag{
-    @apply text-7xl  mx-5  px-5 
+.headderPTag {
+  @apply text-7xl  mx-5  px-5;
 }
-.cardDivContainer{
-    @apply relative flex flex-col w-[250px] h-[400px] gap-2 border border-gray-300 hover:border-gray-100 p-4 transition duration-300 ease-in-out transform hover:scale-105 rounded-md hover:bg-indigo-950 hover:text-gray-300
+.cardDivContainer {
+  @apply relative flex flex-col w-[250px] h-[400px] gap-2 border border-gray-300 hover:border-gray-100 p-4 transition duration-300 ease-in-out transform hover:scale-105 rounded-md hover:bg-indigo-950 hover:text-gray-300;
 }
-.cardImage{
-    @apply rounded-md
+.cardImage {
+  @apply rounded-md;
 }
 /* .topCardContainer{
  @apply relative
 } */
-.ratingSpan{
-    @apply absolute top-0 left-0 text-white p-2 bg-black bg-opacity-50 rounded-md
+.ratingSpan {
+  @apply absolute top-0 left-0 text-white p-2 bg-black bg-opacity-50 rounded-md;
 }
-.twoSpanCard{
-     @apply flex flex-row justify-between items-center gap-2
+.twoSpanCard {
+  @apply flex flex-row justify-between items-center gap-2;
 }
-.bottomCardContainer{
-    @apply flex flex-col
+.bottomCardContainer {
+  @apply flex flex-col;
 }
-.bodyContainer{
-    @apply flex gap-4 flex-wrap justify-center items-center pt-6 pb-10
+.bodyContainer {
+  @apply flex gap-4 flex-wrap justify-center items-center pt-6 pb-10;
 }
-.titleCard{
-    @apply text-base text-center font-bold
+.titleCard {
+  @apply text-base text-center font-bold text-black;
 }
 /* .appContainer{
  @apply bg-gradient-to-r from-indigo-800 via-blue-500 to-blue-300
 } */
-.footerContainer{
-    @apply fixed bottom-0 w-full bg-indigo-950 flex flex-row text-gray-200 p-3 justify-center items-center gap-16
+.footerContainer {
+  @apply fixed bottom-0 w-full bg-indigo-950 flex flex-row text-gray-200 p-3 justify-center items-center gap-16;
 }
-.footerInnerDiv{
-    @apply flex flex-col  justify-center items-center
+.footerInnerDiv {
+  @apply flex flex-col  justify-center items-center;
 }
-.paginationContainer{
-    @apply pb-28 flex justify-center items-center 
+.paginationContainer {
+  @apply pb-28 flex justify-center items-center;
 }
-.searchInput{
-    @apply p-5 border-b-4 border-gray-800 w-3/4 bg-gradient-to-r from-indigo-700 via-blue-400 to-blue-300 rounded placeholder-gray-100 placeholder-opacity-100 text-xl focus:bg-blue-500
+.searchInput {
+  @apply p-5 border-b-4 border-gray-800 w-3/4 bg-gradient-to-r from-indigo-700 via-blue-400 to-blue-300 rounded placeholder-gray-100 placeholder-opacity-100 text-xl focus:bg-blue-500;
 }
-.searchIcon{
-  @apply border-2 border-gray-800 w-[64px] h-[64px]  flex justify-center items-center rounded bg-gray-200
+.searchIcon {
+  @apply border-2 border-gray-800 w-[64px] h-[64px]  flex justify-center items-center rounded bg-gray-200;
 }
-.searchContainer{
-    @apply flex flex-row justify-center gap-4 m-5 
+.searchContainer {
+  @apply flex flex-row justify-center gap-4 m-5;
 }
-.searchBotomContainer{
-    @apply flex flex-row justify-center m-3 gap-4
+.searchBotomContainer {
+  @apply flex flex-row justify-center m-3 gap-4;
 }
-.searchMovies{
-    @apply p-5 w-1/3 border-2 border-indigo-900
+.searchMovies {
+  @apply p-5 w-1/3 border-2 border-indigo-900;
 }
-.searchtvSeries{
-    @apply p-5 w-1/3 border-2 border-indigo-900
+.searchtvSeries {
+  @apply p-5 w-1/3 border-2 border-indigo-900;
 }
-.searchComponentContainer{
-    @apply flex flex-col
+.searchComponentContainer {
+  @apply flex flex-col;
 }
-.genresComponent{
-    @apply flex flex-wrap gap-2 m-4  justify-center items-center mx-4
+.genresComponent {
+  @apply flex flex-wrap gap-2 m-4  justify-center items-center mx-4;
 }
-.genereChip{
-    @apply text-[40px]  font-bold p-2 
+.genereChip {
+  @apply text-[40px]  font-bold p-2;
 }
-.topBodyText{
-    @apply flex justify-center items-center text-3xl font-bold p-2
+.topBodyText {
+  @apply flex justify-center items-center text-3xl text-black  font-bold p-2;
 }

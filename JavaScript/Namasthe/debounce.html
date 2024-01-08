@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input onkeyup="debounce()" />
+    <button onclick="throttle()">Click Me</button>
+  </body>
+  <script>
+    const normalCall = () => {
+      console.log("Fetching data : ", counter++);
+    };
+    let counter = 0;
+    let data;
+    const debounce = () => {
+      clearTimeout(data);
+      data = setTimeout(() => {
+        console.log("Fetching data : ", counter++);
+      }, 300);
+    };
+    let counterThrottle = 0;
+    let isThrottle = false;
+    const throttle = () => {
+      isThrottle = true;
+      if (isThrottle) {
+        setTimeout(() => {
+          isThrottle = false;
+          console.log("Fetching data for throttle : ", counterThrottle++);
+        }, 1000);
+      }
+    };
+  </script>
+</html>
