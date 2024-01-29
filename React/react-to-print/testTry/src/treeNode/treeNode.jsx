@@ -1,8 +1,20 @@
-export const BasicComponent = ({ name }) => {
+export const BasicComponent = ({ name, childrens }) => {
   console.log("name :", name);
+  console.log("childrens", childrens);
   return (
     <ul>
       <li>{name}</li>
+      {childrens.map((item, index) => {
+        return (
+          <ul key={index}>
+            {item.children ? (
+              <BasicComponent name={item.name} childrens={item.children} />
+            ) : (
+              <li>{item.name}</li>
+            )}
+          </ul>
+        );
+      })}
     </ul>
   );
 };
@@ -31,13 +43,19 @@ const ParentTreeComponent = () => {
       ],
     },
   ];
-  return data.map((item) => {
-    return (
-      <div key={item.name}>
-        <BasicComponent name={item.name} childrens={item.children} />
-      </div>
-    );
-  });
+  return (
+    <div style={{ display: "flex", flexDirection: "column" }}>
+      {data.map((item, index) => {
+        return (
+          <BasicComponent
+            key={index}
+            name={item.name}
+            childrens={item.children}
+          />
+        );
+      })}
+    </div>
+  );
 };
 
 export default ParentTreeComponent;
