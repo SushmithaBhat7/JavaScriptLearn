@@ -28,7 +28,7 @@ app.post("/api/users", (request, response) => {
   // console.log("body", body);
   users.push({ ...body, id: users.length + 1 });
   fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err, data) => {
-    return response.json({ status: "Pending", id: users.length + 1 });
+    return response.json({ status: "Pending", id: users.length });
   });
 });
 
@@ -41,13 +41,34 @@ app
     });
     return response.json(user);
   })
-  .post((request, response) => {
+  .patch((request, response) => {
     //Edit User with ID
-    return response.json({ status: "pending" });
+    const id = Number(request.params.id);
+    const user = users.find((user) => {
+      return user.id === id;
+    });
+    const body = request.body;
+    for (const key in body) {
+      if (user.hasOwnProperty(key)) {
+        user[key] = body[key];
+      }
+    }
+    users[id - 1] = user;
+    fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err, data) => {
+      return response.json({ status: "pending", id: id });
+    });
   })
   .delete((request, response) => {
     //Delete User with ID
-    return response.json({ status: "Pending" });
+    const id = Number(request.params.id);
+    console.log("id", id);
+    const userList = users.filter((user) => {
+      return user.id !== id;
+    });
+
+    fs.writeFile("./MOCK_DATA.json", JSON.stringify(userList), (err, data) => {
+      return response.json({ status: "Pending" });
+    });
   });
 
 app.listen(PORT, () => {
