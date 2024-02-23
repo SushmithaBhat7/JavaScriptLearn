@@ -1,0 +1,56 @@
+REST API - JSON
+
+GET /users - Render HTML Doc
+GET /api/users - List all users
+
+//Dynamic Path Parameter
+// GET /api/users/:id
+//   :id ->dynamic variable use ":"
+GET /api/users/1 - Get user with ID 1
+GET /api/users/2 - Get user with ID 2
+
+POST /api/users - Create new user
+
+PATCH /api/users/1 - Edit the user with ID 1
+
+DELETE /api/users/1 - Delete the user with ID 1
+
+//mockaroo.com => It generates Fake data for testing purpose
+
+
+request.params :  { id: '1003' }
+
+body = {
+  first_name: 'renameTryPatch',
+  last_name: 'XYZ'
+}
+
+user =  {
+  first_name: 'TryPatch',
+  last_name: 'ABC',
+  email: 'tryabc@gmail.com',
+  gender: 'Male',
+  id: 1003
+}
+userUpdated =  {
+  first_name: 'renameTryPatch',
+  last_name: 'XYZ',
+  email: 'tryabc@gmail.com',
+  gender: 'Male',
+  id: 1003
+}
+
+users[id-1] before :  {
+  first_name: 'TryPatch',
+  last_name: 'ABC',
+  email: 'tryabc@gmail.com',
+  gender: 'Male',
+  id: 1004
+}
+users[id-1] after :  {
+  first_name: 'patch2',
+  last_name: 'qwe',
+  email: 'tryabc@gmail.com',
+  gender: 'Male',
+  id: 1004
+}
