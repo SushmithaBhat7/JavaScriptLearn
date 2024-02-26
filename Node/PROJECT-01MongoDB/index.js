@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const PORT = 8001;
 const fs = require("fs");
-let users = require("./MOCK_DATA.json");
+// let users = require("./MOCK_DATA.json");
 const { default: mongoose } = require("mongoose");
 
 //connection for mongoose from mongodb
@@ -15,27 +15,32 @@ mongoose
     console.log("Error :", err);
   });
 
-const userSchema = new mongoose.Schema({
-  firstName: {
-    type: String,
-    required: true,
+const userSchema = new mongoose.Schema(
+  {
+    firstName: {
+      type: String,
+      required: true,
+    },
+    lastName: {
+      type: String,
+      required: false,
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    jobTitle: {
+      type: String,
+    },
+    gender: {
+      type: String,
+    },
   },
-  lastName: {
-    type: String,
-    required: false,
-  },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  jobTitle: {
-    type: String,
-  },
-  gender: {
-    type: String,
-  },
-});
+  {
+    timestamps: true,
+  }
+);
 
 const User = mongoose.model("user", userSchema);
 //Middleware - plugin
@@ -51,7 +56,7 @@ app.use((request, response, next) => {
 
 //Custom Middleware 2
 app.use((request, response, next) => {
-  console.log("Middleware 2", request.creditCardId);
+  // console.log("Middleware 2", request.creditCardId);
   fs.appendFile(
     "log.txt",
     `Date : ${Date.now()}, Method : ${request.method}, Path : ${
@@ -63,12 +68,14 @@ app.use((request, response, next) => {
   );
 });
 
-app.get("/users", (request, response) => {
+app.get("/users", async (request, response) => {
+  const allDbUsers = await User.find({});
+
   const html = `
       <ul>
-      ${users
+      ${allDbUsers
         .map((user) => {
-          return `<li>${user.first_name}</li>`;
+          return `<li>${user.firstName}-${user.email}</li>`;
         })
         .join("")}
       </ul>
@@ -76,61 +83,54 @@ app.get("/users", (request, response) => {
   return response.send(html);
 });
 
-app.get("/api/users", (request, response) => {
+app.get("/api/users", async (request, response) => {
   // request.setHeader("X-UseCase", "Practice");
   response.setHeader("X-MyName", "Sushmitha Bhat");
-  return response.json(users);
+  const allDbUsers = await User.find({});
+  return response.json(allDbUsers);
 });
-app.post("/api/users", (request, response) => {
+app.post("/api/users", async (request, response) => {
   const body = request.body;
   // console.log("body", body);
-  if (!body || !body.first_name || !body.last_name) {
+  if (
+    !body ||
+    !body.first_name ||
+    !body.last_name ||
+    !body.email ||
+    !body.gender ||
+    !body.job_title
+  ) {
     response.status(400).json({ msg: "All feilds are required" });
   }
-  users.push({ ...body, id: users.length + 1 });
-  fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err, data) => {
-    return response.status(201).json({ status: "Pending", id: users.length });
+  const result = await User.create({
+    firstName: body.first_name,
+    lastName: body.last_name,
+    email: body.email,
+    gender: body.gender,
+    jobTitle: body.job_title,
   });
+  // console.log("Result", result);
+  return response.status(204).json({ msg: "Success" });
 });
 
 app
   .route("/api/users/:id")
-  .get((request, response) => {
-    const id = Number(request.params.id);
-    const user = users.find((user) => {
-      return user.id === id;
-    });
+  .get(async (request, response) => {
+    // const id = Number(request.params.id);
+
+    const user = await User.findById(request.params.id);
     if (!user) return response.status(404).json({ msg: "User Not found" });
     return response.json(user);
   })
-  .patch((request, response) => {
+  .patch(async (request, response) => {
     //Edit User with ID
-    const id = Number(request.params.id);
-    const user = users.find((user) => {
-      return user.id === id;
-    });
-    const body = request.body;
-    for (const key in body) {
-      if (user.hasOwnProperty(key)) {
-        user[key] = body[key];
-      }
-    }
-    users[id - 1] = user;
-    fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err, data) => {
-      return response.json({ status: "pending", id: id });
-    });
+    await User.findByIdAndUpdate(request.params.id, { lastName: "Changed" });
+    return response.json({ status: "Success" });
   })
-  .delete((request, response) => {
+  .delete(async (request, response) => {
     //Delete User with ID
-    const id = Number(request.params.id);
-    console.log("id", id);
-    const userList = users.filter((user) => {
-      return user.id !== id;
-    });
-    users = userList;
-    fs.writeFile("./MOCK_DATA.json", JSON.stringify(userList), (err, data) => {
-      return response.json({ status: "Pending" });
-    });
+    await User.findByIdAndDelete(request.params.id);
+    return response.json({ status: "Success" });
   });
 
 app.listen(PORT, () => {

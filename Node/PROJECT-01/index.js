@@ -51,7 +51,7 @@ app.use((request, response, next) => {
 
 //Custom Middleware 2
 app.use((request, response, next) => {
-  // console.log("Middleware 2", request.creditCardId);
+  console.log("Middleware 2", request.creditCardId);
   fs.appendFile(
     "log.txt",
     `Date : ${Date.now()}, Method : ${request.method}, Path : ${
@@ -81,28 +81,16 @@ app.get("/api/users", (request, response) => {
   response.setHeader("X-MyName", "Sushmitha Bhat");
   return response.json(users);
 });
-app.post("/api/users", async (request, response) => {
+app.post("/api/users", (request, response) => {
   const body = request.body;
   // console.log("body", body);
-  if (
-    !body ||
-    !body.first_name ||
-    !body.last_name ||
-    !body.email ||
-    !body.gender ||
-    !body.job_title
-  ) {
+  if (!body || !body.first_name || !body.last_name) {
     response.status(400).json({ msg: "All feilds are required" });
   }
-  const result = await User.create({
-    firstName: body.first_name,
-    lastName: body.last_name,
-    email: body.email,
-    gender: body.gender,
-    jobTitle: body.job_title,
+  users.push({ ...body, id: users.length + 1 });
+  fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err, data) => {
+    return response.status(201).json({ status: "Pending", id: users.length });
   });
-  console.log("Result", result);
-  return response.status(204).json({ msg: Success });
 });
 
 app
